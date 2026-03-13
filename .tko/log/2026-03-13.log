@@ -1,0 +1,6 @@
+2026-03-13 17:11:16, MOVE, v:1, k:ed@pintando, mode:DOWN
+2026-03-13 17:11:33, MOVE, v:1, k:ed@pintando, mode:PICK
+2026-03-13 17:14:09, MOVE, v:1, k:ed@pintando, mode:BACK
+2026-03-13 17:14:18, MOVE, v:1, k:ed@pintando, mode:PICK
+2026-03-13 17:30:08, EXEC, v:1, k:ed@pintando, mode:FULL, rate:0, size:15
+2026-03-13 17:32:22, EXEC, v:1, k:ed@pintando, mode:FULL, rate:100, size:15

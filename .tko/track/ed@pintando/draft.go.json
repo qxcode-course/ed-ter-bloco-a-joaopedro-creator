@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-13_17-30-08",
+            "content": "@@ -227,17 +227,16 @@\n rintf(%22%25\n-.\n 2f%5Cn%22, h\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-03-13_17-32-22",
+            "content": "package main\nimport \"fmt\"\nimport \"math\"\n\nfunc main() {\n    var a, b, c float64;\n    fmt.Scan(&a)\n    fmt.Scan(&b)\n    fmt.Scan(&c)\n\n    sp := (a + b +c)/2;\n    heron := math.Sqrt(sp* (sp - a) * (sp - b) * (sp - c));\n\n    fmt.Printf(\"%.2f\\n\", heron)\n}\n",
+            "lines": "15"
+        }
+    ]
+}
