@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-13_19-05-46",
+            "content": "@@ -478,18 +478,16 @@\n mt.Print\n-ln\n (%22sem ve\n@@ -529,10 +529,8 @@\n rint\n-ln\n (ven\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-03-13_19-06-15",
+            "content": "@@ -490,13 +490,13 @@\n sem \n-ganha\n+vence\n dor%22\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-03-13_19-06-34",
+            "content": "package main\nimport \"fmt\"\nimport \"math\"\nfunc main() {\n    var N int \n    fmt.Scan(&N)\n\n    menorPontuacao := 101\n    vencedor := -1\n\n    for i := 0; i < N ; i++ {\n        var A, B int \n        fmt.Scan(&A, &B)\n\n        if A < 10 || B < 10{\n            continue\n        }\n\n        pontuacao := int(math.Abs(float64(A - B)))\n\n        if pontuacao < menorPontuacao {\n            menorPontuacao = pontuacao\n            vencedor = i\n        }\n    }\n\n    if vencedor == -1{\n        fmt.Println(\"sem ganhador\")\n    } else {\n        fmt.Println(vencedor)\n    }\n\n\n}\n",
+            "lines": "34"
+        }
+    ]
+}
