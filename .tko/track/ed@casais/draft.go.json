@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-13_19-32-19",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var N int \n    fmt.Scan(&N)\n\n    descasados := make(map[int]int)\n    casados := 0\n\n    for i := 0; i < N; i++ {\n        var animal int\n        fmt.Scan(&animal)\n\n        if descasados[-animal] >0 {\n            descasados[-animal]--\n            casados ++\n        } else {\n            descasados[animal]++\n        }\n    }\n\n    fmt.Println(casados)\n}\n",
+            "lines": "23"
+        }
+    ]
+}

@@ -19,3 +19,9 @@
 2026-03-13 19:05:46, EXEC, v:1, k:ed@pedra, mode:FULL, rate:0, size:34
 2026-03-13 19:06:15, EXEC, v:1, k:ed@pedra, mode:FULL, rate:75, size:34
 2026-03-13 19:06:34, EXEC, v:1, k:ed@pedra, mode:FULL, rate:100, size:34
+2026-03-13 19:10:24, MOVE, v:1, k:ed@pedra, mode:BACK
+2026-03-13 19:10:32, MOVE, v:1, k:ed@casais, mode:DOWN
+2026-03-13 19:10:35, MOVE, v:1, k:ed@casais, mode:PICK
+2026-03-13 19:32:19, EXEC, v:1, k:ed@casais, mode:FREE, size:23
+2026-03-13 19:33:41, MOVE, v:1, k:ed@casais, mode:PICK
+2026-03-13 19:33:43, EXEC, v:1, k:ed@casais, mode:FULL, rate:100
