@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-13_18-29-37",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var H, P, F, D int\n\n    fmt.Scan(&H, &P, &F, &D)\n\n    for{\n        F = (F + D + 16) % 16\n\n        if F == H {\n            fmt.Println(\"S\")\n            break\n        }\n\n        if F == P {\n            fmt.Println(\"N\")\n            break\n        }\n    }\n    \n}\n",
+            "lines": "22"
+        }
+    ]
+}
