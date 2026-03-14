@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-14_12-36-41",
+            "content": "@@ -41,485 +41,28 @@\n     \n-var Q int %0A    var D string%0A    fmt.Scan(&Q, &D)%0A%0A    x := make(%5B%5Dint, Q)%0A    Y := make(%5B%5Dint, Q)%0A%0A    for i := 0; i %3C Q; i++ %7B%0A        fmt.Scan(&x%5Bi%5D, &y%5Bi%5D)%0A    %7D%0A%0A    oldx:= x%5B0%5D%0A    oldx:= x%5B0%5D%0A%0A%0A    switch D %7B%0A%09case %22L%22:%0A%09%09x%5B0%5D--%0A%09case %22R%22:%0A%09%09x%5B0%5D++%0A%09case %22U%22:%0A%09%09y%5B0%5D--%0A%09case %22D%22:%0A%09%09y%5B0%5D++%0A%09%7D%0A%0A    for i := 1; i %3C Q; i++ %7B%0A%09%09tmpx := x%5Bi%5D%0A%09%09tmpy := y%5Bi%5D%0A%0A%09%09x%5Bi%5D = oldx%0A%09%09y%5Bi%5D = oldy%0A%0A%09%09oldx = tmpx%0A%09%09oldy = tmpy%0A%09%7D%0A%0A    for i := 0; i %3C Q; i++ %7B%0A%09%09fmt.Println(x%5Bi%5D, y%5Bi%5D)%0A%09%7D%0A\n+fmt.Println(%22qxcode%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-14_12-54-39",
+            "content": "@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -46,16 +46,17 @@\n ar Q int\n+ \n %0A    var\n@@ -115,17 +115,17 @@\n  Q)%0A    \n-y\n+Y\n  := make\n@@ -211,17 +211,16 @@\n     oldx\n- \n := x%5B0%5D%0A\n@@ -230,19 +230,19 @@\n  old\n-y := y\n+x:= x\n %5B0%5D%0A%0A\n+%0A\n     \n@@ -252,20 +252,17 @@\n tch D %7B%0A\n-    \n+%09\n case %22L%22\n@@ -267,27 +267,18 @@\n L%22:%0A\n-        \n+%09%09\n x%5B0%5D--%0A\n-    \n+%09\n case\n@@ -287,27 +287,18 @@\n R%22:%0A\n-        \n+%09%09\n x%5B0%5D++%0A\n-    \n+%09\n case\n@@ -307,27 +307,18 @@\n U%22:%0A\n-        \n+%09%09\n y%5B0%5D--%0A\n-    \n+%09\n case\n@@ -327,27 +327,18 @@\n D%22:%0A\n-        \n+%09%09\n y%5B0%5D++%0A\n-    \n+%09\n %7D%0A%0A \n@@ -365,24 +365,18 @@\n ; i++ %7B%0A\n-        \n+%09%09\n tmpx := \n@@ -380,24 +380,18 @@\n := x%5Bi%5D%0A\n-        \n+%09%09\n tmpy := \n@@ -396,24 +396,18 @@\n = y%5Bi%5D%0A%0A\n-        \n+%09%09\n x%5Bi%5D = o\n@@ -410,24 +410,18 @@\n  = oldx%0A\n-        \n+%09%09\n y%5Bi%5D = o\n@@ -425,24 +425,18 @@\n = oldy%0A%0A\n-        \n+%09%09\n oldx = t\n@@ -439,24 +439,18 @@\n  = tmpx%0A\n-        \n+%09%09\n oldy = t\n@@ -453,20 +453,17 @@\n  = tmpy%0A\n-    \n+%09\n %7D%0A%0A    f\n@@ -482,32 +482,26 @@\n  %3C Q; i++ %7B%0A\n-        \n+%09%09\n fmt.Println(\n@@ -516,11 +516,10 @@\n i%5D)%0A\n-    %7D\n+%09%7D%0A\n %0A%7D\n+%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-14_12-56-32",
+            "content": "package main\nimport \"fmt\"\n\nfunc main() {\n    var Q int\n    var D string\n    fmt.Scan(&Q, &D)\n\n    x := make([]int, Q)\n    y := make([]int, Q)\n\n    for i := 0; i < Q; i++ {\n        fmt.Scan(&x[i], &y[i])\n    }\n\n    oldx := x[0]\n    oldy := y[0]\n\n    switch D {\n    case \"L\":\n        x[0]--\n    case \"R\":\n        x[0]++\n    case \"U\":\n        y[0]--\n    case \"D\":\n        y[0]++\n    }\n\n    for i := 1; i < Q; i++ {\n        tmpx := x[i]\n        tmpy := y[i]\n\n        x[i] = oldx\n        y[i] = oldy\n\n        oldx = tmpx\n        oldy = tmpy\n    }\n\n    for i := 0; i < Q; i++ {\n        fmt.Println(x[i], y[i])\n    }\n}",
+            "lines": "44"
+        }
+    ]
+}
