@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-14_01-24-17",
+            "content": "@@ -140,33 +140,32 @@\n otal+1)%0A%0A    for\n- \n i := 0; i %3C n; i\n@@ -727,17 +727,16 @@\n ltando :\n-=\n  %5B%5Dint %7B\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-03-14_01-25-34",
+            "content": "@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -53,16 +53,17 @@\n l, n int\n+ \n %0A    fmt\n@@ -307,25 +307,25 @@\n    for i := \n-1\n+0\n ; i %3C n; i++\n@@ -356,17 +356,16 @@\n fig%5Bi-1%5D\n- \n %7B%0A      \n@@ -727,32 +727,33 @@\n altando := %5B%5Dint\n+ \n %7B%7D%0A    for i := \n@@ -791,17 +791,16 @@\n  !tem%5Bi%5D\n- \n %7B%0A      \n@@ -1036,16 +1036,26 @@\n intln()%0A\n-\n     %7D%0A\n+    %0A    %0A\n %7D%0A\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-03-14_01-26-38",
+            "content": "@@ -355,24 +355,106 @@\n  fig%5Bi-1%5D %7B%0A\n+            if len(repetidas) == 0 %7C%7C repetidas%5Blen(repetidas)-1%5D != fig%5Bi%5D %7B%0A    \n             \n@@ -483,32 +483,46 @@\n etidas, fig%5Bi%5D)%0A\n+            %7D%0A\n         %7D%0A    %7D%0A\n@@ -593,40 +593,8 @@\n e %7B%0A\n-        fmt.Print(repetidas%5B0%5D)%0A\n     \n@@ -598,33 +598,33 @@\n        for i := \n-1\n+0\n ; i %3C len(repeti\n@@ -657,21 +657,16 @@\n t.Print(\n-%22 %22, \n repetida\n@@ -669,16 +669,21 @@\n tidas%5Bi%5D\n+, %22 %22\n )%0A      \n@@ -924,39 +924,8 @@\n e %7B%0A\n-        fmt.Print(faltando%5B0%5D)%0A\n     \n@@ -933,25 +933,25 @@\n    for i := \n-1\n+0\n ; i %3C len(fa\n@@ -991,13 +991,8 @@\n int(\n-%22 %22, \n falt\n@@ -998,16 +998,21 @@\n tando%5Bi%5D\n+, %22 %22\n )%0A      \n@@ -1044,8 +1044,9 @@\n %0A    %7D%0A%7D\n+%0A\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-03-14_01-28-36",
+            "content": "package main\nimport \"fmt\"\n\nfunc main() {\n    var total, n int\n    fmt.Scan(&total, &n)\n\n    fig := make([]int, n)\n    tem := make([]bool, total+1)\n\n    for i := 0; i < n; i++ {\n        fmt.Scan(&fig[i])\n        if fig[i] <= total {\n            tem[fig[i]] = true\n        }\n    }\n\n    repetidas := []int{}\n    for i := 1; i < n; i++ {\n        if fig[i] == fig[i-1] {\n            repetidas = append(repetidas, fig[i])\n        }\n    }\n\n    if len(repetidas) == 0 {\n        fmt.Println(\"N\")\n    } else {\n        fmt.Print(repetidas[0])\n        for i := 1; i < len(repetidas); i++ {\n            fmt.Print(\" \", repetidas[i])\n        }\n        fmt.Println()\n    }\n\n    faltando := []int{}\n    for i := 1; i <= total; i++ {\n        if !tem[i] {\n            faltando = append(faltando, i)\n        }\n    }\n\n    if len(faltando) == 0 {\n        fmt.Println(\"N\")\n    } else {\n        fmt.Print(faltando[0])\n        for i := 1; i < len(faltando); i++ {\n            fmt.Print(\" \", faltando[i])\n        }\n        fmt.Println()\n    }\n}",
+            "lines": "51"
+        }
+    ]
+}
