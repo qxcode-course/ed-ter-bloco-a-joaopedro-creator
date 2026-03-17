@@ -10,19 +10,20 @@ sources:
   target: https://github.com/qxcodeed/arcade.git
   type: git
   writeable: false
-  cache_timestamp: '2026-03-14 12:33:54'
+  cache_timestamp: '2026-03-17 13:12:43'
   quests: null
   tasks: null
 expanded:
-- ed@revisão
 - ed@main-quest
+- ed@revisão
 tasks:
-  ed@pintando: '{rate:100}'
-  ed@mumia: '{rate:100}'
-  ed@fuga: '{rate:100}'
-  ed@pedra: '{rate:100}'
-  ed@casais: '{rate:100}'
-  ed@baruel: '{rate:100}'
+  ed@pintando: '{self:1, rate:100, study:23, guided:1, concept:1}'
+  ed@mumia: '{self:1, rate:100, study:30, guided:1, concept:1}'
+  ed@fuga: '{self:1, rate:100, study:27, guided:1, concept:1}'
+  ed@pedra: '{self:1, rate:100, study:36, guided:1, concept:1}'
+  ed@casais: '{self:1, rate:100, study:25, guided:1, concept:1}'
+  ed@baruel: '{self:1, rate:100, study:30, guided:1, concept:1}'
+  ed@gomos: '{self:1, rate:100, study:25, guided:1, concept:1}'
 flags:
   painel: 0
   quests: 0
