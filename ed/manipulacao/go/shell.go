@@ -9,38 +9,108 @@ import (
 )
 
 func getMen(vet []int) []int {
-	_ = vet
-	return nil
+	var res []int
+	for _, v := range vet {
+		if v > 0 {
+			res = append(res, v)
+		}
+	}
+	return res
 }
 
 func getCalmWomen(vet []int) []int {
-	_ = vet
-	return nil
+	var res []int
+	for _, v := range vet {
+		if v < 0 && -v < 10 {
+			res = append(res, v)
+		}
+	}
+	return res
 }
 
 func sortVet(vet []int) []int {
-	_ = vet
-	return nil
+	res := make([]int, len(vet))
+	copy(res, vet)
+
+	for i := 0; i < len(res); i++ {
+		for j := i + 1; j < len(res); j++ {
+			if res[i] > res[j] {
+				res[i], res[j] = res[j], res[i]
+			}
+		}
+	}
+	return res
 }
 
 func sortStress(vet []int) []int {
-	_ = vet
-	return nil
+	res := make([]int, len(vet))
+	copy(res, vet)
+
+	for i := 0; i < len(res); i++ {
+		for j := i + 1; j < len(res); j++ {
+			if abs(res[i]) > abs(res[j]) {
+				res[i], res[j] = res[j], res[i]
+			}
+		}
+	}
+	return res
 }
 
 func reverse(vet []int) []int {
-	_ = vet
-	return nil
+	res := make([]int, len(vet))
+	for i := 0; i < len(vet); i++ {
+		res[i] = vet[len(vet)-1-i]
+	}
+	return res
 }
 
 func unique(vet []int) []int {
-	_ = vet
-	return nil
+	seen := make(map[int]bool)
+	var res []int
+
+	for _, v := range vet {
+		if !seen[v] {
+			seen[v] = true
+			res = append(res, v)
+		}
+	}
+	return res
 }
 
 func repeated(vet []int) []int {
-	_ = vet
-	return nil
+	count := make(map[int]int)
+	var res []int
+
+	// contar ocorrências
+	for _, v := range vet {
+		count[v]++
+	}
+
+	// adicionar repetições extras
+	for _, v := range vet {
+		if count[v] > 1 {
+			res = append(res, v)
+			count[v]--
+		}
+	}
+
+	// ordenar crescente
+	for i := 0; i < len(res); i++ {
+		for j := i + 1; j < len(res); j++ {
+			if res[i] > res[j] {
+				res[i], res[j] = res[j], res[i]
+			}
+		}
+	}
+
+	return res
+}
+
+func abs(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
 }
 
 func main() {
@@ -103,4 +173,3 @@ func str2vet(s string) []int {
 	}
 	return vet
 }
-
