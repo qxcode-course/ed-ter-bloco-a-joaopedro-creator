@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-24_18-41-36",
+            "content": "@@ -237,182 +237,8 @@\n )%0A%09%7D\n-%0A%0A%09removidos := make(map%5Bint%5Dbool)%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09removidos%5Bsaiu%5Bi%5D%5D = true%0A%09%7D%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09!removidos%5Bfila%5Bi%5D%5D%7B%0A%09%09%09fmt.Println(%22%25d %22, n)%0A%09%09%7D%0A%09%7D\n %0A%09%0A%0A\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-03-24_18-49-40",
+            "content": "@@ -181,17 +181,17 @@\n (%5B%5Dint, \n-m\n+n\n )%0A%09for i\n@@ -193,33 +193,33 @@\n for i := 0; i %3C \n-m\n+n\n ; i++ %7B%0A%09%09fmt.Sc\n@@ -286,17 +286,17 @@\n  0; i %3C \n-m\n+n\n ; i++ %7B%0A\n@@ -359,11 +359,8 @@\n %7B%0A%09%09\n-if \n !rem\n@@ -392,17 +392,18 @@\n rint\n-f\n+ln\n (%22%25d %22, \n fila\n@@ -398,23 +398,17 @@\n (%22%25d %22, \n-fila%5Bi%5D\n+n\n )%0A%09%09%7D%0A%09%7D\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-24_18-53-27",
+            "content": "@@ -400,10 +400,8 @@\n (%22%25d\n-%5Cn\n  %22, \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-24_18-54-33",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -33,20 +33,17 @@\n ain() %7B%0A\n-    \n+%09\n var n in\n@@ -39,29 +39,27 @@\n %7B%0A%09var n int\n-%0A    \n+ %0A%09\n fmt.Scan(&n)\n@@ -60,20 +60,17 @@\n an(&n)%0A%0A\n-    \n+%09\n fila := \n@@ -84,20 +84,17 @@\n int, n)%0A\n-    \n+%09\n for i :=\n@@ -106,32 +106,26 @@\n  %3C n; i++ %7B%0A\n-        \n+%09%09\n fmt.Scan(&fi\n@@ -131,27 +131,21 @@\n ila%5Bi%5D)%0A\n-    %7D%0A%0A    \n+%09%7D%0A%0A%09\n var m in\n@@ -146,20 +146,17 @@\n r m int%0A\n-    \n+%09\n fmt.Scan\n@@ -160,21 +160,17 @@\n can(&m)%0A\n-%0A    \n+%09\n saiu := \n@@ -184,20 +184,17 @@\n int, m)%0A\n-    \n+%09\n for i :=\n@@ -210,24 +210,18 @@\n ; i++ %7B%0A\n-        \n+%09%09\n fmt.Scan\n@@ -231,27 +231,21 @@\n aiu%5Bi%5D)%0A\n-    %7D%0A%0A    \n+%09%7D%0A%0A%09\n removido\n@@ -269,20 +269,17 @@\n %5Dbool)%0A%0A\n-    \n+%09\n for i :=\n@@ -295,24 +295,18 @@\n ; i++ %7B%0A\n-        \n+%09%09\n removido\n@@ -327,41 +327,13 @@\n rue%0A\n-    %7D%0A%0A    primeiro := true%0A%0A    \n+%09%7D%0A%0A%09\n for \n@@ -353,24 +353,18 @@\n ; i++ %7B%0A\n-        \n+%09%09\n if !remo\n@@ -381,54 +381,13 @@\n %5Bi%5D%5D\n- \n %7B%0A\n-            if !primeiro %7B%0A                \n+%09%09%09\n fmt.\n@@ -395,121 +395,36 @@\n rint\n+f\n (%22\n- %22)%0A            %7D%0A            fmt.Print(fila%5Bi%5D)%0A            primeiro = false%0A        %7D%0A    %7D%0A%0A    fmt.Println()\n+%25d%5Cn %22, fila%5Bi%5D)%0A%09%09%7D%0A%09%7D%0A%09%0A\n %0A%7D%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-24_18-56-04",
+            "content": "@@ -6,16 +6,17 @@\n ge main%0A\n+%0A\n import %22\n@@ -20,16 +20,17 @@\n t %22fmt%22%0A\n+%0A\n func mai\n@@ -35,17 +35,20 @@\n ain() %7B%0A\n-%09\n+    \n var n in\n@@ -52,11 +52,13 @@\n  int\n- %0A%09\n+%0A    \n fmt.\n@@ -67,17 +67,20 @@\n an(&n)%0A%0A\n-%09\n+    \n fila := \n@@ -94,17 +94,20 @@\n int, n)%0A\n-%09\n+    \n for i :=\n@@ -115,34 +115,40 @@\n 0; i %3C n; i++ %7B%0A\n-%09%09\n+        \n fmt.Scan(&fila%5Bi\n@@ -150,21 +150,27 @@\n ila%5Bi%5D)%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A    \n var m in\n@@ -171,17 +171,20 @@\n r m int%0A\n-%09\n+    \n fmt.Scan\n@@ -188,17 +188,21 @@\n can(&m)%0A\n-%09\n+%0A    \n saiu := \n@@ -216,17 +216,20 @@\n int, m)%0A\n-%09\n+    \n for i :=\n@@ -245,18 +245,24 @@\n ; i++ %7B%0A\n-%09%09\n+        \n fmt.Scan\n@@ -272,21 +272,27 @@\n aiu%5Bi%5D)%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A    \n removido\n@@ -316,17 +316,20 @@\n %5Dbool)%0A%0A\n-%09\n+    \n for i :=\n@@ -345,18 +345,24 @@\n ; i++ %7B%0A\n-%09%09\n+        \n removido\n@@ -383,13 +383,41 @@\n rue%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A    primeiro := true%0A%0A    \n for \n@@ -437,18 +437,24 @@\n ; i++ %7B%0A\n-%09%09\n+        \n if !remo\n@@ -471,13 +471,54 @@\n %5Bi%5D%5D\n+ \n %7B%0A\n-%09%09%09\n+            if !primeiro %7B%0A                \n fmt.\n@@ -526,36 +526,109 @@\n rint\n-f\n (%22\n-%25d%5Cn %22, fila%5Bi%5D)%0A%09%09%7D%0A%09%7D%0A%09\n+ %22)%0A            %7D%0A            fmt.Print(fila%5Bi%5D)%0A            primeiro = false%0A        %7D%0A    %7D%0A%0A    \n fmt.\n@@ -637,11 +637,10 @@\n intln()%0A\n-%0A\n %7D%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-24_18-57-36",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -33,20 +33,17 @@\n ain() %7B%0A\n-    \n+%09\n var n in\n@@ -39,29 +39,27 @@\n %7B%0A%09var n int\n-%0A    \n+ %0A%09\n fmt.Scan(&n)\n@@ -60,20 +60,17 @@\n an(&n)%0A%0A\n-    \n+%09\n fila := \n@@ -84,20 +84,17 @@\n int, n)%0A\n-    \n+%09\n for i :=\n@@ -106,32 +106,26 @@\n  %3C n; i++ %7B%0A\n-        \n+%09%09\n fmt.Scan(&fi\n@@ -131,27 +131,21 @@\n ila%5Bi%5D)%0A\n-    %7D%0A%0A    \n+%09%7D%0A%0A%09\n var m in\n@@ -146,20 +146,17 @@\n r m int%0A\n-    \n+%09\n fmt.Scan\n@@ -160,21 +160,17 @@\n can(&m)%0A\n-%0A    \n+%09\n saiu := \n@@ -184,20 +184,17 @@\n int, m)%0A\n-    \n+%09\n for i :=\n@@ -210,24 +210,18 @@\n ; i++ %7B%0A\n-        \n+%09%09\n fmt.Scan\n@@ -231,27 +231,21 @@\n aiu%5Bi%5D)%0A\n-    %7D%0A%0A    \n+%09%7D%0A%0A%09\n removido\n@@ -269,20 +269,17 @@\n %5Dbool)%0A%0A\n-    \n+%09\n for i :=\n@@ -295,24 +295,18 @@\n ; i++ %7B%0A\n-        \n+%09%09\n removido\n@@ -323,27 +323,21 @@\n  = true%0A\n-    %7D%0A%0A    \n+%09%7D%0A%0A%09\n for i :=\n@@ -353,24 +353,18 @@\n ; i++ %7B%0A\n-        \n+%09%09\n if !remo\n@@ -381,23 +381,13 @@\n %5Bi%5D%5D\n- \n %7B%0A\n-            \n+%09%09%09\n fmt.\n@@ -396,16 +396,18 @@\n intf(%22%25d\n+%5Cn\n  %22, fila\n@@ -415,29 +415,16 @@\n i%5D)%0A\n-        %7D%0A    %7D%0A%0A    \n+%09%09%7D%0A%09%7D%0A%09\n fmt.\n@@ -433,9 +433,11 @@\n intln()%0A\n-%7D\n+%0A%7D%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-24_18-59-36",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n\n    fila := make([]int, n)\n    for i := 0; i < n; i++ {\n        fmt.Scan(&fila[i])\n    }\n\n    var m int\n    fmt.Scan(&m)\n\n    saiu := make([]int, m)\n    for i := 0; i < m; i++ {\n        fmt.Scan(&saiu[i])\n    }\n\n    removidos := make(map[int]bool)\n\n    for i := 0; i < m; i++ {\n        removidos[saiu[i]] = true\n    }\n\n    for i := 0; i < n; i++ {\n        if !removidos[fila[i]] {\n            fmt.Printf(\"%d \", fila[i])\n        }\n    }\n\n    fmt.Println()\n}",
+            "lines": "35"
+        }
+    ]
+}
