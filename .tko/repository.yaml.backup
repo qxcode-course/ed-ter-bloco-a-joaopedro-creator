@@ -10,20 +10,20 @@ sources:
   target: https://github.com/qxcodeed/arcade.git
   type: git
   writeable: false
-  cache_timestamp: '2026-03-17 13:12:43'
+  cache_timestamp: '2026-03-24 13:24:59'
   quests: null
   tasks: null
 expanded:
-- ed@main-quest
-- ed@revisão
+- '@ed@revisao-basic-basic_sem_quest'
+- ed@revisao-basic-basic
 tasks:
-  ed@pintando: '{self:1, rate:100, study:23, guided:1, concept:1}'
-  ed@mumia: '{self:1, rate:100, study:30, guided:1, concept:1}'
-  ed@fuga: '{self:1, rate:100, study:27, guided:1, concept:1}'
-  ed@pedra: '{self:1, rate:100, study:36, guided:1, concept:1}'
-  ed@casais: '{self:1, rate:100, study:25, guided:1, concept:1}'
-  ed@baruel: '{self:1, rate:100, study:30, guided:1, concept:1}'
-  ed@gomos: '{self:1, rate:100, study:25, guided:1, concept:1}'
+  ed@pintando: '{self:1, rate:100, study:23, concept:1, refactor:1}'
+  ed@mumia: '{self:1, rate:100, study:30, concept:1, refactor:1}'
+  ed@fuga: '{self:1, rate:100, study:27, concept:1, refactor:1}'
+  ed@pedra: '{self:1, rate:100, study:36, concept:1, refactor:1}'
+  ed@casais: '{self:1, rate:100, study:25, concept:1, refactor:1}'
+  ed@baruel: '{self:1, rate:100, study:30, concept:1, refactor:1}'
+  ed@gomos: '{self:1, rate:100, study:25, concept:1, refactor:1}'
 flags:
   painel: 0
   quests: 0
@@ -32,4 +32,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@gomos
+selected: '@ed@revisao-basic-basic_sem_quest'

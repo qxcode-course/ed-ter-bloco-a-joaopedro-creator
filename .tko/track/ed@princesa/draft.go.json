@@ -1,0 +1,74 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-24_13-42-41",
+            "content": "@@ -23,254 +23,25 @@\n mt%22%0A\n-%0Afunc josephus(n int) int%7B%0A    resultado := 0 %0A    for i:= 2; i %3C n; i++%7B%0A        resultado = (resultado + 2) %25 i%0A    %7D%0A    return resultado%0A%7D%0A%0A%0Afunc main() %7B%0A    var n int %0A     fmt.Scan(&n)%0A%0A     sobrou := josephus(n)%0A%0A     fmt.Println(sobrou)%0A%0A\n+func main() %7B%0A    \n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-24_14-16-03",
+            "content": "@@ -216,81 +216,8 @@\n n)%0A%0A\n-     for i := 0; i%3Cn;i++%7B%0A        var E int %0A        fmt.Scan(&E)%0A     %7D%0A\n     \n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-24_14-18-56",
+            "content": "@@ -29,90 +29,49 @@\n unc \n-main() %7B%0A    var n, e int %0A     fmt.Scan(&n, &e)%0A%0A     vivos := make(%5B%5Dbool, n)%0A%0A \n+josephus(n int) int%7B%0A    resultado := 0 %0A\n     \n@@ -71,29 +71,28 @@\n 0 %0A    for i\n- \n := \n-0\n+2\n ; i %3C n; i++\n@@ -105,97 +105,119 @@\n     \n-vivos%5Bi%5D = true%0A \n+resultado = (resultado + 2) %25 i%0A\n     %7D%0A\n-%0A\n     \n- espada := -1%0A     qtdVivos := n%0A%0A     for qtdVivos %3E 1 %7B%0A   \n+return resultado%0A%7D%0A%0A%0Afunc main() %7B%0A    var n int %0A     fmt.Scan(&n)%0A%0A\n     \n@@ -234,13 +234,11 @@\n 0; i\n- \n %3Cn;\n- \n i++%7B\n@@ -250,220 +250,80 @@\n     \n-    if vivos%5Bi%5D %7B%0A                if i == espada%7B%0A                    fmt.Printf(%22%3E%25d%22, i +1)%0A                %7D else %7B%0A                    fmt.Printf(%22%25d%22, i +1)%0A                %7D%0A            %7D%0A        %7D%0A \n+var E int %0A        fmt.Scan(&E)%0A     %7D%0A     sobrou := josephus(n)%0A%0A\n      \n-  \n fmt.\n@@ -334,139 +334,15 @@\n tln(\n-)%0A%0A%0A        morto := (espada + 1) %25n%0A%0A        for !vivos%5Bmorto%5D %7B%0A            espada = (espada + 1) %25n%0A        %7D%0A        %0A     %7D%0A%0A%0A\n+sobrou)\n %0A%0A%0A%7D\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-24_17-43-38",
+            "content": "@@ -584,289 +584,23 @@\n  = (\n-morto + 1) %25n%0A        %7D%0A        vivos%5Bmorto%5D = false %0A        qtdVivos--%0A%0A        espada = (morto + 1) %25n%0A        for !vivos%5Bespada%5D %7B%0A            espada = (espada + 1) %25n%0A        %7D%0A%0A        for i := 0; i %3C n; i++%7B%0A            if vivos%5Bi%5D%7B%0A                fmt.Printf(%22%3E%25d%22, n)%0A    \n+espada + 1) %25n%0A\n     \n@@ -609,25 +609,24 @@\n   %7D%0A        \n-%7D\n %0A     %7D%0A%0A%0A%0A%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-24_17-50-35",
+            "content": "@@ -855,18 +855,12 @@\n %22%3E%25d\n-%5Cn\n %22, n\n- +1 \n )%0A  \n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-03-24_17-51-20",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -50,17 +50,19 @@\n n, e int\n-%0A\n+ %0A \n     fmt.\n@@ -75,16 +75,17 @@\n n, &e)%0A%0A\n+ \n     vivo\n@@ -106,16 +106,17 @@\n ol, n)%0A%0A\n+ \n     for \n@@ -125,33 +125,32 @@\n := 0; i %3C n; i++\n- \n %7B%0A        vivos%5B\n@@ -159,27 +159,29 @@\n  = true%0A    \n+ \n %7D%0A%0A\n+ \n     espada :\n@@ -186,14 +186,12 @@\n  := \n-e - \n+-\n 1%0A\n+ \n     \n@@ -205,24 +205,25 @@\n s := n%0A%0A    \n+ \n for qtdVivos\n@@ -232,42 +232,8 @@\n  1 %7B\n-%0A%0A        // imprimir estado atual\n %0A   \n@@ -248,32 +248,30 @@\n  i := 0; i %3C\n- \n n; i++\n- \n %7B%0A          \n@@ -316,17 +316,16 @@\n = espada\n- \n %7B%0A      \n@@ -353,21 +353,21 @@\n ntf(%22%3E%25d\n- \n %22, i\n+ \n +1)%0A    \n@@ -425,13 +425,13 @@\n (%22%25d\n- \n %22, i\n+ \n +1)%0A\n@@ -499,44 +499,8 @@\n ()%0A%0A\n-        // encontrar quem vai morrer\n %0A   \n@@ -519,34 +519,34 @@\n = (espada + 1) %25\n- \n n\n+%0A\n %0A        for !vi\n@@ -570,21 +570,22 @@\n         \n-morto\n+espada\n  = (mort\n@@ -584,33 +584,32 @@\n  = (morto + 1) %25\n- \n n%0A        %7D%0A%0A   \n@@ -607,26 +607,8 @@\n    %7D\n-%0A%0A        // matar\n %0A   \n@@ -632,16 +632,17 @@\n  = false\n+ \n %0A       \n@@ -658,33 +658,8 @@\n --%0A%0A\n-        // passar espada%0A\n     \n@@ -680,25 +680,24 @@\n morto + 1) %25\n- \n n%0A        fo\n@@ -750,17 +750,16 @@\n a + 1) %25\n- \n n%0A      \n@@ -766,42 +766,13 @@\n   %7D%0A\n+%0A\n     \n-%7D%0A%0A    // %C3%BAltimo sobrevivente%0A\n     \n@@ -793,17 +793,16 @@\n %3C n; i++\n- \n %7B%0A      \n@@ -795,32 +795,36 @@\n n; i++%7B%0A        \n+  \n+  \n if vivos%5Bi%5D %7B%0A  \n@@ -810,33 +810,32 @@\n      if vivos%5Bi%5D\n- \n %7B%0A            fm\n@@ -824,32 +824,36 @@\n i%5D%7B%0A            \n+   \n+ \n fmt.Printf(%22%3E%25d%5C\n@@ -860,11 +860,13 @@\n n%22, \n-i\n+n \n +1\n+ \n )%0A  \n@@ -875,13 +875,34 @@\n     \n+  \n-%7D%0A    %7D%0A%7D\n+  %7D%0A        %7D%0A     %7D%0A%0A%0A%0A%0A%0A%7D%0A\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-03-24_17-52-26",
+            "content": "@@ -989,11 +989,11 @@\n tf(%22\n+%3E\n %25d\n-%3E\n %5Cn%22,\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-03-24_17-53-57",
+            "content": "@@ -384,19 +384,19 @@\n Printf(%22\n+%3E\n %25d\n-%3E\n  %22, i+1)\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-03-24_17-54-25",
+            "content": "@@ -388,14 +388,12 @@\n tf(%22\n-%5B\n %25d%3E \n-%5D\n %22, i\n@@ -457,13 +457,11 @@\n tf(%22\n-%5B\n %25d \n-%5D\n %22, i\n@@ -989,13 +989,11 @@\n tf(%22\n-%5B\n %25d%3E\n-%5D\n %5Cn%22,\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-03-24_17-55-26",
+            "content": "@@ -384,19 +384,22 @@\n Printf(%22\n+%5B\n %25d%3E\n+ %5D\n %22, i+1)%0A\n@@ -455,18 +455,21 @@\n Printf(%22\n+%5B\n %25d\n+ %5D\n %22, i+1)%0A\n@@ -502,32 +502,32 @@\n     %7D%0A        %7D%0A\n+\n         fmt.Prin\n@@ -534,12 +534,8 @@\n tln(\n-%22%5B%5D%22\n )%0A%0A \n@@ -989,19 +989,21 @@\n Printf(%22\n+%5B\n %25d%3E\n+%5D\n %5Cn%22, i+1\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-03-24_17-56-38",
+            "content": "@@ -230,31 +230,8 @@\n 1 %7B%0A\n-        fmt.Print(%22%5B %22)\n %0A   \n@@ -525,16 +525,17 @@\n rintln(%22\n+%5B\n %5D%22)%0A%0A   \n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-03-24_17-57-53",
+            "content": "@@ -410,17 +410,16 @@\n ntf(%22%25d%3E\n- \n %22, i+1)%0A\n@@ -477,17 +477,16 @@\n intf(%22%25d\n- \n %22, i+1)%0A\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-03-24_17-58-41",
+            "content": "@@ -108,35 +108,8 @@\n n)%0A%0A\n-    // todos come%C3%A7am vivos%0A\n     \n@@ -226,16 +226,39 @@\n s %3E 1 %7B%0A\n+        fmt.Print(%22%5B %22)\n %0A       \n@@ -287,32 +287,8 @@\n ual%0A\n-        fmt.Print(%22%5B %22)%0A\n     \n@@ -785,18 +785,16 @@\n  passar \n-a \n espada%0A \n@@ -915,25 +915,16 @@\n %0A%0A    //\n- imprimir\n  %C3%BAltimo \n@@ -936,36 +936,16 @@\n vivente%0A\n-    fmt.Print(%22%5B %22)%0A\n     for \n@@ -1006,33 +1006,34 @@\n  fmt.Printf(%22%25d%3E\n- \n+%5Cn\n %22, i+1)%0A        \n@@ -1040,30 +1040,9 @@\n %7D%0A    %7D%0A\n-    fmt.Println(%22%5D%22)%0A\n %7D\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-03-24_17-59-56",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    var n, e int\n    fmt.Scan(&n, &e)\n\n    vivos := make([]bool, n)\n\n    // todos come\u00e7am vivos\n    for i := 0; i < n; i++ {\n        vivos[i] = true\n    }\n\n    espada := e - 1\n    qtdVivos := n\n\n    for qtdVivos > 1 {\n\n        // imprimir estado atual\n        fmt.Print(\"[ \")\n        for i := 0; i < n; i++ {\n            if vivos[i] {\n                if i == espada {\n                    fmt.Printf(\"%d> \", i+1)\n                } else {\n                    fmt.Printf(\"%d \", i+1)\n                }\n            }\n        }\n        fmt.Println(\"]\")\n\n        // encontrar quem vai morrer\n        morto := (espada + 1) % n\n        for !vivos[morto] {\n            morto = (morto + 1) % n\n        }\n\n        // matar\n        vivos[morto] = false\n        qtdVivos--\n\n        // passar a espada\n        espada = (morto + 1) % n\n        for !vivos[espada] {\n            espada = (espada + 1) % n\n        }\n    }\n\n    // imprimir \u00faltimo sobrevivente\n    fmt.Print(\"[ \")\n    for i := 0; i < n; i++ {\n        if vivos[i] {\n            fmt.Printf(\"%d> \", i+1)\n        }\n    }\n    fmt.Println(\"]\")\n}",
+            "lines": "59"
+        }
+    ]
+}
