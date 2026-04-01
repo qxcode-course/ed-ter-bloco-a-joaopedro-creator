@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-01_13-56-11",
+            "content": "@@ -174,27 +174,6 @@\n um)%0A\n-    fmt.Println(num)%0A\n %7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-04-01_13-57-01",
+            "content": "@@ -144,40 +144,8 @@\n ) %7B%0A\n-    var n int %0A    fmt.Scan(&n)%0A\n     \n@@ -151,17 +151,19 @@\n  num := \n-n\n+100\n %0A    res\n@@ -174,11 +174,27 @@\n um)%0A    \n+fmt.Println(num)\n %0A%7D%0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-04-01_14-01-19",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc resto(num int) {\n\tif num == 0 {\n\t\treturn\n\t}\n\tresto(num / 2)\n\tfmt.Printf(\"%d %d\\n\", num/2, num%2)\n}\n\nfunc main() {\n    var n int \n    fmt.Scan(&n)\n    num := n\n    resto(num)\n    \n}\n",
+            "lines": "19"
+        }
+    ]
+}
