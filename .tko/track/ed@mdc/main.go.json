@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-01_14-07-10",
+            "content": "@@ -56,56 +56,16 @@\n  %7B%0A%09\n-if (b == 0)%7B%0A%09%09return a%0A%09%7D%0A%09return mdc(b, a %25 b)\n+return 0\n %0A%7D%0A%0A\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-04-02_16-11-14",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc mdc(a, b int) int {\n\tif (b == 0){\n\t\treturn a\n\t}\n\treturn mdc(b, a % b)\n}\n\nfunc main() {\n\tvar a, b int\n\tfmt.Scan(&a, &b)\n\tfmt.Println(mdc(a, b))\n}\n",
+            "lines": "18"
+        }
+    ]
+}

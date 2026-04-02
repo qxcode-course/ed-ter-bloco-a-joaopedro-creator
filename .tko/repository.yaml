@@ -28,6 +28,7 @@ tasks:
   ed@apagando: '{self:1, rate:100, study:45, concept:1}'
   ed@manipulacao: '{self:1, rate:100, study:50, concept:1, refactor:1}'
   ed@resto: '{self:1, rate:100, study:15}'
+  ed@mdc: '{self:1, rate:100, study:3}'
   ed@analise: '{}'
   ed@especiais: '{}'
   ed@buscas: '{}'
@@ -38,7 +39,6 @@ tasks:
   ed@fractais_png: '{}'
   ed@triangulo: '{}'
   ed@treinando: '{}'
-  ed@mdc: '{}'
   ed@queimada: '{}'
   ed@labirinto: '{}'
   ed@eh_primo: '{}'
@@ -116,4 +116,4 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@resto
+selected: ed@triangulo
