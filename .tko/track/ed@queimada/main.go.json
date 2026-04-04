@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-04_19-09-18",
+            "content": "@@ -67,25 +67,25 @@\n  %5B%5D%5B%5D rune, \n-l\n+1\n , c int, val\n@@ -281,12 +281,8 @@\n  %7B%0A%09\n-if !\n is_v\n@@ -292,17 +292,17 @@\n e(grid, \n-l\n+1\n , c, '#'\n@@ -347,25 +347,25 @@\n Trees(grid, \n-l\n+1\n , c + 1)%0A%09bu\n@@ -378,17 +378,17 @@\n s(grid, \n-l\n+1\n , c - 1)\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-04_19-14-12",
+            "content": "@@ -41,17 +41,16 @@\n %22os%22%0A)%0A%0A\n-%0A\n func is_\n@@ -56,32 +56,33 @@\n _value(grid %5B%5D%5B%5D\n+ \n rune, l, c int, \n@@ -97,17 +97,16 @@\n ne) bool\n- \n %7B%0A%09nl :=\n@@ -119,17 +119,16 @@\n rid)%0A%09nc\n- \n := len(g\n@@ -140,23 +140,21 @@\n %5D)%0A%0A\n-%09%0A\n %09if \n-l\n+c\n  %3C 0 %7C%7C \n l %3E=\n@@ -153,28 +153,28 @@\n  %7C%7C \n-l\n+c\n  %3E= n\n-l\n+c\n  %7C%7C \n-c\n+1\n  %3C 0 %7C%7C \n c %3E=\n@@ -169,24 +169,23 @@\n  %3C 0 %7C%7C \n-c\n+1\n  %3E= n\n-c \n+l\n %7B%0A%09%09retu\n@@ -197,16 +197,19 @@\n lse%0A%09%7D%0A%0A\n+%09%09%0A\n %09return \n@@ -228,19 +228,22 @@\n = value%0A\n+%09%0A\n %7D%0A%0A\n+%0A\n func bur\n@@ -276,17 +276,16 @@\n  int) %7B%0A\n-%0A\n %09if !is_\n@@ -306,17 +306,16 @@\n  c, '#')\n- \n %7B%0A%09%09retu\n@@ -323,19 +323,16 @@\n n%0A%09%7D\n-%0A%0A%09\n %0A%09grid%5B\n-l\n+1\n %5D%5Bc%5D\n@@ -337,19 +337,16 @@\n c%5D = 'o'\n-%0A%0A%09\n %0A%09burnTr\n@@ -359,17 +359,19 @@\n id, l, c\n-+\n+ + \n 1)%0A%09burn\n@@ -386,17 +386,19 @@\n id, l, c\n--\n+ - \n 1)%0A%09burn\n@@ -410,17 +410,19 @@\n (grid, l\n-+\n+ + \n 1, c)%0A%09b\n@@ -441,15 +441,19 @@\n d, l\n--\n+ - \n 1, c)%0A\n+%09%0A\n %7D%0A%0Af\n@@ -505,20 +505,16 @@\n Stdin)%0A%09\n-if !\n scanner.\n@@ -523,22 +523,8 @@\n an()\n- %7B%0A%09%09return%0A%09%7D\n %0A%09li\n@@ -674,35 +674,21 @@\n for \n-i := 0; i %3C nl; i++\n+range nl\n  %7B%0A%09%09\n-if \n scan\n@@ -697,20 +697,17 @@\n r.Scan()\n- %7B%0A%09\n+%0A\n %09%09line :\n@@ -733,17 +733,16 @@\n xt())%0A%09%09\n-%09\n grid = a\n@@ -763,16 +763,11 @@\n ne)%0A\n-%09%09%7D%0A\n %09%7D%0A\n-%0A\n %09bur\n@@ -904,8 +904,9 @@\n e))%0A%09%7D%0A%7D\n+%0A\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-04_19-15-47",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n\nfunc is_value(grid [][]rune, l, c int, value rune) bool {\n\tnl := len(grid)\n\tnc := len(grid[0])\n\n\t\n\tif l < 0 || l >= nl || c < 0 || c >= nc {\n\t\treturn false\n\t}\n\n\treturn grid[l][c] == value\n}\n\nfunc burnTrees(grid [][]rune, l, c int) {\n\n\tif !is_value(grid, l, c, '#') {\n\t\treturn\n\t}\n\n\t\n\tgrid[l][c] = 'o'\n\n\t\n\tburnTrees(grid, l, c+1)\n\tburnTrees(grid, l, c-1)\n\tburnTrees(grid, l+1, c)\n\tburnTrees(grid, l-1, c)\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tline := scanner.Text()\n\tvar nl, nc, lfire, cfire int\n\tfmt.Sscanf(line, \"%d %d %d %d\", &nl, &nc, &lfire, &cfire)\n\n\tgrid := make([][]rune, 0, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tif scanner.Scan() {\n\t\t\tline := []rune(scanner.Text())\n\t\t\tgrid = append(grid, line)\n\t\t}\n\t}\n\n\tburnTrees(grid, lfire, cfire)\n\tshowGrid(grid)\n}\n\nfunc showGrid(grid [][]rune) {\n\tfor _, line := range grid {\n\t\tfmt.Println(string(line))\n\t}\n}",
+            "lines": "63"
+        }
+    ]
+}
