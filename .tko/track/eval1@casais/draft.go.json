@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_14-03-24",
+            "content": "@@ -62,12 +62,8 @@\n ados\n- map\n %5Bint\n@@ -123,23 +123,16 @@\n  return \n-casados\n %0A    %7D%0A \n@@ -411,60 +411,8 @@\n %0A   \n- descasados := make(map%5Bint%5Dint)%0A    totalCasados :=\n  ent\n@@ -448,39 +448,12 @@\n  0)%0A\n-%0A\n     \n-fmt.Println(totalCasados)%0A\n %0A%0A%0A%7D\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-14_14-13-44",
+            "content": "@@ -479,17 +479,27 @@\n entrada(\n-n\n+restantes-1\n , descas\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-14_14-14-34",
+            "content": "package main\nimport \"fmt\"\n\nfunc entrada(restantes int, descasados map[int]int, casados int)int{\n    if restantes == 0{\n        return casados\n    }\n    var animal int\n    fmt.Scan(&animal)\n\n    if descasados[-animal] > 0 {\n        descasados[-animal]--\n        casados++\n    }else{\n        descasados[animal]++\n    }\n\n    return entrada(restantes - 1, descasados, casados)\n}\nfunc main() {\n    var n int \n    fmt.Scan(&n)\n\n    descasados := make(map[int]int)\n    totalCasados := entrada(n, descasados, 0)\n\n    fmt.Println(totalCasados)\n\n\n\n}\n",
+            "lines": "31"
+        }
+    ]
+}
