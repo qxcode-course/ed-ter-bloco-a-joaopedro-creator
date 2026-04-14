@@ -4,6 +4,8 @@ import "fmt"
 
 // x: número que está sendo testado
 // div: divisor que está sendo testado
+
+
 func eh_primo(x int, div int) bool {
 	if (x < 2){
 		return false
@@ -28,3 +30,5 @@ func main() {
 		fmt.Println("false")
 	}
 }
+
+

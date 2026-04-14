@@ -16,3 +16,9 @@ func main() {
 	fmt.Scan(&a, &b)
 	fmt.Println(mdc(a, b))
 }
+
+
+
+
+
+

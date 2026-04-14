@@ -1,0 +1,35 @@
+2026-04-14 12:00:08, MOVE, v:1, k:ed@casais, mode:EDIT
+2026-04-14 12:01:44, MOVE, v:1, k:ed@casais, mode:EDIT
+2026-04-14 12:10:11, MOVE, v:1, k:ed@casais, mode:EDIT
+2026-04-14 12:10:37, MOVE, v:1, k:ed@casais, mode:EDIT
+2026-04-14 12:18:25, MOVE, v:1, k:ed@triangulo, mode:PICK
+2026-04-14 12:18:27, MOVE, v:1, k:ed@triangulo, mode:BACK
+2026-04-14 12:22:13, SELF, v:1, k:ed@triangulo, self:1, rate:100, study:31, concept:1, problem:1, refactor:1
+2026-04-14 12:20:48, MOVE, v:1, k:ed@triangulo, mode:EDIT
+2026-04-14 12:34:14, MOVE, v:1, k:ed@eh_primo, mode:EDIT
+2026-04-14 12:39:38, MOVE, v:1, k:ed@eh_primo, mode:EDIT
+2026-04-14 12:45:09, MOVE, v:1, k:ed@mdc, mode:EDIT
+2026-04-14 12:47:07, MOVE, v:1, k:ed@mdc, mode:EDIT
+2026-04-14 12:47:43, MOVE, v:1, k:ed@casais, mode:EDIT
+2026-04-14 12:47:59, MOVE, v:1, k:ed@eh_primo, mode:EDIT
+2026-04-14 13:18:56, MOVE, v:1, k:eval1@queimada, mode:DOWN
+2026-04-14 13:18:56, MOVE, v:1, k:eval1@queimada, mode:EDIT
+2026-04-14 13:18:56, MOVE, v:1, k:eval1@queimada, mode:EDIT
+2026-04-14 13:21:03, MOVE, v:1, k:eval1@queimada, mode:EDIT
+2026-04-14 13:27:10, MOVE, v:1, k:eval1@queimada, mode:EDIT
+2026-04-14 13:31:48, MOVE, v:1, k:eval1@queimada, mode:PICK
+2026-04-14 13:30:54, MOVE, v:1, k:eval1@queimada, mode:EDIT
+2026-04-14 13:32:13, EXEC, v:1, k:eval1@queimada, mode:FULL, rate:0, size:53
+2026-04-14 13:36:42, EXEC, v:1, k:eval1@queimada, mode:FULL, size:60, fail:COMP
+2026-04-14 13:37:02, EXEC, v:1, k:eval1@queimada, mode:FULL, size:60, fail:COMP
+2026-04-14 13:32:10, MOVE, v:1, k:eval1@queimada, mode:EDIT
+2026-04-14 13:36:51, MOVE, v:1, k:eval1@queimada, mode:EDIT
+2026-04-14 13:37:21, EXEC, v:1, k:eval1@queimada, mode:FULL, rate:14, size:60
+2026-04-14 13:37:15, MOVE, v:1, k:eval1@queimada, mode:EDIT
+2026-04-14 13:37:21, MOVE, v:1, k:eval1@queimada, mode:EDIT
+2026-04-14 13:43:32, EXEC, v:1, k:eval1@queimada, mode:FULL, rate:14, size:60
+2026-04-14 13:46:05, EXEC, v:1, k:eval1@queimada, mode:FULL, rate:100, size:60
+2026-04-14 13:46:15, MOVE, v:1, k:eval1@queimada, mode:BACK
+2026-04-14 13:47:10, SELF, v:1, k:eval1@queimada, self:1, rate:100, study:30
+2026-04-14 13:45:55, MOVE, v:1, k:eval1@queimada, mode:EDIT
+2026-04-14 13:46:05, MOVE, v:1, k:eval1@queimada, mode:EDIT

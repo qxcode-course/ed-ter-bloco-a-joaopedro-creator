@@ -1,0 +1,14 @@
+2026-04-07 13:37:52, MOVE, v:1, k:ed@fractais_png, mode:DOWN
+2026-04-07 13:43:56, EXEC, v:1, k:src@go, mode:FREE, size:136
+2026-04-07 18:11:46, EXEC, v:1, k:workspaces@ed-ter-bloco-a-joaopedro-creator, mode:FREE, size:1073
+2026-04-07 18:13:26, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-04-07 18:13:36, MOVE, v:1, k:ed@fractais_png, mode:BACK
+2026-04-07 18:44:02, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-04-07 19:00:05, EXEC, v:1, k:ed@fractais_png, mode:LOCK, rate:0, size:137
+2026-04-07 19:12:17, EXEC, v:1, k:ed@fractais_png, mode:LOCK, rate:0, size:137
+2026-04-07 19:14:36, EXEC, v:1, k:ed@fractais_png, mode:LOCK, rate:0, size:137
+2026-04-07 19:14:58, EXEC, v:1, k:ed@fractais_png, mode:LOCK, rate:0, size:137
+2026-04-07 19:35:57, EXEC, v:1, k:ed@fractais_png, mode:LOCK, rate:0, size:136
+2026-04-07 19:39:01, EXEC, v:1, k:ed@fractais_png, mode:LOCK, rate:0, size:136
+2026-04-07 19:51:37, EXEC, v:1, k:ed@fractais_png, mode:LOCK, rate:0, size:136
+2026-04-07 19:52:05, EXEC, v:1, k:ed@fractais_png, mode:LOCK, rate:0, size:136
