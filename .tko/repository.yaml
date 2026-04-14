@@ -22,9 +22,8 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@rec
-- eval1@teste-1
 - ed@sandbox
+- eval1@eval1
 flags:
   inbox: all
   panel: graph
@@ -32,4 +31,4 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: eval1@casais
+selected: eval1@queimada
