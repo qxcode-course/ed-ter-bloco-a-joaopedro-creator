@@ -22,6 +22,13 @@ func NewVector(capacity int) *Vector {
 	}
 }
 
+func (vec *Vector) String() string {
+	return "[" + Join(vec.data[0:vec.size], ", ") + "]"
+}
+
+func (vec *Vector) Status() string {
+	return fmt.Sprintf("size:%v capacity:%v", vec.size, vec.capacity)
+}
 
 func Join(slice []int, sep string) string {
 	if len(slice) == 0 {
@@ -67,7 +74,7 @@ func main() {
 		case "show":
 			 fmt.Println(v)
 		case "status":
-			// fmt.Println(v.Status())
+			 fmt.Println(v.Status())
 		case "pop":
 			// err := v.PopBack()
 			// if err != nil {
