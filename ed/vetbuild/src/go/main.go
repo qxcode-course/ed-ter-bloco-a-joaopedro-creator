@@ -30,6 +30,25 @@ func (vec *Vector) Status() string {
 	return fmt.Sprintf("size:%v capacity:%v", vec.size, vec.capacity)
 }
 
+func (vec *Vector) PushBack(value int) error{
+	if vec.size < vec.capacity{
+		vec.data[vec.size] = value
+		vec.size += 1
+		return nil
+	}
+
+	return fmt.Errorf("Lotou")
+}
+
+func (vec *Vector) PopBack() error {
+	if vec.size == 0 {
+        return fmt.Errorf("fail: vector empty") 
+    }
+    
+    vec.size--
+    return nil
+}
+
 func Join(slice []int, sep string) string {
 	if len(slice) == 0 {
 		return ""
@@ -67,19 +86,22 @@ func main() {
 			 value, _ := strconv.Atoi(parts[1])
 			 v = NewVector(value)
 		case "push":
-			// for _, part := range parts[1:] {
-			// 	value, _ := strconv.Atoi(part)
-			// 	v.PushBack(value)
-			// }
+			for _, part := range parts[1:] {
+				value, _ := strconv.Atoi(part)
+				err := v.PushBack(value)
+				if err != nil{
+					fmt.Println(err)
+				}
+			}
 		case "show":
 			 fmt.Println(v)
 		case "status":
 			 fmt.Println(v.Status())
 		case "pop":
-			// err := v.PopBack()
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
+			err := v.PopBack()
+			if err != nil {
+				fmt.Println(err)
+			}
 		case "insert":
 			// index, _ := strconv.Atoi(parts[1])
 			// value, _ := strconv.Atoi(parts[2])
