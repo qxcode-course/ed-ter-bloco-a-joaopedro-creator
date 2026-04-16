@@ -23,12 +23,12 @@ sources:
   tasks: null
 expanded:
 - ed@sandbox
-- eval1@eval1
+- ed@vector
 flags:
   inbox: all
-  panel: graph
+  panel: skills
   show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: eval1@queimada
+selected: ed@vetbuild

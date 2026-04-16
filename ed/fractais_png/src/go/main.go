@@ -26,8 +26,6 @@ func gelo(pen *Pen, dist float64, nivel int){
     }
 	
 }
-
-
 func rotacao(pen *Pen, dist float64){
 	if dist < 1 {
         return

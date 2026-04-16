@@ -1,0 +1,13 @@
+2026-04-16 18:23:13, MOVE, v:1, k:ed@vetbuild, mode:DOWN
+2026-04-16 18:23:12, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-16 18:23:13, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-16 18:23:13, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-16 18:23:13, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-16 18:28:29, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-16 18:46:37, MOVE, v:1, k:ed@vetbuild, mode:PICK
+2026-04-16 18:46:39, EXEC, v:1, k:ed@vetbuild, mode:FULL, size:130, fail:COMP
+2026-04-16 18:49:07, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:0, size:132
+2026-04-16 18:51:39, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-16 18:49:07, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-16 18:59:05, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-04-16 19:05:31, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:0, size:132
