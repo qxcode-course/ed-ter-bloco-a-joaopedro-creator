@@ -42,7 +42,7 @@ func (vec *Vector) PushBack(value int) error{
 
 func (vec *Vector) PopBack() error {
 	if vec.size == 0 {
-        return fmt.Errorf("fail: vector empty") 
+        return fmt.Errorf("vetor vazio") 
     }
     
     vec.size--
