@@ -32,3 +32,4 @@ flags:
   show_time: 'true'
 lang: go
 selected: ed@vetbuild
+selected_index: 5
