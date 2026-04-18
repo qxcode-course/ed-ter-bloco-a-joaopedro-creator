@@ -49,6 +49,31 @@ func (vec *Vector) PopBack() error {
     return nil
 }
 
+func (vec *Vector) Insert(index int, value int) error {
+	if index < 0 || index > vec.size{
+		return fmt.Errorf("indice invalido")
+	}
+	if vec.size == vec.capacity{
+		newCap := vec.capacity
+        if newCap == 0 { newCap = 1 } else { newCap *= 2 }
+        
+        newData := make([]int, newCap)
+        for i := 0; i < vec.size; i++ {
+            newData[i] = vec.data[i]
+        }
+        vec.data = newData
+        vec.capacity = newCap
+	}
+
+	for i := vec.size; i > index; i-- {
+        vec.data[i] = vec.data[i-1]
+    }
+
+	vec.data[index] = value
+    vec.size++
+	return nil
+}
+
 func Join(slice []int, sep string) string {
 	if len(slice) == 0 {
 		return ""
@@ -103,12 +128,12 @@ func main() {
 				fmt.Println(err)
 			}
 		case "insert":
-			// index, _ := strconv.Atoi(parts[1])
-			// value, _ := strconv.Atoi(parts[2])
-			// err := v.Insert(index, value)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
+			index, _ := strconv.Atoi(parts[1])
+			value, _ := strconv.Atoi(parts[2])
+			err := v.Insert(index, value)
+			if err != nil {
+				fmt.Println(err)
+			}
 		case "erase":
 			// index, _ := strconv.Atoi(parts[1])
 			// err := v.Erase(index)
