@@ -86,6 +86,25 @@ func (vec *Vector) Erase(index int) error {
 	return nil
 }
 
+func (vec *Vector) IndexOf(value int ) int {
+	for i := 0; i < vec.size; i++{
+		if vec.data[i] == value{
+			return i
+		}
+	}
+	return -1
+}
+
+func (vec *Vector) Contains(value int ) bool {
+	for i := 0; i < vec.size; i++{
+		if vec.data[i] == value{
+			return true 
+		}
+	}
+
+	return false
+}
+
 func Join(slice []int, sep string) string {
 	if len(slice) == 0 {
 		return ""
@@ -153,16 +172,16 @@ func main() {
 				fmt.Println(err)
 			}
 		case "indexOf":
-			// value, _ := strconv.Atoi(parts[1])
-			// index := v.IndexOf(value)
-			// fmt.Println(index)
+			value, _ := strconv.Atoi(parts[1])
+			index := v.IndexOf(value)
+			fmt.Println(index)
 		case "contains":
-			// value, _ := strconv.Atoi(parts[1])
-			// if v.Contains(value) {
-			// 	fmt.Println("true")
-			// } else {
-			// 	fmt.Println("false")
-			// }
+			value, _ := strconv.Atoi(parts[1])
+			if v.Contains(value) {
+				fmt.Println("true")
+			} else {
+				fmt.Println("false")
+			}
 		case "clear":
 			// v.Clear()
 		case "capacity":
