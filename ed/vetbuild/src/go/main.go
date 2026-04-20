@@ -156,20 +156,21 @@ func (vec *Vector) Slice(start int, end int) *Vector {
 		return NewVector(0)
 	}
 
-	
 	realStart := (start % vec.size + vec.size) % vec.size
-	
-	newSize := end - start
+	realEnd := (end % vec.size + vec.size) % vec.size
+
+	newSize := realEnd - realStart
 	if newSize < 0 {
-		newSize = 0
+	
+		newSize = (vec.size - realStart) + realEnd
 	}
 
 	sharedData := vec.data[realStart:]
 
 	return &Vector{
-		data:     sharedData, 
+		data:     sharedData,
 		size:     newSize,
-		capacity: len(sharedData),
+		capacity: vec.capacity - realStart,
 	}
 }
 
