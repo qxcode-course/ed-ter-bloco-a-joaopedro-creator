@@ -120,6 +120,27 @@ func (vec *Vector) At(index int) (int,error) {
     return vec.data[index], nil
 }
 
+func (vec *Vector) Set(index int, value int) error {
+	if index < 0 || index >= vec.size {
+        return fmt.Errorf("fail: indice invalido")
+    }
+
+    vec.data[index] = value
+    return nil
+}
+
+func (vec *Vector) Reserve(newCapacity int) {
+	if newCapacity > vec.capacity {
+        newData := make([]int, newCapacity)
+
+        for i := 0; i < vec.size; i++ {
+            newData[i] = vec.data[i]
+        }
+		
+        vec.data = newData
+        vec.capacity = newCapacity
+    }
+}
 
 func Join(slice []int, sep string) string {
 	if len(slice) == 0 {
@@ -211,16 +232,16 @@ func main() {
 				fmt.Println(value)
 			}
 		case "set":
-			// index, _ := strconv.Atoi(parts[1])
-			// value, _ := strconv.Atoi(parts[2])
-			// err := v.Set(index, value)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
-			// 
+			index, _ := strconv.Atoi(parts[1])
+			value, _ := strconv.Atoi(parts[2])
+			err := v.Set(index, value)
+			if err != nil {
+				fmt.Println(err)
+			}
+			
 		case "reserve":
-			// newCapacity, _ := strconv.Atoi(parts[1])
-			// v.Reserve(newCapacity)
+			newCapacity, _ := strconv.Atoi(parts[1])
+			v.Reserve(newCapacity)
 		case "slice":
 			// start, _ := strconv.Atoi(parts[1])
 			// end, _ := strconv.Atoi(parts[2])
