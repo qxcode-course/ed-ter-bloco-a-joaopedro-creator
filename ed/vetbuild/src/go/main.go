@@ -105,6 +105,22 @@ func (vec *Vector) Contains(value int ) bool {
 	return false
 }
 
+func (vec *Vector) Clear() {
+	vec.size = 0
+}
+
+func (vec *Vector) Capacity() int {
+	return vec.capacity
+}
+
+func (vec *Vector) At(index int) (int,error) {
+	if index < 0 || index >= vec.size {
+        return 0, fmt.Errorf("indice invalido")
+    }
+    return vec.data[index], nil
+}
+
+
 func Join(slice []int, sep string) string {
 	if len(slice) == 0 {
 		return ""
@@ -183,17 +199,17 @@ func main() {
 				fmt.Println("false")
 			}
 		case "clear":
-			// v.Clear()
+			 v.Clear()
 		case "capacity":
-			// fmt.Println(v.Capacity())
+			 fmt.Println(v.Capacity())
 		case "get":
-			// index, _ := strconv.Atoi(parts[1])
-			// value, err := v.At(index)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// } else {
-			// 	fmt.Println(value)
-			// }
+			index, _ := strconv.Atoi(parts[1])
+			value, err := v.At(index)
+			if err != nil {
+				fmt.Println(err)
+			} else {
+				fmt.Println(value)
+			}
 		case "set":
 			// index, _ := strconv.Atoi(parts[1])
 			// value, _ := strconv.Atoi(parts[2])
