@@ -31,18 +31,27 @@ func (vec *Vector) Status() string {
 }
 
 func (vec *Vector) PushBack(value int) error{
-	if vec.size < vec.capacity{
-		vec.data[vec.size] = value
-		vec.size += 1
-		return nil
-	}
+	if vec.size == vec.capacity {
+        newCap := vec.capacity
+        if newCap == 0 {
+            newCap = 1
+        } else {
+            newCap *= 2
+        }
+        vec.Reserve(newCap)
+      
+    }
 
-	return fmt.Errorf("Lotou")
+    
+    vec.data[vec.size] = value
+    vec.size++
+
+    return nil
 }
 
 func (vec *Vector) PopBack() error {
 	if vec.size == 0 {
-        return fmt.Errorf("vetor vazio") 
+        return fmt.Errorf("vector is empty") 
     }
     
     vec.size--
@@ -76,7 +85,7 @@ func (vec *Vector) Insert(index int, value int) error {
 
 func (vec *Vector) Erase(index int) error {
 	if index < 0 || index >= vec.size {
-        return fmt.Errorf("indice invalido")
+        return fmt.Errorf("index out of range")
     }
 
 	for i := index; i < vec.size - 1; i++{
@@ -115,14 +124,14 @@ func (vec *Vector) Capacity() int {
 
 func (vec *Vector) At(index int) (int,error) {
 	if index < 0 || index >= vec.size {
-        return 0, fmt.Errorf("indice invalido")
+        return 0, fmt.Errorf("index out of range")
     }
     return vec.data[index], nil
 }
 
 func (vec *Vector) Set(index int, value int) error {
 	if index < 0 || index >= vec.size {
-        return fmt.Errorf("fail: indice invalido")
+        return fmt.Errorf("index out of range")
     }
 
     vec.data[index] = value
@@ -136,10 +145,32 @@ func (vec *Vector) Reserve(newCapacity int) {
         for i := 0; i < vec.size; i++ {
             newData[i] = vec.data[i]
         }
-		
+
         vec.data = newData
         vec.capacity = newCapacity
     }
+}
+
+func (vec *Vector) Slice(start int, end int) *Vector {
+	if vec.size == 0 {
+		return NewVector(0)
+	}
+
+	
+	realStart := (start % vec.size + vec.size) % vec.size
+	
+	newSize := end - start
+	if newSize < 0 {
+		newSize = 0
+	}
+
+	sharedData := vec.data[realStart:]
+
+	return &Vector{
+		data:     sharedData, 
+		size:     newSize,
+		capacity: len(sharedData),
+	}
 }
 
 func Join(slice []int, sep string) string {
@@ -243,10 +274,10 @@ func main() {
 			newCapacity, _ := strconv.Atoi(parts[1])
 			v.Reserve(newCapacity)
 		case "slice":
-			// start, _ := strconv.Atoi(parts[1])
-			// end, _ := strconv.Atoi(parts[2])
-			// slice := v.Slice(start, end)
-			// fmt.Println(slice)
+			start, _ := strconv.Atoi(parts[1])
+			end, _ := strconv.Atoi(parts[2])
+			slice := v.Slice(start, end)
+			fmt.Println(slice)
 		default:
 			fmt.Println("fail: comando invalido")
 		}
