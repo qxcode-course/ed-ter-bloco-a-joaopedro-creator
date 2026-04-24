@@ -38,26 +38,41 @@ func Join(slice []int, sep string) string {
 	return result.String()
 }
 
-func (vec *Set) Insert(value int) {
-    index := 0
-    for index < vec.size && vec.data[index] < value {
-        index++
-    }
 
-    if index < vec.size && vec.data[index] == value {
-        return 
-    }
-    if vec.size >= vec.capacity {
+func (set *Set) Insert(value int) {
+	for i := 0; i < set.size; i++{
+		if set.data[i] == value{
+			return
+		}
+	}
+	if set.size == set.capacity{
+		newCapacity := set.capacity * 2
+		if newCapacity == 0 {
+			newCapacity = 1
+		}
+		novo := NewSet(newCapacity)
+		for i:= 0; i < set.capacity; i++{
+			novo.data[i] = set.data[i]
+		}
+		set.data = novo.data
+		set.capacity = novo.capacity
+	}
+	
+	indice := set.size
+	for i:= 0; i < set.size; i++{
+		if value < set.data[i]{
+			indice = i
+			break
+		}
+	}
+	for j := set.size; j > indice; j--{
+			set.data[j] = set.data[j - 1]
+		}
+	set.data[indice] = value
+	set.size++
+	
 
-        return
-    }
-
-    for i := vec.size; i > index; i-- {
-        vec.data[i] = vec.data[i-1]
-    }
-
-    vec.data[index] = value
-    vec.size++
+	
 }
 
 func (vec *Set) Erase(value int) bool {
