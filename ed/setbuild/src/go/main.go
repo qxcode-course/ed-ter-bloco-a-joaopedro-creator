@@ -21,6 +21,21 @@ func NewSet(capacity int) *Set {
 	}
 }
 
+func (vec *Set) String() string {
+	return "[" + Join(vec.data[0:vec.size], ", ") + "]"
+}
+
+func Join(slice []int, sep string) string {
+	if len(slice) == 0 {
+		return ""
+	}
+	var result strings.Builder
+	fmt.Fprintf(&result, "%d", slice[0])
+	for _, value := range slice[1:] {
+		fmt.Fprintf(&result, "%s%d", sep, value)
+	}
+	return result.String()
+}
 
 func main() {
 	var line, cmd string
@@ -48,6 +63,7 @@ func main() {
 			// 	value, _ := strconv.Atoi(part)
 			// }
 		case "show":
+			fmt.Println(v)
 		case "erase":
 			// value, _ := strconv.Atoi(parts[1])
 		case "contains":
