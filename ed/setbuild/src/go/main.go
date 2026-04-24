@@ -86,6 +86,16 @@ func (vec *Set) Erase(value int) bool {
     return true
 }
 
+func (vec *Set) Contains(value int ) bool {
+	for i := 0; i < vec.size; i++{
+		if vec.data[i] == value{
+			return true 
+		}
+	}
+
+	return false
+}
+
 func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
@@ -121,7 +131,8 @@ func main() {
 			 }
 
 		case "contains":
-			// value, _ := strconv.Atoi(parts[1])
+			 value, _ := strconv.Atoi(parts[1])
+			 fmt.Println(v.Contains(value))
 		case "clear":
 		default:
 			fmt.Println("fail: comando invalido")
