@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"strconv"
 )
 
 type Set struct {
@@ -37,6 +38,28 @@ func Join(slice []int, sep string) string {
 	return result.String()
 }
 
+func (vec *Set) Insert(value int) {
+    index := 0
+    for index < vec.size && vec.data[index] < value {
+        index++
+    }
+
+    if index < vec.size && vec.data[index] == value {
+        return 
+    }
+    if vec.size >= vec.capacity {
+
+        return
+    }
+
+    for i := vec.size; i > index; i-- {
+        vec.data[i] = vec.data[i-1]
+    }
+
+    vec.data[index] = value
+    vec.size++
+}
+
 func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
@@ -56,12 +79,13 @@ func main() {
 		case "end":
 			return
 		case "init":
-			// value, _ := strconv.Atoi(parts[1])
-			// v = NewSet(value)
+			value, _ := strconv.Atoi(parts[1])
+			v = NewSet(value)
 		case "insert":
-			// for _, part := range parts[1:] {
-			// 	value, _ := strconv.Atoi(part)
-			// }
+			 for _, part := range parts[1:] {
+			 	value, _ := strconv.Atoi(part)
+				v.Insert(value)
+			 }
 		case "show":
 			fmt.Println(v)
 		case "erase":
