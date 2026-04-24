@@ -60,6 +60,32 @@ func (vec *Set) Insert(value int) {
     vec.size++
 }
 
+func (vec *Set) Erase(value int) bool {
+    indice := -1
+    for i := 0; i < vec.size; i++ {
+        if value == vec.data[i] {
+            indice = i
+            break
+        }
+        
+        if vec.data[i] > value {
+            break
+        }
+    }
+   
+    if indice == -1 {
+        return false
+    }
+
+    for i := indice; i < vec.size-1; i++ {
+        vec.data[i] = vec.data[i+1] 
+    }
+
+    vec.data[vec.size-1] = 0
+    vec.size--
+    return true
+}
+
 func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
@@ -89,7 +115,11 @@ func main() {
 		case "show":
 			fmt.Println(v)
 		case "erase":
-			// value, _ := strconv.Atoi(parts[1])
+			 value, _ := strconv.Atoi(parts[1])
+			 if !v.Erase(value){
+				fmt.Println("value not found")
+			 }
+
 		case "contains":
 			// value, _ := strconv.Atoi(parts[1])
 		case "clear":
