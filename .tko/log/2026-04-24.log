@@ -1,0 +1,14 @@
+2026-04-24 16:46:54, MOVE, v:1, k:ed@multiset, mode:DOWN
+2026-04-24 16:46:54, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-24 16:46:54, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-24 16:46:54, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-24 16:46:54, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-24 16:52:04, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-24 17:02:58, MOVE, v:1, k:ed@setbuild, mode:DOWN
+2026-04-24 16:58:15, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-24 17:02:58, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-04-24 17:02:58, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-04-24 17:02:58, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-04-24 17:02:58, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-04-24 17:15:36, MOVE, v:1, k:ed@setbuild, mode:PICK
+2026-04-24 17:15:40, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:0, size:60
