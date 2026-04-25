@@ -70,16 +70,25 @@ func (ms *MultiSet) Insert(value int) {
 	ms.data[indice] = value
 }
 
-func (vec *MultiSet) Erase(index int) error {
-	if index < 0 || index >= vec.size {
+func (ms *MultiSet) Erase(value int) error {
+    indice := -1
+    for i := 0; i < ms.size; i++ {
+        if ms.data[i] == value {
+            indice = i
+            break 
+        }
+    }
+
+    if indice == -1 {
         return fmt.Errorf("value not found")
     }
 
-	for i := index; i < vec.size - 1; i++{
-		vec.data[i] = vec.data[i + 1]
-	}
-	vec.size--
-	return nil
+    for i := indice; i < ms.size-1; i++ {
+        ms.data[i] = ms.data[i+1]
+    }
+    
+    ms.size--
+    return nil
 }
 
 func (vec *MultiSet) Contains(value int ) bool {
