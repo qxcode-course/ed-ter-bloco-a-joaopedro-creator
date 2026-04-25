@@ -72,7 +72,7 @@ func (ms *MultiSet) Insert(value int) {
 
 func (vec *MultiSet) Erase(index int) error {
 	if index < 0 || index >= vec.size {
-        return fmt.Errorf("index out of range")
+        return fmt.Errorf("value not found")
     }
 
 	for i := index; i < vec.size - 1; i++{
