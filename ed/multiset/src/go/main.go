@@ -114,6 +114,13 @@ func (ms *MultiSet)Unique() int{
 	return total
 }
 
+func (ms *MultiSet) Clear(){
+	for i := 0; i < ms.size; i++{
+		ms.data[i] = 0
+	}
+	ms.size = 0
+}
+
 func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
@@ -161,6 +168,7 @@ func main() {
 		case "unique":
 			fmt.Println(ms.Unique())
 		case "clear":
+			ms.Clear()
 		default:
 			fmt.Println("fail: comando invalido")
 		}
