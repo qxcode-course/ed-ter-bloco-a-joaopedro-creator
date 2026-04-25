@@ -45,3 +45,7 @@
 2026-04-24 18:23:18, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:66, size:141
 2026-04-24 18:26:36, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:100, size:177
 2026-04-24 18:26:53, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:100, size:156
+2026-04-24 18:27:29, MOVE, v:1, k:ed@setbuild, mode:BACK
+2026-04-24 18:26:53, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-04-24 18:26:50, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-04-24 18:29:02, SELF, v:1, k:ed@setbuild, self:1, rate:100, study:80, concept:1, problem:1, refactor:1

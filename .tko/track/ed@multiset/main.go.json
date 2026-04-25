@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-25_12-13-43",
+            "content": "@@ -53,19 +53,8 @@\n gs%22%0A\n-%09%22strconv%22%0A\n )%0A%0A%0A\n@@ -606,511 +606,8 @@\n %0A%7D%0A%0A\n-func (ms *MultiSet) Insert(value int) %7B%0A%09if ms.capacity == ms.size%7B%0A%09%09if ms.capacity == 0%7B%0A%09%09%09ms.capacity = 1%0A%09%09%7D else %7B%0A%09%09%09%0A%09%09%09novo:= NewMultiSet(ms.capacity*2)%0A%09%09%09for i:= 0; i %3C ms.size; i++%7B%0A%09%09%09%09novo.data%5Bi%5D = ms.data%5Bi%5D%0A%09%09%09%7D%0A%0A%09%09%09ms.data = novo.data%0A%09%09%09ms.capacity = novo.capacity%0A%0A%09%09%7D%0A%09%7D %0A%0A%09indice:= ms.size%0A%09for i:= 0; i %3C ms.size; i++%7B%0A%09%09if ms.data%5Bi%5D %3E= value%7B%0A%09%09%09indice = i%0A%09%09%09break%0A%09%09%7D%0A%09%7D%0A%09for i:= ms.size; i %3E indice; i--%7B%0A%09%09ms.data%5Bi%5D = ms.data%5Bi-1%5D%0A%09%7D%0A%09ms.size++%0A%09ms.data%5Bindice%5D = value%0A%7D%0A%0A\n func\n@@ -678,16 +678,19 @@\n Stdin)%0A%09\n+// \n ms := Ne\n@@ -929,16 +929,19 @@\n it%22:%0A%09%09%09\n+// \n value, _\n@@ -969,16 +969,19 @@\n %5B1%5D)%0A%09%09%09\n+// \n ms = New\n@@ -1016,16 +1016,19 @@\n rt%22:%0A%09%09%09\n+// \n for _, p\n@@ -1054,16 +1054,19 @@\n :%5D %7B%0A%09%09%09\n+// \n %09value, \n@@ -1096,29 +1096,11 @@\n %0A%09%09%09\n-%09ms.Insert(value)%0A%09%09%09\n+// \n %7D%0A%09%09\n",
+            "lines": "79"
+        },
+        {
+            "label": "2026-04-25_12-25-24",
+            "content": "@@ -1633,27 +1633,8 @@\n w%22:%0A\n-%09%09%09fmt.Println(ms)%0A\n %09%09ca\n",
+            "lines": "112"
+        },
+        {
+            "label": "2026-04-25_12-32-05",
+            "content": "@@ -1120,248 +1120,8 @@\n %0A%7D%0A%0A\n-func (vec *MultiSet) Erase(index int) error %7B%0A%09if index %3C 0 %7C%7C index %3E= vec.size %7B%0A        return fmt.Errorf(%22index out of range%22)%0A    %7D%0A%0A%09for i := index; i %3C vec.size - 1; i++%7B%0A%09%09vec.data%5Bi%5D = vec.data%5Bi + 1%5D%0A%09%7D%0A%09vec.size--%0A%09return nil%0A%7D%0A%0A\n func\n@@ -1667,16 +1667,18 @@\n se%22:%0A%09%09%09\n+//\n  value, \n@@ -1708,81 +1708,8 @@\n 1%5D)%0A\n-%09%09%09 err := ms.Erase(value)%0A%09%09%09 if err != nil%7B%0A%09%09%09%09fmt.Println(err)%0A%09%09%09 %7D%0A\n %09%09ca\n",
+            "lines": "113"
+        },
+        {
+            "label": "2026-04-25_12-36-34",
+            "content": "@@ -1360,157 +1360,8 @@\n %0A%7D%0A%0A\n-func (vec *MultiSet) Contains(value int ) bool %7B%0A%09for i := 0; i %3C vec.size; i++%7B%0A%09%09if vec.data%5Bi%5D == value%7B%0A%09%09%09return true %0A%09%09%7D%0A%09%7D%0A%0A%09return false%0A%7D%0A%0A\n func\n@@ -2033,24 +2033,26 @@\n ntains%22:%0A%09%09%09\n+//\n  value, _ :=\n@@ -2078,102 +2078,8 @@\n 1%5D)%0A\n-%09%09%09 if ms.Contains(value) %7B%0A%09%09%09%09fmt.Println(%22true%22)%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Println(%22false%22)%0A%09%09%09%7D%0A\n %09%09ca\n",
+            "lines": "129"
+        },
+        {
+            "label": "2026-04-25_12-39-07",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n\t\"strconv\"\n)\n\n\ntype MultiSet struct {\n\tdata     []int\n\tsize     int\n\tcapacity int\n}\n\nfunc NewMultiSet(capacity int) *MultiSet {\n    return &MultiSet{\n        data:     make([]int, capacity),\n        size:     0,\n        capacity: capacity,\n    }\n}\n\n\nfunc Join(slice []int, sep string) string {\n\tif len(slice) == 0 {\n\t\treturn \"\"\n\t}\n\tresult := fmt.Sprintf(\"%d\", slice[0])\n\tfor _, value := range slice[1:] {\n\t\tresult += sep + fmt.Sprintf(\"%d\", value)\n\t}\n\treturn result\n}\n\nfunc (vec *MultiSet) String() string {\n\treturn \"[\" + Join(vec.data[0:vec.size], \", \") + \"]\"\n}\n\nfunc (ms *MultiSet) Insert(value int) {\n\tif ms.capacity == ms.size{\n\t\tif ms.capacity == 0{\n\t\t\tms.capacity = 1\n\t\t} else {\n\t\t\t\n\t\t\tnovo:= NewMultiSet(ms.capacity*2)\n\t\t\tfor i:= 0; i < ms.size; i++{\n\t\t\t\tnovo.data[i] = ms.data[i]\n\t\t\t}\n\n\t\t\tms.data = novo.data\n\t\t\tms.capacity = novo.capacity\n\n\t\t}\n\t} \n\n\tindice:= ms.size\n\tfor i:= 0; i < ms.size; i++{\n\t\tif ms.data[i] >= value{\n\t\t\tindice = i\n\t\t\tbreak\n\t\t}\n\t}\n\tfor i:= ms.size; i > indice; i--{\n\t\tms.data[i] = ms.data[i-1]\n\t}\n\tms.size++\n\tms.data[indice] = value\n}\n\nfunc (vec *MultiSet) Erase(index int) error {\n\tif index < 0 || index >= vec.size {\n        return fmt.Errorf(\"index out of range\")\n    }\n\n\tfor i := index; i < vec.size - 1; i++{\n\t\tvec.data[i] = vec.data[i + 1]\n\t}\n\tvec.size--\n\treturn nil\n}\n\nfunc (vec *MultiSet) Contains(value int ) bool {\n\tfor i := 0; i < vec.size; i++{\n\t\tif vec.data[i] == value{\n\t\t\treturn true \n\t\t}\n\t}\n\n\treturn false\n}\n\nfunc main() {\n\tvar line, cmd string\n\tscanner := bufio.NewScanner(os.Stdin)\n\tms := NewMultiSet(0)\n\n\tfor scanner.Scan() {\n\t\tfmt.Print(\"$\")\n\t\tline = scanner.Text()\n\t\targs := strings.Fields(line)\n\t\tfmt.Println(line)\n\t\tif len(args) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tcmd = args[0]\n\n\t\tswitch cmd {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"init\":\n\t\t\tvalue, _ := strconv.Atoi(args[1])\n\t\t\tms = NewMultiSet(value)\n\t\tcase \"insert\":\n\t\t\tfor _, part := range args[1:] {\n\t\t\t\tvalue, _ := strconv.Atoi(part)\n\t\t\t\tms.Insert(value)\n\t\t\t}\n\t\tcase \"show\":\n\t\t\tfmt.Println(ms)\n\t\tcase \"erase\":\n\t\t\t value, _ := strconv.Atoi(args[1])\n\t\t\t err := ms.Erase(value)\n\t\t\t if err != nil{\n\t\t\t\tfmt.Println(err)\n\t\t\t }\n\t\tcase \"contains\":\n\t\t\t value, _ := strconv.Atoi(args[1])\n\t\t\t if ms.Contains(value) {\n\t\t\t\tfmt.Println(\"true\")\n\t\t\t} else {\n\t\t\t\tfmt.Println(\"false\")\n\t\t\t}\n\t\tcase \"count\":\n\t\t\t// value, _ := strconv.Atoi(args[1])\n\t\tcase \"unique\":\n\t\tcase \"clear\":\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "144"
+        }
+    ]
+}

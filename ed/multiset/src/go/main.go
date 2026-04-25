@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"strconv"
 )
 
 
@@ -34,10 +35,67 @@ func Join(slice []int, sep string) string {
 	return result
 }
 
+func (vec *MultiSet) String() string {
+	return "[" + Join(vec.data[0:vec.size], ", ") + "]"
+}
+
+func (ms *MultiSet) Insert(value int) {
+	if ms.capacity == ms.size{
+		if ms.capacity == 0{
+			ms.capacity = 1
+		} else {
+			
+			novo:= NewMultiSet(ms.capacity*2)
+			for i:= 0; i < ms.size; i++{
+				novo.data[i] = ms.data[i]
+			}
+
+			ms.data = novo.data
+			ms.capacity = novo.capacity
+
+		}
+	} 
+
+	indice:= ms.size
+	for i:= 0; i < ms.size; i++{
+		if ms.data[i] >= value{
+			indice = i
+			break
+		}
+	}
+	for i:= ms.size; i > indice; i--{
+		ms.data[i] = ms.data[i-1]
+	}
+	ms.size++
+	ms.data[indice] = value
+}
+
+func (vec *MultiSet) Erase(index int) error {
+	if index < 0 || index >= vec.size {
+        return fmt.Errorf("index out of range")
+    }
+
+	for i := index; i < vec.size - 1; i++{
+		vec.data[i] = vec.data[i + 1]
+	}
+	vec.size--
+	return nil
+}
+
+func (vec *MultiSet) Contains(value int ) bool {
+	for i := 0; i < vec.size; i++{
+		if vec.data[i] == value{
+			return true 
+		}
+	}
+
+	return false
+}
+
 func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
-	// ms := NewMultiSet(0)
+	ms := NewMultiSet(0)
 
 	for scanner.Scan() {
 		fmt.Print("$")
@@ -53,17 +111,28 @@ func main() {
 		case "end":
 			return
 		case "init":
-			// value, _ := strconv.Atoi(args[1])
-			// ms = NewMultiSet(value)
+			value, _ := strconv.Atoi(args[1])
+			ms = NewMultiSet(value)
 		case "insert":
-			// for _, part := range args[1:] {
-			// 	value, _ := strconv.Atoi(part)
-			// }
+			for _, part := range args[1:] {
+				value, _ := strconv.Atoi(part)
+				ms.Insert(value)
+			}
 		case "show":
+			fmt.Println(ms)
 		case "erase":
-			// value, _ := strconv.Atoi(args[1])
+			 value, _ := strconv.Atoi(args[1])
+			 err := ms.Erase(value)
+			 if err != nil{
+				fmt.Println(err)
+			 }
 		case "contains":
-			// value, _ := strconv.Atoi(args[1])
+			 value, _ := strconv.Atoi(args[1])
+			 if ms.Contains(value) {
+				fmt.Println("true")
+			} else {
+				fmt.Println("false")
+			}
 		case "count":
 			// value, _ := strconv.Atoi(args[1])
 		case "unique":
