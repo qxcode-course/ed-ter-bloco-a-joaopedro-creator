@@ -23,3 +23,12 @@
 2026-04-25 12:58:07, MOVE, v:1, k:ed@multiset, mode:EDIT
 2026-04-25 12:58:11, MOVE, v:1, k:ed@multiset, mode:EDIT
 2026-04-25 13:03:19, EXEC, v:1, k:ed@multiset, mode:FULL, rate:100, size:185
+2026-04-25 13:03:14, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-25 13:03:19, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-25 13:07:33, SELF, v:1, k:ed@multiset, self:1, rate:100, study:80, concept:1, problem:1, debug:1
+2026-04-25 13:07:36, MOVE, v:1, k:ed@multiset, mode:BACK
+2026-04-25 13:11:16, SELF, v:1, k:ed@multiset, self:1, rate:66, study:80, concept:1, refactor:1
+2026-04-25 13:12:49, MOVE, v:1, k:ed@multiset, mode:PICK
+2026-04-25 13:13:00, EXEC, v:1, k:ed@multiset, mode:FULL, rate:100, size:186
+2026-04-25 13:13:04, MOVE, v:1, k:ed@multiset, mode:BACK
+2026-04-25 13:14:04, SELF, v:1, k:ed@multiset, self:1, rate:100, study:80, concept:1, debug:1, refactor:1

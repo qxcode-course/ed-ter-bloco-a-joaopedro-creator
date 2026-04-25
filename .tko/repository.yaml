@@ -22,8 +22,8 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@sandbox
 - ed@vector
+- ed@sandbox
 flags:
   inbox: all
   panel: skills

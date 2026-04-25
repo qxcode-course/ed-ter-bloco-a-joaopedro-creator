@@ -79,6 +79,7 @@ func (ms *MultiSet) Erase(value int) error {
         }
     }
 
+	
     if indice == -1 {
         return fmt.Errorf("value not found")
     }
