@@ -92,6 +92,28 @@ func (vec *MultiSet) Contains(value int ) bool {
 	return false
 }
 
+func (ms *MultiSet) Count(value int) int{
+	total := 0
+	for i:= 0; i < ms.size; i++{
+		if value == ms.data[i] {
+			total++
+		}
+	}
+	return total
+}
+
+func (ms *MultiSet)Unique() int{
+	total := 0
+	num := 0
+	for i := 0; i < ms.size; i++{
+		if ms.data[i] > num{
+			num = ms.data[i]
+			total++
+		}
+	}
+	return total
+}
+
 func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
@@ -134,8 +156,10 @@ func main() {
 				fmt.Println("false")
 			}
 		case "count":
-			// value, _ := strconv.Atoi(args[1])
+			 value, _ := strconv.Atoi(args[1])
+			 fmt.Println(ms.Count(value))
 		case "unique":
+			fmt.Println(ms.Unique())
 		case "clear":
 		default:
 			fmt.Println("fail: comando invalido")
