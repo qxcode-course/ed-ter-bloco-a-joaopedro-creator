@@ -45,6 +45,10 @@ func (l *Llist) insert(A *root, value int) {
 	l.size++
 }
 
+func (l *Llist) Size() int {
+    return l.size
+}
+
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
  	ll := NewLList()
@@ -66,9 +70,9 @@ func main() {
 
 		switch cmd {
 		case "show":
-			 fmt.Println(ll.String())
+			fmt.Println(ll.String())
 		case "size":
-			// fmt.Println(ll.Size())
+			fmt.Println(ll.Size())
 		case "push_back":
 			// for _, v := range args[1:] {
 			// 	num, _ := strconv.Atoi(v)
