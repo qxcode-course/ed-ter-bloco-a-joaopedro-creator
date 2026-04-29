@@ -114,6 +114,15 @@ func (l *Llist) Back() *node {
 	return l.head.prev
 }
 
+func (l *Llist) Search(value int) *node {
+	for it := l.head.next; it != l.head; it = it.next {
+		if it.Value == value {
+			return it
+		}
+	}
+	return nil
+}
+
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
@@ -166,14 +175,14 @@ func main() {
 			}
 			fmt.Println("]")
 		case "replace":
-			// oldvalue, _ := strconv.Atoi(args[1])
-			// newvalue, _ := strconv.Atoi(args[2])
-			// node := ll.Search(oldvalue)
-			// if node != nil {
-			// 	node.Value = newvalue
-			// } else {
-			// 	fmt.Println("fail: not found")
-			// }
+			oldvalue, _ := strconv.Atoi(args[1])
+			newvalue, _ := strconv.Atoi(args[2])
+			node := ll.Search(oldvalue)
+			if node != nil {
+				node.Value = newvalue
+			} else {
+				fmt.Println("fail: not found")
+			}
 		case "insert":
 			// oldvalue, _ := strconv.Atoi(args[1])
 			// newvalue, _ := strconv.Atoi(args[2])
