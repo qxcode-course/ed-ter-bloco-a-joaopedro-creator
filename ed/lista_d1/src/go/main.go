@@ -69,6 +69,14 @@ func (l *Llist) PushFront(value int) {
 	l.insert(l.head.next, value) 
 }
 
+func (l *Llist) PopFront(value int) {
+	l.remove(l.head.next) 
+}
+
+func (l *Llist) PopBack(value int) {
+	l.remove(l.head.prev) 
+}
+
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
  	ll := NewLList()
@@ -104,9 +112,9 @@ func main() {
 				ll.PushFront(num)
 			}
 		case "pop_back":
-			// ll.PopBack()
+			ll.PopBack(ll.head.Value)
 		case "pop_front":
-			// ll.PopFront()
+			ll.PopFront(ll.head.Value)
 		case "clear":
 			// ll.Clear()
 		case "end":
