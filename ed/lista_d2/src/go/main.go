@@ -55,6 +55,49 @@ func (l *Llist) Size() int {
     return l.size
 }
 
+func (l *Llist) Insert(nodeRef *node, value int) {
+	A := nodeRef
+	B := nodeRef.prev
+	C := &node{Value: value,
+		next: A,
+		prev: B,
+		root: l.head,
+	}
+
+	B.next = C
+	A.prev = C
+	l.size++
+}
+
+func (l *Llist) PushBack(v int){
+	l.Insert(l.head, v)
+}
+func (l *Llist) PushFront(v int){
+	l.Insert(l.head.next, v)
+}
+func (l *Llist) PopBack(v int){
+	l.Remove(l.head.prev)
+}
+func (l *Llist) PopFront(v int){
+	l.Remove(l.head.next)
+}
+
+
+
+func (l *Llist) Remove(n *node) *node {
+	if n == l.head {
+		return nil
+	}
+	proximo := n.next
+	n.prev.next = n.next
+	n.next.prev = n.prev
+	l.size--
+
+	if proximo == l.head {
+		return nil
+	}
+	return proximo
+}
 
 
 func main() {
@@ -82,15 +125,15 @@ func main() {
 		case "size":
 		    fmt.Println(ll.Size())
 		case "push_back":
-			// for _, v := range args[1:] {
-			// 	num, _ := strconv.Atoi(v)
-			// 	ll.PushBack(num)
-			// }
+			for _, v := range args[1:] {
+				num, _ := strconv.Atoi(v)
+				ll.PushBack(num)
+			}
 		case "push_front":
-			// for _, v := range args[1:] {
-			// 	num, _ := strconv.Atoi(v)
-			// 	ll.PushFront(num)
-			// }
+			for _, v := range args[1:] {
+				num, _ := strconv.Atoi(v)
+				ll.PushFront(num)
+			}
 		case "pop_back":
 			// ll.PopBack()
 		case "pop_front":
