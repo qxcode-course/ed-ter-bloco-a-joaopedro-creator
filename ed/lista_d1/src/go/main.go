@@ -77,6 +77,12 @@ func (l *Llist) PopBack(value int) {
 	l.remove(l.head.prev) 
 }
 
+func (l *Llist) Clear(value int) {
+	l.head.next = l.head
+	l.head.prev = l.head
+	l.size = 0
+}
+
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
  	ll := NewLList()
@@ -116,7 +122,7 @@ func main() {
 		case "pop_front":
 			ll.PopFront(ll.head.Value)
 		case "clear":
-			// ll.Clear()
+			ll.Clear(ll.head.Value)
 		case "end":
 			return
 		default:
