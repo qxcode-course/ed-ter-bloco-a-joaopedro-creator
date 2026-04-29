@@ -8,22 +8,41 @@ import (
 	"strconv"
 )
 
-type  Node struct {
+type  root struct {
     Value int            
-    next *Node           
-    prev *Node           
+    next *root           
+    prev *root           
 }
 
 type Llist struct{
-	head * Node
+	head * root
+	size int
 }
 
 func NewLList() *Llist{
 	lList := &Llist{}
-	lList.head = &Node{}
+	lList.head = &root{}
 	lList.head.next = lList.head
 	lList.head.prev = lList.head
 	return lList
+}
+
+func (l *Llist) String() string {
+	var elements []string
+	for it := l.head.next; it != l.head; it = it.next {
+		elements = append(elements, strconv.Itoa(it.Value))
+	}
+	return "[" + strings.Join(elements, ", ") + "]"
+}
+
+func (l *Llist) insert(A *root, value int) {
+	B := A.prev
+	
+	C := &root{Value: value, next: A, prev: B}
+
+	B.next = C
+	A.prev = C
+	l.size++
 }
 
 func main() {
@@ -47,7 +66,7 @@ func main() {
 
 		switch cmd {
 		case "show":
-			// fmt.Println(ll.String())
+			 fmt.Println(ll.String())
 		case "size":
 			// fmt.Println(ll.Size())
 		case "push_back":

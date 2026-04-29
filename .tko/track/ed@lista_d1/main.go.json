@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-29_11-58-03",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n\t\"strconv\"\n)\n\ntype  root struct {\n    Value int            \n    next *root           \n    prev *root           \n}\n\ntype Llist struct{\n\thead * root\n\tsize int\n}\n\nfunc NewLList() *Llist{\n\tlList := &Llist{}\n\tlList.head = &root{}\n\tlList.head.next = lList.head\n\tlList.head.prev = lList.head\n\treturn lList\n}\n\nfunc (l *Llist) String() string {\n\tvar elements []string\n\tfor it := l.head.next; it != l.head; it = it.next {\n\t\telements = append(elements, strconv.Itoa(it.Value))\n\t}\n\treturn \"[\" + strings.Join(elements, \", \") + \"]\"\n}\n\nfunc (l *Llist) insert(A *root, value int) {\n\tB := A.prev\n\t\n\tC := &root{Value: value, next: A, prev: B}\n\n\tB.next = C\n\tA.prev = C\n\tl.size++\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n \tll := NewLList()\n\n\tfor {\n\t\tfmt.Print(\"$\")\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline := scanner.Text()\n\t\tfmt.Println(line)\n\t\targs := strings.Fields(line)\n\n\t\tif len(args) == 0 {\n\t\t\tcontinue\n\t\t}\n\n\t\tcmd := args[0]\n\n\t\tswitch cmd {\n\t\tcase \"show\":\n\t\t\t fmt.Println(ll.String())\n\t\tcase \"size\":\n\t\t\t// fmt.Println(ll.Size())\n\t\tcase \"push_back\":\n\t\t\t// for _, v := range args[1:] {\n\t\t\t// \tnum, _ := strconv.Atoi(v)\n\t\t\t// \tll.PushBack(num)\n\t\t\t// }\n\t\tcase \"push_front\":\n\t\t\t// for _, v := range args[1:] {\n\t\t\t// \tnum, _ := strconv.Atoi(v)\n\t\t\t// \tll.PushFront(num)\n\t\t\t// }\n\t\tcase \"pop_back\":\n\t\t\t// ll.PopBack()\n\t\tcase \"pop_front\":\n\t\t\t// ll.PopFront()\n\t\tcase \"clear\":\n\t\t\t// ll.Clear()\n\t\tcase \"end\":\n\t\t\treturn\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "94"
+        }
+    ]
+}
