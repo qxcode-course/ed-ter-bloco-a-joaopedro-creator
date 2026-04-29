@@ -45,6 +45,18 @@ func (l *Llist) insert(A *root, value int) {
 	l.size++
 }
 
+func (l *Llist) remove(node *root) {
+	if node == l.head {
+		return
+	}
+	A := node.prev
+	B := node.next
+
+	A.next = B
+	B.prev = A
+	l.size--
+}
+
 func (l *Llist) Size() int {
     return l.size
 }
