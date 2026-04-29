@@ -82,6 +82,11 @@ func (l *Llist) PopFront(v int){
 	l.Remove(l.head.next)
 }
 
+func (l *Llist) Clear(value int) {
+	l.head.next = l.head
+	l.head.prev = l.head
+	l.size = 0
+}
 
 
 func (l *Llist) Remove(n *node) *node {
@@ -97,6 +102,16 @@ func (l *Llist) Remove(n *node) *node {
 		return nil
 	}
 	return proximo
+}
+
+func (l *Llist) Front() *node {
+	if l.size == 0 { return nil }
+	return l.head.next
+}
+
+func (l *Llist) Back() *node {
+	if l.size == 0 { return nil }
+	return l.head.prev
 }
 
 
@@ -135,21 +150,21 @@ func main() {
 				ll.PushFront(num)
 			}
 		case "pop_back":
-			// ll.PopBack()
+			ll.PopBack(ll.head.Value)
 		case "pop_front":
-			// ll.PopFront()
+			ll.PopFront(ll.head.Value)
 		case "clear":
-			// ll.Clear()
+			ll.Clear(ll.head.Value)
 		case "walk":
-			// fmt.Print("[ ")
-			// for node := ll.Front(); node != nil; node = node.Next() {
-			// 	fmt.Printf("%v ", node.Value)
-			// }
-			// fmt.Print("]\n[ ")
-			// for node := ll.Back(); node != nil; node = node.Prev() {
-			// 	fmt.Printf("%v ", node.Value)
-			// }
-			// fmt.Println("]")
+			fmt.Print("[ ")
+			for node := ll.Front(); node != nil; node = node.Next() {
+				fmt.Printf("%v ", node.Value)
+			}
+			fmt.Print("]\n[ ")
+			for node := ll.Back(); node != nil; node = node.Prev() {
+				fmt.Printf("%v ", node.Value)
+			}
+			fmt.Println("]")
 		case "replace":
 			// oldvalue, _ := strconv.Atoi(args[1])
 			// newvalue, _ := strconv.Atoi(args[2])
