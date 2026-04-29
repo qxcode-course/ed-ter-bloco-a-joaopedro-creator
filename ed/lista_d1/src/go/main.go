@@ -61,6 +61,14 @@ func (l *Llist) Size() int {
     return l.size
 }
 
+func (l *Llist) PushBack(value int) {
+	l.insert(l.head, value) 
+}
+
+func (l *Llist) PushFront(value int) {
+	l.insert(l.head.next, value) 
+}
+
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
  	ll := NewLList()
@@ -86,15 +94,15 @@ func main() {
 		case "size":
 			fmt.Println(ll.Size())
 		case "push_back":
-			// for _, v := range args[1:] {
-			// 	num, _ := strconv.Atoi(v)
-			// 	ll.PushBack(num)
-			// }
+			for _, v := range args[1:] {
+				num, _ := strconv.Atoi(v)
+				ll.PushBack(num)
+			}
 		case "push_front":
-			// for _, v := range args[1:] {
-			// 	num, _ := strconv.Atoi(v)
-			// 	ll.PushFront(num)
-			// }
+			for _, v := range args[1:] {
+				num, _ := strconv.Atoi(v)
+				ll.PushFront(num)
+			}
 		case "pop_back":
 			// ll.PopBack()
 		case "pop_front":
