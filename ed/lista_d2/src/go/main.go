@@ -11,7 +11,22 @@ import (
 type  node struct {
     Value int            
     next *node          
-    prev *node         
+    prev *node  
+	root *node       
+}
+
+func (n *node) Next() *node {
+	if n.next == n.root {
+		return nil
+	}
+	return n.next
+}
+
+func (n *node) Prev() *node {
+	if n.prev == n.root {
+		return nil
+	}
+	return n.prev
 }
 
 type Llist struct{
