@@ -67,6 +67,15 @@ func (l *LList[T]) Clear(value int) {
 	l.size = 0
 }
 
+func (l *LList[T]) Search(value T) *Node[T] {
+	for it := l.root.next; it != l.root; it = it.next {
+		if it.Value == value {
+			return it
+		}
+	}
+	return nil
+}
+
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	ll := NewLList[int]()
@@ -99,19 +108,19 @@ func main() {
 		case "clear":
 			ll.Clear(ll.root.Value)
 		case "forward":
-			// search, _ := strconv.Atoi(args[1])
-			// steps, _ := strconv.Atoi(args[2])
-			// node := ll.Search(search)
-			// if node == nil {
-			// 	fmt.Println("fail: valor não encontrado")
-			// 	continue
-			// }
-			// collect := []string{}
-			// for range steps {
-			// 	collect = append(collect, fmt.Sprintf("%v", node.Value))
-			// 	node = node.Next()
-			// }
-			// fmt.Printf("[ %s ]\n", strings.Join(collect, " "))
+			search, _ := strconv.Atoi(args[1])
+			steps, _ := strconv.Atoi(args[2])
+			node := ll.Search(search)
+			if node == nil {
+				fmt.Println("fail: valor não encontrado")
+				continue
+			}
+			collect := []string{}
+			for range steps {
+				collect = append(collect, fmt.Sprintf("%v", node.Value))
+				node = node.Next()
+			}
+			fmt.Printf("[ %s ]\n", strings.Join(collect, " "))
 		case "backward":
 			// search, _ := strconv.Atoi(args[1])
 			// steps, _ := strconv.Atoi(args[2])
