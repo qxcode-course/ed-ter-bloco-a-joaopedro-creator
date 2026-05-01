@@ -25,11 +25,11 @@ expanded:
 - ed@sandbox
 - ed@list
 flags:
-  inbox: inbox
-  panel: skills
+  inbox: all
+  panel: graph
   show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@lista_d4
-selected_index: 6
+selected: ed@prin_list1
+selected_index: 9
