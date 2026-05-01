@@ -2,8 +2,13 @@
     "patches": [
         {
             "label": "2026-05-01_18-25-22",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t//\"strings\"\n)\n\n\n// mostra a lista com o elemento sword destacado\nfunc ToStr(l *DList[int], sword *DNode[int]) string {\n\treturn \"\"\n}\n\n// move para frente na lista circular\nfunc Next(l *DList[int], it *DNode[int]) *DNode[int] {\n\tprox := it.next\n\n\tif prox == l.root{\n\t\tprox = prox.next\n\t}\n\t\n\n\n\treturn prox\n}\n\nfunc main() {\n\tvar qtd, chosen int\n\tfmt.Scan(&qtd, &chosen)\n\tfmt.Println(qtd, chosen)\n\tl := NewDList[int]()\n\tfor i := 1; i <= qtd; i++ {\n\t\tl.PushBack(i)\n\t}\n\tsword := l.Front()\n\tfor range chosen - 1 {\n\t\tsword = Next(l, sword)\n\t}\n\tfor range qtd - 1 {\n\t\tfmt.Println(ToStr(l, sword))\n\t\tl.Erase(Next(l, sword))\n\t\tsword = Next(l, sword)\n\t}\n\tfmt.Println(ToStr(l, sword))\n}\n",
+            "content": "@@ -150,208 +150,16 @@\n %0A%09re\n-s := %22%5B %22%0A%0A%09for n := l.Front(); n != l.End(); n = n.next%7B%0A%09%09res += fmt.Sprint(n.Value)%0A%09%09%0A%09%09if n == sword%7B%0A%09%09%09res += %22%3E%22%0A%09%09%7D%0A%0A%09%09if n.next != l.End()%7B%0A%09%09%09res +=\n+turn\n  %22\n- \n %22%0A\n-%09%09%7D%0A%09%7D%0A%09res += %22 %5D%22 %0A    return res%0A\n %7D%0A%0A/\n@@ -314,10 +314,12 @@\n %0A%09%7D%0A\n-\n %09%0A\n+%0A%0A\n %09ret\n",
             "lines": "45"
+        },
+        {
+            "label": "2026-05-01_18-54-42",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t//\"strings\"\n)\n\n\n// mostra a lista com o elemento sword destacado\nfunc ToStr(l *DList[int], sword *DNode[int]) string {\n\tres := \"[ \"\n\n\tfor n := l.Front(); n != l.End(); n = n.next{\n\t\tres += fmt.Sprint(n.Value)\n\t\t\n\t\tif n == sword{\n\t\t\tres += \">\"\n\t\t}\n\n\t\tif n.next != l.End(){\n\t\t\tres += \" \"\n\t\t}\n\t}\n\tres += \" ]\" \n    return res\n}\n\n// move para frente na lista circular\nfunc Next(l *DList[int], it *DNode[int]) *DNode[int] {\n\tprox := it.next\n\n\tif prox == l.root{\n\t\tprox = prox.next\n\t}\n\t\n\treturn prox\n}\n\nfunc main() {\n\tvar qtd, chosen int\n\tfmt.Scan(&qtd, &chosen)\n\tfmt.Println(qtd, chosen)\n\tl := NewDList[int]()\n\tfor i := 1; i <= qtd; i++ {\n\t\tl.PushBack(i)\n\t}\n\tsword := l.Front()\n\tfor range chosen - 1 {\n\t\tsword = Next(l, sword)\n\t}\n\tfor range qtd - 1 {\n\t\tfmt.Println(ToStr(l, sword))\n\t\tl.Erase(Next(l, sword))\n\t\tsword = Next(l, sword)\n\t}\n\tfmt.Println(ToStr(l, sword))\n}\n",
+            "lines": "57"
         }
     ]
 }
