@@ -37,7 +37,7 @@ func (n *Node[T]) Next() *Node[T] {
 
 func (n *Node[T]) Prev() *Node[T] {
 	if n.prev == n.root {
-		return nil
+		return n.root.prev
 	}
 	return n.prev
 }
