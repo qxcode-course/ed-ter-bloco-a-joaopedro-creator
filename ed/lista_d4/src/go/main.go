@@ -61,6 +61,12 @@ func (l *LList[T]) String() string {
 }
 
 
+func (l *LList[T]) Clear(value int) {
+	l.root.next = l.root
+	l.root.prev = l.root
+	l.size = 0
+}
+
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	ll := NewLList[int]()
@@ -91,7 +97,7 @@ func main() {
 				ll.PushBack(num)
 			}
 		case "clear":
-			// ll.Clear()
+			ll.Clear(ll.root.Value)
 		case "forward":
 			// search, _ := strconv.Atoi(args[1])
 			// steps, _ := strconv.Atoi(args[2])
