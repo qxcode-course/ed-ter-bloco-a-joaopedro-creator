@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	
 )
 
 type Node[T comparable] struct {
@@ -38,6 +39,10 @@ func (l *LList[T]) PushBack(value T) {
 	l.insertBefore(l.root, value)
 }
 
+func (l *LList[T]) Size() int {
+    return l.size
+}
+
 func (l *LList[T]) insertBefore(mark *Node[T], value T) {
 	n := &Node[T]{Value: value, root: l.root}
 	n.prev = mark.prev
@@ -58,7 +63,7 @@ func (l *LList[T]) String() string {
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
-// 	ll := NewLList[int]()
+	ll := NewLList[int]()
 
 	for {
 		fmt.Print("$")
@@ -77,9 +82,9 @@ func main() {
 
 		switch cmd {
 		case "show":
-			// fmt.Println(ll.String())
+			fmt.Println(ll.String())
 		case "size":
-			// fmt.Println(ll.Size())
+			fmt.Println(ll.Size())
 		case "push_back":
 			// for _, v := range args[1:] {
 			// 	num, _ := strconv.Atoi(v)
