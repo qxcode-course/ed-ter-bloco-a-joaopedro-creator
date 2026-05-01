@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	
+	"strconv"
 )
 
 type Node[T comparable] struct {
@@ -86,10 +86,10 @@ func main() {
 		case "size":
 			fmt.Println(ll.Size())
 		case "push_back":
-			// for _, v := range args[1:] {
-			// 	num, _ := strconv.Atoi(v)
-			// 	ll.PushBack(num)
-			// }
+			for _, v := range args[1:] {
+				num, _ := strconv.Atoi(v)
+				ll.PushBack(num)
+			}
 		case "clear":
 			// ll.Clear()
 		case "forward":
