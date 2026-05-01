@@ -35,6 +35,13 @@ func (n *Node[T]) Next() *Node[T] {
 	return n.next
 }
 
+func (n *Node[T]) Prev() *Node[T] {
+	if n.prev == n.root {
+		return nil
+	}
+	return n.prev
+}
+
 func (l *LList[T]) PushBack(value T) {
 	l.insertBefore(l.root, value)
 }
@@ -122,19 +129,19 @@ func main() {
 			}
 			fmt.Printf("[ %s ]\n", strings.Join(collect, " "))
 		case "backward":
-			// search, _ := strconv.Atoi(args[1])
-			// steps, _ := strconv.Atoi(args[2])
-			// node := ll.Search(search)
-			// if node == nil {
-			// 	fmt.Println("fail: valor não encontrado")
-			// 	continue
-			// }
-			// collect := []string{}
-			// for range steps {
-			// 	collect = append(collect, fmt.Sprintf("%v", node.Value))
-			// 	node = node.Prev()
-			// }
-			// fmt.Printf("[ %s ]\n", strings.Join(collect, " "))
+			search, _ := strconv.Atoi(args[1])
+			steps, _ := strconv.Atoi(args[2])
+			node := ll.Search(search)
+			if node == nil {
+				fmt.Println("fail: valor não encontrado")
+				continue
+			}
+			collect := []string{}
+			for range steps {
+				collect = append(collect, fmt.Sprintf("%v", node.Value))
+				node = node.Prev()
+			}
+			fmt.Printf("[ %s ]\n", strings.Join(collect, " "))
 		case "end":
 			return
 		default:
