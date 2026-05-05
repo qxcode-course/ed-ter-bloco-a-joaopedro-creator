@@ -40,6 +40,10 @@ func (e *Editor) KeyRight() {
 }
 
 func (e *Editor) KeyUp() {
+	if e.it_line != e.texto.Front() {
+        e.it_line = e.it_line.Prev()          
+        e.it_char = e.it_line.Value.Front()    
+    }
 }
 
 func (e *Editor) KeyDown() {
