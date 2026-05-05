@@ -47,6 +47,10 @@ func (e *Editor) KeyUp() {
 }
 
 func (e *Editor) KeyDown() {
+	if e.it_line != e.texto.End() {
+        e.it_line = e.it_line.Next()          
+        e.it_char = e.it_line.Value.Front()    
+    }
 }
 
 func (e *Editor) KeyBackspace() {
