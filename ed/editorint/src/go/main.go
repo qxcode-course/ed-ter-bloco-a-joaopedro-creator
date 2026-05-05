@@ -74,9 +74,20 @@ func (e *Editor) KeyUp() {
 }
 
 func (e *Editor) KeyDown() {
-	if e.it_line != e.texto.End() {
-        e.it_line = e.it_line.Next()          
-        e.it_char = e.it_line.Value.Front()    
+    if e.it_line.Next() == e.texto.End() {
+        return
+    }
+
+    colunaAlvo := e.it_line.Value.IndexOf(e.it_char)
+
+    e.it_line = e.it_line.Next()
+
+    e.it_char = e.it_line.Value.Front()
+    for i := 0; i < colunaAlvo; i++ {
+        if e.it_char == e.it_line.Value.End() {
+            break
+        }
+        e.it_char = e.it_char.Next()
     }
 }
 
