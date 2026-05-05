@@ -20,9 +20,16 @@ func (e *Editor) InsertChar(r rune) {
 }
 
 func (e *Editor) KeyLeft() {
-	if e.it_char.Prev() != e.it_line.Value.End() {
-		e.it_char = e.it_char.Prev() // Move o cursor para a esquerda
-	}
+	if e.it_char == e.it_line.Value.Front() {
+        
+        if e.it_line != e.texto.Front() {
+            e.it_line = e.it_line.Prev()       
+            e.it_char = e.it_line.Value.End()  
+        }
+
+    } else {
+        e.it_char = e.it_char.Prev()
+    }
 }
 
 func (e *Editor) KeyEnter() {
@@ -33,9 +40,16 @@ func (e *Editor) KeyEnter() {
 }
 
 func (e *Editor) KeyRight() {
-	if e.it_char.Next() != e.it_line.Value.End(){
-		e.it_char = e.it_char.Next() // Move o cursor para a direita
-	}
+	if e.it_char == e.it_line.Value.End() {
+        
+        if e.it_line != e.texto.En {
+            e.it_line = e.it_line.Next()       
+            e.it_char = e.it_line.Value.End()  
+        }
+
+    } else {
+        e.it_char = e.it_char.Prev()
+    }
 	
 }
 
