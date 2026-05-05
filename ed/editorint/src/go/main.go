@@ -46,8 +46,8 @@ func (e *Editor) KeyDown() {
 }
 
 func (e *Editor) KeyBackspace() {
-	if e.it_char.Next() != e.it_line.Value.End(){
-		e.it_char = e.it_line.Value.Erase(e.it_char)
+	if e.it_char != e.it_line.Value.Front(){
+		e.it_char = e.it_line.Value.Erase(e.it_char.Prev())
 	}
 }
 
