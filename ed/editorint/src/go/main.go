@@ -92,7 +92,26 @@ func (e *Editor) KeyDown() {
 }
 
 func (e *Editor) KeyBackspace() {
-	if e.it_char != e.it_line.Value.Front(){
+	if e.it_char == e.it_line.Value.Front(){
+		if e.it_line == e.texto.Front(){
+			return
+		}
+
+		linhaAtual := e.it_line
+		linhaAcima := e.it_line.Prev()
+
+		posicaoDeUniao := linhaAcima.Value.End()
+
+		for it := linhaAtual.Value.Front(); it != linhaAtual.Value.End();{
+			charParaMover := it.Value
+            linhaAcima.Value.Insert(linhaAcima.Value.End(), charParaMover)
+            
+            it = linhaAtual.Value.Erase(it)
+		}
+		e.it_line = linhaAcima
+        e.it_char = posicaoDeUniao      
+        e.texto.Erase(linhaAtual)
+	}else{
 		e.it_char = e.it_line.Value.Erase(e.it_char.Prev())
 	}
 }
