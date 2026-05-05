@@ -57,9 +57,19 @@ func (e *Editor) KeyRight() {
 }
 
 func (e *Editor) KeyUp() {
-	if e.it_line != e.texto.Front() {
-        e.it_line = e.it_line.Prev()          
-        e.it_char = e.it_line.Value.Front()    
+	if e.it_line == e.texto.Front() {
+        return
+    }
+    colunaAlvo := e.it_line.Value.IndexOf(e.it_char)
+
+    e.it_line = e.it_line.Prev()
+
+    e.it_char = e.it_line.Value.Front()
+    for i := 0; i < colunaAlvo; i++ {
+        if e.it_char == e.it_line.Value.End() {
+            break
+        }
+        e.it_char = e.it_char.Next()
     }
 }
 
