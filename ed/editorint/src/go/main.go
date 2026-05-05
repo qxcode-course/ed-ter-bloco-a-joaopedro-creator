@@ -117,9 +117,27 @@ func (e *Editor) KeyBackspace() {
 }
 
 func (e *Editor) KeyDelete() {
-	if e.it_char.Prev() != e.it_line.Value.End(){
-		e.it_char = e.it_line.Value.Erase(e.it_char)
-	}
+	if e.it_char == e.it_line.Value.End() {
+        
+        // Só podemos juntar se houver uma linha abaixo
+        if e.it_line.Next() != e.texto.End() {
+            linhaAtual := e.it_line
+            proximaLinha := e.it_line.Next()
+
+            for it := proximaLinha.Value.Front(); it != proximaLinha.Value.End(); {
+                charParaMover := it.Value
+                linhaAtual.Value.Insert(linhaAtual.Value.End(), charParaMover)
+                it = proximaLinha.Value.Erase(it)
+            }
+
+           
+            e.texto.Erase(proximaLinha)
+            
+        }
+
+    } else {
+        e.it_char = e.it_line.Value.Erase(e.it_char)
+    }
 }
 
 func main() {
