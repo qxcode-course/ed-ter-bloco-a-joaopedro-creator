@@ -41,16 +41,13 @@ func (e *Editor) KeyEnter() {
 
 func (e *Editor) KeyRight() {
 	if e.it_char == e.it_line.Value.End() {
-        
-        if e.it_line != e.texto.En {
-            e.it_line = e.it_line.Next()       
-            e.it_char = e.it_line.Value.End()  
+        if e.it_line.Next() != e.texto.End() {
+            e.it_line = e.it_line.Next()        
+            e.it_char = e.it_line.Value.Front()  
         }
-
-    } else {
-        e.it_char = e.it_char.Prev()
+    	} else {
+        	e.it_char = e.it_char.Next()
     }
-	
 }
 
 func (e *Editor) KeyUp() {
