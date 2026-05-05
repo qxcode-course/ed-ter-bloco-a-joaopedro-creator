@@ -34,9 +34,15 @@ func (e *Editor) KeyLeft() {
 
 func (e *Editor) KeyEnter() {
 	nova := NewList[rune]()
-	e.texto.Insert(e.it_line.Next(), nova)
-	e.it_line = e.it_line.Next()
-	e.it_char = e.it_line.Value.Front()
+
+    for it := e.it_char; it != e.it_line.Value.End(); {
+        charParaMover := it.Value
+        nova.PushBack(charParaMover) 
+        it = e.it_line.Value.Erase(it)
+    }
+    e.texto.Insert(e.it_line.Next(), nova)
+    e.it_line = e.it_line.Next()
+    e.it_char = e.it_line.Value.Front()
 }
 
 func (e *Editor) KeyRight() {
