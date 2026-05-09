@@ -32,8 +32,13 @@
         },
         {
             "label": "2026-05-09_13-00-54",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n\n)\nfunc main() {\n    scanner := bufio.NewScanner(os.Stdin)\n    scanner.Scan()\n    entrada := scanner.Text()\n\n     texto := []rune{}\n    cursor := 0\n\n    for _, ch := range entrada{\n    switch ch{\n    case 'R' :\n        texto = append(texto[:cursor], append([]rune{'\\n'}, texto[cursor:]...)...)\n            cursor++\n    case 'B':\n        if cursor > 0 {\n            texto = append(texto[:cursor-1], texto[cursor:]...)\n            cursor--\n        }\n    \n    case 'D' :\n        if cursor < len(texto) {\n            texto = append(texto[:cursor], texto[cursor+1:]...)\n        }\n    case '>' :\n        if cursor < len(texto) {\n            cursor++\n        }\n    case '<' :\n        if cursor > 0 {\n            cursor--\n        }\n    default: \n            texto = append(texto[:cursor], append([]rune{ch}, texto[cursor:]...)...)\n            cursor++\n    }\n    }\n    texto = append(texto[:cursor], append([]rune{'|'}, texto[cursor:]...)...)\n    fmt.Print(strings.ReplaceAll(string(texto), \"\\n\", \"\\n\"))\n}\n",
+            "content": "@@ -38,16 +38,28 @@\n %22%0A%09%22os%22%0A\n+%09%22strings%22%0A%0A\n )%0Afunc m\n@@ -1000,23 +1000,53 @@\n rint\n-ln(string(texto\n+(strings.ReplaceAll(string(texto), %22%5Cn%22, %22%5Cn%22\n ))%0A%7D\n",
             "lines": "48"
+        },
+        {
+            "label": "2026-05-09_13-04-57",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\nfunc main() {\n    scanner := bufio.NewScanner(os.Stdin)\n    scanner.Scan()\n    entrada := scanner.Text()\n\n     texto := []rune{}\n    cursor := 0\n\n    for _, ch := range entrada{\n    switch ch{\n    case 'R' :\n        texto = append(texto[:cursor], append([]rune{'\\n'}, texto[cursor:]...)...)\n            cursor++\n    case 'B':\n        if cursor > 0 {\n            texto = append(texto[:cursor-1], texto[cursor:]...)\n            cursor--\n        }\n    \n    case 'D' :\n        if cursor < len(texto) {\n            texto = append(texto[:cursor], texto[cursor+1:]...)\n        }\n    case '>' :\n        if cursor < len(texto) {\n            cursor++\n        }\n    case '<' :\n        if cursor > 0 {\n            cursor--\n        }\n    default: \n            texto = append(texto[:cursor], append([]rune{ch}, texto[cursor:]...)...)\n            cursor++\n    }\n    }\n    texto = append(texto[:cursor], append([]rune{'|'}, texto[cursor:]...)...)\n    fmt.Println(string(texto))\n}\n",
+            "lines": "46"
         }
     ]
 }

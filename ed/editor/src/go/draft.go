@@ -4,8 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"strings"
-
 )
 func main() {
     scanner := bufio.NewScanner(os.Stdin)
@@ -44,5 +42,5 @@ func main() {
     }
     }
     texto = append(texto[:cursor], append([]rune{'|'}, texto[cursor:]...)...)
-    fmt.Print(strings.ReplaceAll(string(texto), "\n", "\n"))
+    fmt.Println(string(texto))
 }
