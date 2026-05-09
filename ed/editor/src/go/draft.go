@@ -21,16 +21,26 @@ func main() {
         texto = append(texto[:cursor], append([]rune{'\n'}, texto[cursor:]...)...)
             cursor++
     case 'B':
-        
+        if cursor > 0 {
+            texto = append(texto[:cursor-1], texto[cursor:]...)
+            cursor--
+        }
     
     case 'D' :
-         
+        if cursor < len(texto) {
+            texto = append(texto[:cursor], texto[cursor+1:]...)
+        }
     case '>' :
-          
+        if cursor < len(texto) {
+            cursor++
+        }
     case '<' :
-       
-    default: // letras a-z e '-'
-            
+        if cursor > 0 {
+            cursor--
+        }
+    default: 
+            texto = append(texto[:cursor], append([]rune{ch}, texto[cursor:]...)...)
+            cursor++
     }
     }
     texto = append(texto[:cursor], append([]rune{'|'}, texto[cursor:]...)...)

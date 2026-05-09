@@ -12,8 +12,28 @@
         },
         {
             "label": "2026-05-09_12-57-06",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n\n)\nfunc main() {\n    scanner := bufio.NewScanner(os.Stdin)\n    scanner.Scan()\n    entrada := scanner.Text()\n\n     texto := []rune{}\n    cursor := 0\n\n    for _, ch := range entrada{\n    switch ch{\n    case 'R' :\n        texto = append(texto[:cursor], append([]rune{'\\n'}, texto[cursor:]...)...)\n            cursor++\n    case 'B':\n        \n    \n    case 'D' :\n         \n    case '>' :\n          \n    case '<' :\n       \n    default: // letras a-z e '-'\n            \n    }\n    }\n    texto = append(texto[:cursor], append([]rune{'|'}, texto[cursor:]...)...)\n    fmt.Print(strings.ReplaceAll(string(texto), \"\\n\", \"\\n\"))\n}\n",
+            "content": "@@ -390,130 +390,8 @@\n     \n-if cursor %3E 0 %7B%0A                texto = append(texto%5B:cursor-1%5D, texto%5Bcursor:%5D...)%0A                cursor--%0A            %7D\n %0A   \n",
             "lines": "38"
+        },
+        {
+            "label": "2026-05-09_12-57-55",
+            "content": "@@ -542,115 +542,8 @@\n     \n- if cursor %3C len(texto) %7B%0A                texto = append(texto%5B:cursor%5D, texto%5Bcursor+1:%5D...)%0A            %7D\n %0A   \n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-05-09_12-58-21",
+            "content": "@@ -406,32 +406,36 @@\n 0 %7B%0A            \n+    \n texto = append(t\n@@ -466,24 +466,28 @@\n ursor:%5D...)%0A\n+    \n             \n@@ -499,24 +499,28 @@\n r--%0A        \n+    \n %7D%0A    %0A    c\n@@ -525,24 +525,26 @@\n  case 'D' :%0A\n+  \n         if c\n@@ -568,32 +568,36 @@\n ) %7B%0A            \n+  \n+  \n texto = append(t\n@@ -632,32 +632,36 @@\n 1:%5D...)%0A        \n+    \n %7D%0A    case '%3E' :\n@@ -673,133 +673,33 @@\n     \n-if cursor %3C len(texto) %7B%0A            cursor++%0A        %7D%0A    case '%3C' :%0A        if cursor %3E 0 %7B%0A            cursor--%0A        %7D\n+  %0A    case '%3C' :%0A       \n %0A   \n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-05-09_13-00-21",
+            "content": "@@ -790,93 +790,27 @@\n lt: \n-%0A            texto = append(texto%5B:cursor%5D, append(%5B%5Drune%7Bch%7D, texto%5Bcursor:%5D...)...)\n+// letras a-z e '-'\n %0A   \n@@ -814,32 +814,24 @@\n             \n-cursor++\n %0A    %7D%0A    %7D\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-05-09_13-00-54",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n\n)\nfunc main() {\n    scanner := bufio.NewScanner(os.Stdin)\n    scanner.Scan()\n    entrada := scanner.Text()\n\n     texto := []rune{}\n    cursor := 0\n\n    for _, ch := range entrada{\n    switch ch{\n    case 'R' :\n        texto = append(texto[:cursor], append([]rune{'\\n'}, texto[cursor:]...)...)\n            cursor++\n    case 'B':\n        if cursor > 0 {\n            texto = append(texto[:cursor-1], texto[cursor:]...)\n            cursor--\n        }\n    \n    case 'D' :\n        if cursor < len(texto) {\n            texto = append(texto[:cursor], texto[cursor+1:]...)\n        }\n    case '>' :\n        if cursor < len(texto) {\n            cursor++\n        }\n    case '<' :\n        if cursor > 0 {\n            cursor--\n        }\n    default: \n            texto = append(texto[:cursor], append([]rune{ch}, texto[cursor:]...)...)\n            cursor++\n    }\n    }\n    texto = append(texto[:cursor], append([]rune{'|'}, texto[cursor:]...)...)\n    fmt.Print(strings.ReplaceAll(string(texto), \"\\n\", \"\\n\"))\n}\n",
+            "lines": "48"
         }
     ]
 }
