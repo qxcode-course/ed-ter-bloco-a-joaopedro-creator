@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
 )
 func main() {
     scanner := bufio.NewScanner(os.Stdin)
@@ -19,7 +20,29 @@ func main() {
     case "R" :
         texto = append(texto[:cursor], append([]rune{'\n'}, texto[cursor:]...)...)
             cursor++
-            
+    case "B":
+        if cursor > 0 {
+                texto = append(texto[:cursor-1], texto[cursor:]...)
+                cursor--
+            }
+    
+    case "D" :
+         if cursor < len(texto) {
+                texto = append(texto[:cursor], texto[cursor+1:]...)
+            }
+    case ">" :
+          if cursor < len(texto) {
+                cursor++
+            }
+    case "<" :
+        if cursor > 0 {
+                cursor--
+            }
+    default: // letras a-z e '-'
+            texto = append(texto[:cursor], append([]rune{ch}, texto[cursor:]...)...)
+            cursor++
     }
     }
+    texto = append(texto[:cursor], append([]rune{'|'}, texto[cursor:]...)...)
+    fmt.Print(strings.ReplaceAll(string(texto), "\n", "\n"))
 }
