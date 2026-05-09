@@ -9,3 +9,9 @@
 2026-05-09 12:10:11, SELF, v:1, k:ed@editorint, self:1, rate:100, study:125, concept:1, refactor:1
 2026-05-09 12:11:59, SELF, v:1, k:ed@queimada, self:1, rate:100, study:22, concept:1, refactor:1
 2026-05-09 12:13:23, SELF, v:1, k:ed@triangulo, self:1, rate:100, study:30, concept:1, refactor:1
+2026-05-09 12:20:44, MOVE, v:1, k:ed@editor, mode:DOWN
+2026-05-09 12:20:44, MOVE, v:1, k:ed@editor, mode:EDIT
+2026-05-09 12:20:44, MOVE, v:1, k:ed@editor, mode:EDIT
+2026-05-09 12:44:30, MOVE, v:1, k:ed@editor, mode:EDIT
+2026-05-09 12:47:44, MOVE, v:1, k:ed@editor, mode:PICK
+2026-05-09 12:47:45, EXEC, v:1, k:ed@editor, mode:FULL, size:25, fail:COMP

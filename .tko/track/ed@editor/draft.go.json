@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-09_12-47-45",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n)\nfunc main() {\n    scanner := bufio.NewScanner(os.Stdin)\n    scanner.Scan()\n    entrada := scanner.Text()\n\n     texto := []rune{}\n    cursor := 0\n\n    for _, ch := range entrada{\n    switch ch{\n    case \"R\" :\n        texto = append(texto[:cursor], append([]rune{'\\n'}, texto[cursor:]...)...)\n            cursor++\n            \n    }\n    }\n}\n",
+            "lines": "25"
+        }
+    ]
+}

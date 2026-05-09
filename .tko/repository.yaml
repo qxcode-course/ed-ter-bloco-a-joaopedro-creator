@@ -21,13 +21,14 @@ sources:
   writeable: false
   quests: null
   tasks: null
-expanded: []
+expanded:
+- ed@list
 flags:
   inbox: all
-  panel: graph
+  panel: skills
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@rec
-selected_index: 2
+selected: ed@editor
+selected_index: 12
