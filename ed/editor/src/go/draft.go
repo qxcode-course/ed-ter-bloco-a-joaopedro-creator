@@ -17,30 +17,20 @@ func main() {
 
     for _, ch := range entrada{
     switch ch{
-    case "R" :
+    case 'R' :
         texto = append(texto[:cursor], append([]rune{'\n'}, texto[cursor:]...)...)
             cursor++
-    case "B":
-        if cursor > 0 {
-                texto = append(texto[:cursor-1], texto[cursor:]...)
-                cursor--
-            }
+    case 'B':
+        
     
-    case "D" :
-         if cursor < len(texto) {
-                texto = append(texto[:cursor], texto[cursor+1:]...)
-            }
-    case ">" :
-          if cursor < len(texto) {
-                cursor++
-            }
-    case "<" :
-        if cursor > 0 {
-                cursor--
-            }
+    case 'D' :
+         
+    case '>' :
+          
+    case '<' :
+       
     default: // letras a-z e '-'
-            texto = append(texto[:cursor], append([]rune{ch}, texto[cursor:]...)...)
-            cursor++
+            
     }
     }
     texto = append(texto[:cursor], append([]rune{'|'}, texto[cursor:]...)...)
