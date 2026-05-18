@@ -13,7 +13,7 @@ func isValid(s []byte, pos int, digit byte, L int) bool {
             if diff < 0 {
                 diff = -diff
             }
-            if diff < L {
+            if diff <= L {
                 return false
             }
         }
