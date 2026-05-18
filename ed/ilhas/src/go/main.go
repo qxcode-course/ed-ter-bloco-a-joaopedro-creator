@@ -13,7 +13,7 @@ func numIslands(grid [][]byte) int {
 
 	var dfs func(i, j int)
 	dfs = func(i, j int) {
-		if i < 0 || i >= len(grid) || j < 0 || j >= len(grid[0]) || grid[i][j] == '1' {
+		if i < 0 || i >= len(grid) || j < 0 || j >= len(grid[0]) || grid[i][j] != '1' {
 			return
 		}
 		grid[i][j] = '0' 
@@ -25,7 +25,7 @@ func numIslands(grid [][]byte) int {
 	 for i := range grid {
         for j := range grid[i] {
             if grid[i][j] == '1' {
-                dfs(i, j) // afunda toda a ilha
+                dfs(i, j) 
                 count++
             }
         }
