@@ -1,10 +1,10 @@
 package main
+
 import (
+    "bufio"
     "fmt"
     "os"
-    "bufio"
 )
-
 
 func isValid(s []byte, pos int, digit byte, L int) bool {
     for i, c := range s {
@@ -35,32 +35,32 @@ func backtrack(s []byte, dots []int, idx, L int) bool {
             if backtrack(s, dots, idx+1, L) {
                 return true                             
             }
-            s[pos] = '.'                               
+            s[pos] = '.'                                
         }
     }
 
+    return false
+}
 
 func main() {
-    
-    entrada := bufio.NewScanner(os.Stdin)
+    reader := bufio.NewReader(os.Stdin)
+
+    var seq string
+    fmt.Fscan(reader, &seq)
+
     var L int
-    var s string
+    fmt.Fscan(reader, &L)
 
-    for entrada.Scan() {
-        fmt.Sscanf(entrada.Text(), "%d %s", &L, &s)
-        sBytes := []byte(s)
-        var dots []int
+    s := []byte(seq)
 
-        for i, c := range sBytes {
-            if c == '.' {
-                dots = append(dots, i)
-            }
-        }
-
-        if backtrack(sBytes, dots, 0, L) {
-            fmt.Println(string(sBytes))
-        } else {
-            fmt.Println("NO SOLUTION")
+    
+    var dots []int
+    for i, c := range s {
+        if c == '.' {
+            dots = append(dots, i)
         }
     }
+
+    backtrack(s, dots, 0, L)
+    fmt.Println(string(s))
 }
