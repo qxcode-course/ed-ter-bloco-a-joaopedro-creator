@@ -4,3 +4,5 @@
 2026-05-19 18:41:44, MOVE, v:1, k:ed@cercado, mode:EDIT
 2026-05-19 18:42:52, MOVE, v:1, k:ed@cercado, mode:EDIT
 2026-05-19 18:55:17, MOVE, v:1, k:ed@cercado, mode:EDIT
+2026-05-19 18:58:22, MOVE, v:1, k:ed@cercado, mode:PICK
+2026-05-19 18:58:24, EXEC, v:1, k:ed@cercado, mode:FULL, rate:33, size:44
