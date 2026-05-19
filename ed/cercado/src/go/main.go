@@ -34,7 +34,18 @@ func solve(board [][]byte) {
 		dfs(board, 0, j)
 		dfs(board, nl-1, j)
 	}
-	
+
+	for i := 0; i < nl; i++ {
+		for j := 0; j < nc; j++ {
+			if board[i][j] == 'O' {
+				board[i][j] = 'X'
+			}
+			if board[i][j] == 'S' {
+				board[i][j] = 'O'
+			}
+		}
+	}
+
 }
 
 // NÃO ALTERE A MAIN
