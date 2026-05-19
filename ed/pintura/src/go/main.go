@@ -25,9 +25,13 @@ func dfs(image [][]int, sr, sc, color, originalColor int){
 
 // Não modifique a assinatura da função floodFill
 func floodFill(image [][]int, sr int, sc int, color int) [][]int {
-	//
-	_ := image
-	return 0
+	originalColor := image[sr][sc]
+	if originalColor == color {
+		return image
+	}
+
+	dfs(image, sr, sc, color, originalColor)
+	return image
 }
 
 // Não modifique a função main
