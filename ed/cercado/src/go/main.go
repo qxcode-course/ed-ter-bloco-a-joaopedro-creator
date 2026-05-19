@@ -23,6 +23,17 @@ func dfs(board [][]byte, i, j int) {
 
 // NÃO ALTERE A ASSINATURA DA FUNÇÃO solve
 func solve(board [][]byte) {
+	nl := len(board)
+	nc := len(board[0])
+
+	for i := 0; i < nl; i++ {
+		dfs(board, i, 0)
+		dfs(board, i, nc-1)
+	}
+	for j := 0; j < nc; j++ {
+		dfs(board, 0, j)
+		dfs(board, nl-1, j)
+	}
 	
 }
 
