@@ -14,3 +14,10 @@
 2026-05-19 19:18:30, MOVE, v:1, k:ed@cercado, mode:BACK
 2026-05-19 19:19:14, SELF, v:1, k:ed@cercado, self:1, rate:100, study:36, concept:1, refactor:1
 2026-05-19 19:21:06, SELF, v:1, k:ed@editorint, self:1, rate:100, study:140, concept:1, refactor:1
+2026-05-19 19:23:31, MOVE, v:1, k:ed@pintura, mode:DOWN
+2026-05-19 19:23:40, MOVE, v:1, k:ed@pintura, mode:PICK
+2026-05-19 19:23:31, MOVE, v:1, k:ed@pintura, mode:EDIT
+2026-05-19 19:23:31, MOVE, v:1, k:ed@pintura, mode:EDIT
+2026-05-19 19:23:31, MOVE, v:1, k:ed@pintura, mode:EDIT
+2026-05-19 19:39:11, EXEC, v:1, k:ed@pintura, mode:FULL, size:72, fail:COMP
+2026-05-19 19:40:14, EXEC, v:1, k:ed@pintura, mode:FULL, size:72, fail:COMP
