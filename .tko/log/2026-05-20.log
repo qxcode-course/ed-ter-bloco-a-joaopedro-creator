@@ -13,3 +13,11 @@
 2026-05-20 14:17:36, MOVE, v:1, k:ed@subset_sum, mode:PICK
 2026-05-20 14:17:37, EXEC, v:1, k:ed@subset_sum, mode:FULL, size:31, fail:COMP
 2026-05-20 14:18:26, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:33
+2026-05-20 14:20:30, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:44
+2026-05-20 14:20:51, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:100, size:44
+2026-05-20 14:20:44, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-05-20 14:20:51, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-05-20 14:24:17, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:100
+2026-05-20 14:25:07, MOVE, v:1, k:ed@subset_sum, mode:BACK
+2026-05-20 14:24:17, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-05-20 17:18:06, SELF, v:1, k:ed@subset_sum, self:1, rate:100, study:57, problem:1

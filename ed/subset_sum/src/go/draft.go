@@ -30,4 +30,15 @@ func main() {
    entrada := bufio.NewReader(os.Stdin)
    
    fmt.Fscan(entrada, &n, &k)
+
+    a = make([]int, n)
+    for i := 0; i < n; i++ {
+        fmt.Fscan(entrada, &a[i])
+    }
+
+    if backtrack(0, 0) {
+        fmt.Println("true")
+    } else {
+        fmt.Println("false")
+    }
 }

@@ -7,8 +7,18 @@
         },
         {
             "label": "2026-05-20_14-18-26",
-            "content": "package main\n\nimport (\n    \"bufio\"\n    \"fmt\"\n    \"os\"\n)\n\nvar a []int\nvar n, k int\n\nfunc backtrack(indice int, soma int) bool {\n    if soma == k{\n        return true\n    }\n    if indice == n{\n        return false\n    }\n    if soma > k {\n        return false\n    }\n\n    return backtrack(indice+1, soma) || backtrack(indice+1, soma + a[indice])\n\n}\n\n\n\nfunc main() {\n   entrada := bufio.NewReader(os.Stdin)\n   \n   fmt.Fscan(entrada, &n, &k)\n}\n",
+            "content": "@@ -432,195 +432,7 @@\n  &k)\n-%0A%0A    a = make(%5B%5Dint, n)%0A    for i := 0; i %3C n; i++ %7B%0A        fmt.Fscan(entrada, &a%5Bi%5D)%0A    %7D%0A%0A    if backtrack(0, 0) %7B%0A        fmt.Println(%22S%22)%0A    %7D else %7B%0A        fmt.Println(%22N%22)%0A    %7D\n %0A%7D%0A\n",
             "lines": "33"
+        },
+        {
+            "label": "2026-05-20_14-20-30",
+            "content": "@@ -569,20 +569,17 @@\n rintln(%22\n-true\n+S\n %22)%0A    %7D\n@@ -607,21 +607,17 @@\n rintln(%22\n-false\n+N\n %22)%0A    %7D\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-05-20_14-20-51",
+            "content": "package main\n\nimport (\n    \"bufio\"\n    \"fmt\"\n    \"os\"\n)\n\nvar a []int\nvar n, k int\n\nfunc backtrack(indice int, soma int) bool {\n    if soma == k{\n        return true\n    }\n    if indice == n{\n        return false\n    }\n    if soma > k {\n        return false\n    }\n\n    return backtrack(indice+1, soma) || backtrack(indice+1, soma + a[indice])\n\n}\n\n\n\nfunc main() {\n   entrada := bufio.NewReader(os.Stdin)\n   \n   fmt.Fscan(entrada, &n, &k)\n\n    a = make([]int, n)\n    for i := 0; i < n; i++ {\n        fmt.Fscan(entrada, &a[i])\n    }\n\n    if backtrack(0, 0) {\n        fmt.Println(\"true\")\n    } else {\n        fmt.Println(\"false\")\n    }\n}\n",
+            "lines": "44"
         }
     ]
 }
