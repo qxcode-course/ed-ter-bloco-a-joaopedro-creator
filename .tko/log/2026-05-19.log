@@ -28,3 +28,13 @@
 2026-05-19 19:51:12, SELF, v:1, k:ed@pintura, self:1, rate:100, study:26, concept:1, refactor:1
 2026-05-19 19:51:12, MOVE, v:1, k:ed@pintura, mode:PICK
 2026-05-19 19:51:20, MOVE, v:1, k:ed@pintura, mode:BACK
+2026-05-19 19:58:55, MOVE, v:1, k:ed@pintura, mode:PICK
+2026-05-19 19:58:56, EXEC, v:1, k:ed@pintura, mode:FULL, rate:100
+2026-05-19 19:59:02, MOVE, v:1, k:ed@pintura, mode:BACK
+2026-05-19 19:59:39, MOVE, v:1, k:ed@pintura, mode:PICK
+2026-05-19 20:00:18, EXEC, v:1, k:ed@pintura, mode:FULL, rate:100
+2026-05-19 20:00:20, MOVE, v:1, k:ed@pintura, mode:BACK
+2026-05-19 20:00:35, SELF, v:1, k:ed@pintura, self:1, rate:100, study:35, concept:1, refactor:1
+2026-05-19 20:01:11, SELF, v:1, k:ed@editorint, self:1, rate:100, study:140, concept:1, refactor:1
+2026-05-19 19:59:53, MOVE, v:1, k:ed@pintura, mode:EDIT
+2026-05-19 20:00:18, MOVE, v:1, k:ed@pintura, mode:EDIT
