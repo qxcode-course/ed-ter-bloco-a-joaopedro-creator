@@ -18,14 +18,13 @@ sources:
   type: git
   writeable: false
   quests: null
-expanded:
-- ed@backtrack
+expanded: []
 flags:
   inbox: all
-  panel: graph
-  show_panel: 'false'
+  panel: skills
+  show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@subset_sum
+selected: ed@list
 selected_index: 5
