@@ -25,11 +25,12 @@ if index == len(word) {
 if lin < 0 || lin >= len(grid) || col < 0 || col >= len(grid[lin]) || grid[lin][col] != word[index] {
 	return false
 }
-
+temp := grid[lin][col]
+grid[lin][col] = '#'
 if dfs(grid, word, lin+1, col, index+1) || dfs(grid, word, lin-1, col, index+1) || dfs(grid, word, lin, col+1, index+1) || dfs(grid, word, lin, col-1, index+1) {
 	return true
 }
-
+grid[lin][col] = temp
 return false
 }
 

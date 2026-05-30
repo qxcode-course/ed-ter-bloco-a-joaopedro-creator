@@ -13,3 +13,5 @@
 2026-05-30 17:02:49, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:75, size:83
 2026-05-30 17:02:48, MOVE, v:1, k:ed@wordsearch, mode:EDIT
 2026-05-30 17:02:49, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-05-30 17:04:16, EXEC, v:1, k:ed@wordsearch, mode:FULL, size:84, fail:COMP
+2026-05-30 17:04:37, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:100, size:84
