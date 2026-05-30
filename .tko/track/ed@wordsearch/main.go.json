@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-30_16-45-36",
+            "content": "@@ -397,305 +397,8 @@\n e%0A%7D%0A\n-if lin %3C 0 %7C%7C lin %3E= len(grid) %7C%7C col %3C 0 %7C%7C col %3E= len(grid%5Blin%5D) %7C%7C grid%5Blin%5D%5Bcol%5D != word%5Bindex%5D %7B%0A%09return false%0A%7D%0A%0Aif dfs(grid, word, lin+1, col, index+1) %7C%7C dfs(grid, word, lin-1, col, index+1) %7C%7C dfs(grid, word, lin, col+1, index+1) %7C%7C dfs(grid, word, lin, col-1, index+1) %7B%0A%09return true%0A%7D%0A%0A\n retu\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-05-30_17-02-49",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n// N\u00e3o mude a assinatura desta fun\u00e7\u00e3o, ela \u00e9 a fun\u00e7\u00e3o chamada pelo LeetCode\nfunc exist(grid [][]byte, word string) bool {\n\tfor i := range grid {\n\t\tfor j := range grid[i]{\n\t\t\tif dfs(grid, word, i, j, 0) {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\t}\n\treturn false\n}\n\nfunc dfs(grid [][]byte, word string,lin, col, index int) bool {\nif index == len(word) {\n\treturn true\n}\nif lin < 0 || lin >= len(grid) || col < 0 || col >= len(grid[lin]) || grid[lin][col] != word[index] {\n\treturn false\n}\n\nif dfs(grid, word, lin+1, col, index+1) || dfs(grid, word, lin-1, col, index+1) || dfs(grid, word, lin, col+1, index+1) || dfs(grid, word, lin, col-1, index+1) {\n\treturn true\n}\n\nreturn false\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar word string\n\tfmt.Sscanf(scanner.Text(), \"%s\", &word)\n\tgrid := make([][]byte, 0)\n\tfor scanner.Scan() {\n\t\tgrid = append(grid, []byte(scanner.Text()))\n\t}\n\tif exist(grid, word) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n}\n",
+            "lines": "50"
+        }
+    ]
+}
