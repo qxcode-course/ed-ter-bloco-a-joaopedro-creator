@@ -18,7 +18,8 @@ sources:
   type: git
   writeable: false
   quests: null
-expanded: []
+expanded:
+- ed@list
 flags:
   inbox: all
   panel: skills
@@ -26,5 +27,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@linear
-selected_index: 6
+selected: ed@lista_d3
+selected_index: 11
