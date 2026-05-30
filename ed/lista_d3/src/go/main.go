@@ -45,6 +45,16 @@ func (l *LList) insertBefore(mark *Node, value int) {
 	l.size++
 }
 
+func (l *LList) String() string {
+    var parts []string
+    n := l.root.next
+    for n != l.root {
+        parts = append(parts, strconv.Itoa(n.Value))
+        n = n.next
+    }
+    return "[" + strings.Join(parts, ", ") + "]"
+}
+
 func equals(a, b *LList) bool {
 	if a.size != b.size {
 		return false

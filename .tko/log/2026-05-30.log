@@ -42,3 +42,6 @@
 2026-05-30 17:33:45, MOVE, v:1, k:ed@lista_d3, mode:EDIT
 2026-05-30 17:33:39, MOVE, v:1, k:ed@lista_d3, mode:EDIT
 2026-05-30 17:39:04, EXEC, v:1, k:ed@lista_d3, mode:FULL, rate:25, size:168
+2026-05-30 17:39:02, MOVE, v:1, k:ed@lista_d3, mode:EDIT
+2026-05-30 17:39:04, MOVE, v:1, k:ed@lista_d3, mode:EDIT
+2026-05-30 17:41:50, EXEC, v:1, k:ed@lista_d3, mode:FULL, rate:100, size:178
