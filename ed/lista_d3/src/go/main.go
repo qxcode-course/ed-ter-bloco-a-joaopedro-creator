@@ -42,6 +42,7 @@ func (l *LList) insertBefore(mark *Node, value int) {
 	n.next = mark
 	mark.prev.next = n
 	mark.prev = n
+	l.size++
 }
 
 func equals(a, b *LList) bool {
