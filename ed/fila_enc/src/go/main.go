@@ -101,14 +101,14 @@ func main() {
 		case "show":
 			fmt.Println(queue)
 		case "push":
-			// for _, arg := range args[1:] {
-			// 	value, _ := strconv.Atoi(arg)
-			// 	queue.Enqueue(value)
-			// }
+			for _, arg := range args[1:] {
+				value, _ := strconv.Atoi(arg)
+				queue.Enqueue(value)
+			}
 		case "pop":
-			// if _, ok := queue.Dequeue(); !ok {
-			// 	fmt.Println("falha: fila vazia")
-			// }
+			if _, ok := queue.Dequeue(); !ok {
+				fmt.Println("falha: fila vazia")
+			}
 		case "peek":
 			if value, ok := queue.Peek(); ok {
 				fmt.Println(value)
