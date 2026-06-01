@@ -117,6 +117,7 @@ func main() {
 			}
 		default:
 			fmt.Println("Unknown command:", args[0])
+			
 		}
 	}
 }
