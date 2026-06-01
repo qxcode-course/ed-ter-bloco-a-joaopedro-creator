@@ -83,7 +83,12 @@ func (b* Deque) PopFront() error {
 	return nil
 }
 
-
+func (b* Deque) Front() (int, error) {
+	if b.size == 0 {
+		return 0, fmt.Errorf("fail: deque vazio")
+	}
+	return b.data[b.front], nil	
+}
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	buf := &Deque{data: make([]int, 4), capacity: 4}
@@ -129,11 +134,11 @@ func main() {
 				fmt.Println(err)
 			}
 		case "front":
-			// if val, err := buf.Front(); err != nil {
-			// 	fmt.Println(err)
-			// } else {
-			// 	fmt.Println(val)
-			// }
+			if val, err := buf.Front(); err != nil {
+				fmt.Println(err)
+			} else {
+				fmt.Println(val)
+			}
 		case "back":
 			// if val, err := buf.Back(); err != nil {
 			// 	fmt.Println(err)
