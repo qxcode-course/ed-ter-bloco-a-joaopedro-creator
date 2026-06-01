@@ -45,18 +45,18 @@ func (s *Stack[T]) Push(value T) {
 
 func (s *Stack[T]) Pop() error {
 	if len(s.data) == 0 {
-		return fmt.Errorf("fail: pilha vazia")
+		return fmt.Errorf("stack is empty")
 	}
 	s.data = s.data[:len(s.data)-1]
 	return nil
 }
 
-func (s *Stack[T]) Peek() (T, bool){
+func (s *Stack[T]) Peek() (T, error) {
 	if len(s.data) == 0{
 		var zero T
-		return zero, false
+		return zero, fmt.Errorf("stack is empty")
 	}
-	return s.data[len(s.data)-1], true
+	return s.data[len(s.data)-1], nil
  }
 
 func main() {
