@@ -21,11 +21,11 @@ sources:
 expanded:
 - ed@linear
 flags:
-  inbox: inbox
-  panel: graph
+  inbox: all
+  panel: skills
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@fila_enc
-selected_index: 6
+selected: ed@bufferring
+selected_index: 7
