@@ -91,3 +91,4 @@
 2026-06-01 18:30:30, EXEC, v:1, k:ed@pilha, mode:FULL, rate:0, size:98
 2026-06-01 18:31:53, EXEC, v:1, k:ed@pilha, mode:FULL, rate:0, size:105
 2026-06-01 18:32:40, EXEC, v:1, k:ed@pilha, mode:FULL, rate:33, size:105
+2026-06-01 18:33:45, EXEC, v:1, k:ed@pilha, mode:FULL, size:113, fail:COMP

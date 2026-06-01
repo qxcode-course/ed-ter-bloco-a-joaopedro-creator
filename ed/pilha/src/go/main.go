@@ -51,6 +51,14 @@ func (s *Stack[T]) Pop() error {
 	return nil
 }
 
+func (s *Stack[T]) Peek() (T, bool){
+	if len(s.data) == 0{
+		var zero T
+		return zero, false
+	}
+	return s.data[len(s.data)-1], true
+ }
+
 func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
@@ -83,12 +91,12 @@ func main() {
 		case "debug":
 			 fmt.Println(v)
 		case "top":
-			// top, err := v.Peek()
-			// if err != nil {
-			// 	fmt.Println(err)
-			// } else {
-			// 	fmt.Println(top)
-			// }
+			top, err := v.Peek()
+			if err != nil {
+				fmt.Println(err)
+			} else {
+				fmt.Println(top)
+			}
 		case "size":
 			fmt.Println(v.Size())
 		case "pop":
