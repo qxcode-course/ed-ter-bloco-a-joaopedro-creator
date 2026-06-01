@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"strconv"
 )
 
 type Stack[T any] struct {
@@ -26,11 +27,23 @@ func (s *Stack[T]) String() string {
 	return output
 }
 
+func NewStack[T any](capacity int) *Stack[T] {
+	return &Stack[T]{data: make([]T, 0, capacity)}
+}
+
+func (s *Stack[T]) Size() int{
+	return len(s.data)
+}
+
+func (s *Stack[T]) Clear(){
+	s.data = s.data[:0]
+}
+
 func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
 
-	// v := NewStack[int](10)
+	v := NewStack[int](10)
 	for {
 		fmt.Print("$")
 		if !scanner.Scan() {
@@ -48,8 +61,8 @@ func main() {
 		case "end":
 			return
 		case "init":
-			// cap, _ := strconv.Atoi(parts[1])
-			// v = NewStack[int](cap)
+			cap, _ := strconv.Atoi(parts[1])
+			v = NewStack[int](cap)
 		case "push":
 			// for _, part := range parts[1:] {
 			// 	value, _ := strconv.Atoi(part)
@@ -65,14 +78,14 @@ func main() {
 			// 	fmt.Println(top)
 			// }
 		case "size":
-			// fmt.Println(v.Size())
+			fmt.Println(v.Size())
 		case "pop":
 			// err := v.Pop()
 			// if err != nil {
 			// 	fmt.Println(err)
 			// }
 		case "clear":
-			// v.Clear()
+			v.Clear()
 		default:
 			fmt.Println("fail: comando invalido")
 		}
