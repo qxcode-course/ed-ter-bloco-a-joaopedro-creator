@@ -18,7 +18,19 @@ func (q *Queue[T]) Enqueue(value T){
 	}
 	q.size++
 }
-// func (q *Queue[T]) Dequeue() (T, bool)
+func (q *Queue[T]) Dequeue() (T, bool){
+	if q.head == nil {
+		var zero T
+		return zero, false
+	}
+	value := q.head.Value
+	q.head = q.head.next
+	if q.head == nil {
+		q.tail = nil
+	}
+	q.size--
+	return value, true
+}
 // func (q *Queue[T]) Peek() (T, bool)
 // func (q *Queue[T]) Size() int
 // func (q *Queue[T]) IsEmpty() bool
@@ -67,7 +79,7 @@ func main() {
 		}
 		switch args[0] {
 		case "end":
-			break
+			return
 		case "show":
 			fmt.Println(queue)
 		case "push":
