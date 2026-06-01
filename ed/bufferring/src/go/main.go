@@ -78,12 +78,13 @@ func (b *Deque) PushFront(value int) {
 	}
 	index := (b.front- 1 + b.capacity) % b.capacity
 	b.data[index] = value
+	b.front = index
 	b.size++
 }
 
 func (b* Deque) PopBack() error {
 	if b.size == 0 {
-		return fmt.Errorf("fail: deque vazio")
+		return fmt.Errorf("fail: buffer vazio")
 	}
 	b.size--
 	return nil
@@ -91,7 +92,7 @@ func (b* Deque) PopBack() error {
 
 func (b* Deque) PopFront() error {
 	if b.size == 0 {
-		return fmt.Errorf("fail: deque vazio")
+		return fmt.Errorf("fail: buffer vazio")
 	}
 	b.front = (b.front + 1) % b.capacity
 	b.size--
