@@ -30,3 +30,8 @@
 2026-06-01 17:09:59, MOVE, v:1, k:ed@bufferring, mode:EDIT
 2026-06-01 17:07:47, MOVE, v:1, k:ed@bufferring, mode:EDIT
 2026-06-01 17:11:09, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:16, size:175
+2026-06-01 17:14:29, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:33, size:178
+2026-06-01 17:14:24, MOVE, v:1, k:ed@bufferring, mode:EDIT
+2026-06-01 17:14:29, MOVE, v:1, k:ed@bufferring, mode:EDIT
+2026-06-01 17:15:43, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:33, size:178
+2026-06-01 17:17:02, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:33, size:185

@@ -52,6 +52,9 @@ func (b *Deque) PushBack(value int) {
 	if b.size == b.capacity {
 		newData := make([]int, b.capacity*2)
 
+	for i := range b.size {
+    newData[i] = b.data[(b.front+i)%b.capacity]
+}
 	b.data = newData
 	b.capacity = b.capacity * 2
 	b.front = 0
@@ -64,9 +67,16 @@ func (b *Deque) PushBack(value int) {
 
 func (b *Deque) PushFront(value int) {
 	if b.size == b.capacity {
-		return
+		newData := make([]int, b.capacity*2)
+
+	for i := range b.size {
+    newData[i] = b.data[(b.front+i)%b.capacity]
+}
+	b.data = newData
+	b.capacity = b.capacity * 2
+	b.front = 0
 	}
-	index := (b.front- 1 + b.size) % b.capacity
+	index := (b.front- 1 + b.capacity) % b.capacity
 	b.data[index] = value
 	b.size++
 }
