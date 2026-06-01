@@ -50,11 +50,16 @@ func (b *Deque) Len() int {
 
 func (b *Deque) PushBack(value int) {
 	if b.size == b.capacity {
-		return
+		newData := make([]int, b.capacity*2)
+
+	b.data = newData
+	b.capacity = b.capacity * 2
+	b.front = 0
 	}
 	index := (b.front + b.size) % b.capacity
 	b.data[index] = value
 	b.size++
+	
 }
 
 func (b *Deque) PushFront(value int) {
