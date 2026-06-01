@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"strconv"
 )
 
 func (q *Queue[T]) Enqueue(value T){
@@ -31,11 +32,28 @@ func (q *Queue[T]) Dequeue() (T, bool){
 	q.size--
 	return value, true
 }
-// func (q *Queue[T]) Peek() (T, bool)
-// func (q *Queue[T]) Size() int
-// func (q *Queue[T]) IsEmpty() bool
-// func (q *Queue[T]) Clear()
+func (q *Queue[T]) Peek() (T, bool){
+	if q.head == nil{
+		var zero T
+		return zero, false
+	}
+	return q.head.Value, true
+ }
+func (q *Queue[T]) Size() int{
+	return q.size
+}
 
+func (q *Queue[T]) Clear(){
+	q.head = nil
+	q.tail = nil
+	q.size = 0
+}
+func (q *Queue[T]) IsEmpty() bool{
+	if q.size == 0 {
+		return true
+	}
+	return false
+}
 
 type Node[T any] struct {
 	Value T
@@ -92,11 +110,11 @@ func main() {
 			// 	fmt.Println("falha: fila vazia")
 			// }
 		case "peek":
-			// if value, ok := queue.Peek(); ok {
-			// 	fmt.Println(value)
-			// } else {
-			// 	fmt.Println("falha: fila vazia")
-			// }
+			if value, ok := queue.Peek(); ok {
+				fmt.Println(value)
+			} else {
+				fmt.Println("falha: fila vazia")
+			}
 		default:
 			fmt.Println("Unknown command:", args[0])
 		}

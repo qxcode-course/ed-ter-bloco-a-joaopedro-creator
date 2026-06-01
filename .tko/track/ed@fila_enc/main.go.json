@@ -7,8 +7,33 @@
         },
         {
             "label": "2026-06-01_17-52-35",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n)\n\nfunc (q *Queue[T]) Enqueue(value T){\n\tnewNode := &Node[T]{Value: value}\n\tif q.tail == nil {\n\t\tq.head = newNode\n\t\tq.tail = newNode\n\t} else {\n\t\tq.tail.next = newNode\n\t\tq.tail = newNode\n\t}\n\tq.size++\n}\nfunc (q *Queue[T]) Dequeue() (T, bool){\n\tif q.head == nil {\n\t\tvar zero T\n\t\treturn zero, false\n\t}\n\tvalue := q.head.Value\n\tq.head = q.head.next\n\tif q.head == nil {\n\t\tq.tail = nil\n\t}\n\tq.size--\n\treturn value, true\n}\n// func (q *Queue[T]) Peek() (T, bool)\n// func (q *Queue[T]) Size() int\n// func (q *Queue[T]) IsEmpty() bool\n// func (q *Queue[T]) Clear()\n\n\ntype Node[T any] struct {\n\tValue T\n\tnext  *Node[T]\n}\n\ntype Queue[T any] struct {\n\thead *Node[T]\n\ttail *Node[T]\n\tsize int\n}\n\nfunc NewQueue[T any]() *Queue[T] {\n\treturn &Queue[T]{}\n}\n\nfunc (q *Queue[T]) String() string {\n\tresult := \"[\"\n\tfor n := q.head; n != nil; n = n.next {\n\t\tif n != q.head {\n\t\t\tresult += \", \"\n\t\t}\n\t\tresult += fmt.Sprintf(\"%v\", n.Value)\n\t}\n\treturn result + \"]\"\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tqueue := NewQueue[int]()\n\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline := scanner.Text()\n\t\tfmt.Println(\"$\" + line)\n\t\targs := strings.Fields(line)\n\t\tif len(args) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tswitch args[0] {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"show\":\n\t\t\tfmt.Println(queue)\n\t\tcase \"push\":\n\t\t\t// for _, arg := range args[1:] {\n\t\t\t// \tvalue, _ := strconv.Atoi(arg)\n\t\t\t// \tqueue.Enqueue(value)\n\t\t\t// }\n\t\tcase \"pop\":\n\t\t\t// if _, ok := queue.Dequeue(); !ok {\n\t\t\t// \tfmt.Println(\"falha: fila vazia\")\n\t\t\t// }\n\t\tcase \"peek\":\n\t\t\t// if value, ok := queue.Peek(); ok {\n\t\t\t// \tfmt.Println(value)\n\t\t\t// } else {\n\t\t\t// \tfmt.Println(\"falha: fila vazia\")\n\t\t\t// }\n\t\tdefault:\n\t\t\tfmt.Println(\"Unknown command:\", args[0])\n\t\t}\n\t}\n}\n",
+            "content": "@@ -462,16 +462,18 @@\n  true%0A%7D%0A\n+//\n  func (q\n@@ -504,96 +504,8 @@\n ool)\n-%7B%0A%09if q.head == nill%7B%0A%09%09var zero T%0A%09%09return zero, false%0A%09%7D%0A%09return q.head.Value, true%0A %7D\n %0A// \n",
             "lines": "104"
+        },
+        {
+            "label": "2026-06-01_18-01-34",
+            "content": "@@ -517,16 +517,17 @@\n d == nil\n+l\n %7B%0A%09%09var \n",
+            "lines": "110"
+        },
+        {
+            "label": "2026-06-01_18-01-42",
+            "content": "@@ -462,16 +462,17 @@\n  true%0A%7D%0A\n+ \n func (q \n@@ -586,16 +586,19 @@\n true%0A %7D%0A\n+// \n func (q \n@@ -622,26 +622,8 @@\n  int\n-%7B%0A%09return q.size%0A%7D\n %0A// \n@@ -1639,16 +1639,19 @@\n ek%22:%0A%09%09%09\n+// \n if value\n@@ -1676,24 +1676,27 @@\n (); ok %7B%0A%09%09%09\n+// \n %09fmt.Println\n@@ -1706,16 +1706,19 @@\n lue)%0A%09%09%09\n+// \n %7D else %7B\n@@ -1721,16 +1721,19 @@\n se %7B%0A%09%09%09\n+// \n %09fmt.Pri\n@@ -1761,16 +1761,19 @@\n ia%22)%0A%09%09%09\n+// \n %7D%0A%09%09defa\n",
+            "lines": "110"
+        },
+        {
+            "label": "2026-06-01_18-05-30",
+            "content": "@@ -633,17 +633,19 @@\n .size%0A%7D%0A\n-%0A\n+// \n func (q \n@@ -659,58 +659,22 @@\n T%5D) \n-Clear()%7B%0A%09q.head = nil%0A%09q.tail = nil%0A%09q.size = 0%0A%7D\n+IsEmpty() bool\n %0A// \n@@ -692,30 +692,24 @@\n eue%5BT%5D) \n-IsEmpty() bool\n+Clear()%0A\n %0A%0Atype N\n",
+            "lines": "112"
+        },
+        {
+            "label": "2026-06-01_18-06-49",
+            "content": "@@ -704,16 +704,19 @@\n e = 0%0A%7D%0A\n+// \n func (q \n@@ -744,60 +744,8 @@\n bool\n-%7B%0A%09if q.size == 0 %7B%0A%09%09return true%0A%09%7D%0A%09return false%0A%7D\n %0A%0Aty\n",
+            "lines": "116"
+        },
+        {
+            "label": "2026-06-01_18-07-47",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n)\n\nfunc (q *Queue[T]) Enqueue(value T){\n\tnewNode := &Node[T]{Value: value}\n\tif q.tail == nil {\n\t\tq.head = newNode\n\t\tq.tail = newNode\n\t} else {\n\t\tq.tail.next = newNode\n\t\tq.tail = newNode\n\t}\n\tq.size++\n}\nfunc (q *Queue[T]) Dequeue() (T, bool){\n\tif q.head == nil {\n\t\tvar zero T\n\t\treturn zero, false\n\t}\n\tvalue := q.head.Value\n\tq.head = q.head.next\n\tif q.head == nil {\n\t\tq.tail = nil\n\t}\n\tq.size--\n\treturn value, true\n}\nfunc (q *Queue[T]) Peek() (T, bool){\n\tif q.head == nil{\n\t\tvar zero T\n\t\treturn zero, false\n\t}\n\treturn q.head.Value, true\n }\nfunc (q *Queue[T]) Size() int{\n\treturn q.size\n}\n\nfunc (q *Queue[T]) Clear(){\n\tq.head = nil\n\tq.tail = nil\n\tq.size = 0\n}\nfunc (q *Queue[T]) IsEmpty() bool{\n\tif q.size == 0 {\n\t\treturn true\n\t}\n\treturn false\n}\n\ntype Node[T any] struct {\n\tValue T\n\tnext  *Node[T]\n}\n\ntype Queue[T any] struct {\n\thead *Node[T]\n\ttail *Node[T]\n\tsize int\n}\n\nfunc NewQueue[T any]() *Queue[T] {\n\treturn &Queue[T]{}\n}\n\nfunc (q *Queue[T]) String() string {\n\tresult := \"[\"\n\tfor n := q.head; n != nil; n = n.next {\n\t\tif n != q.head {\n\t\t\tresult += \", \"\n\t\t}\n\t\tresult += fmt.Sprintf(\"%v\", n.Value)\n\t}\n\treturn result + \"]\"\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tqueue := NewQueue[int]()\n\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline := scanner.Text()\n\t\tfmt.Println(\"$\" + line)\n\t\targs := strings.Fields(line)\n\t\tif len(args) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tswitch args[0] {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"show\":\n\t\t\tfmt.Println(queue)\n\t\tcase \"push\":\n\t\t\t// for _, arg := range args[1:] {\n\t\t\t// \tvalue, _ := strconv.Atoi(arg)\n\t\t\t// \tqueue.Enqueue(value)\n\t\t\t// }\n\t\tcase \"pop\":\n\t\t\t// if _, ok := queue.Dequeue(); !ok {\n\t\t\t// \tfmt.Println(\"falha: fila vazia\")\n\t\t\t// }\n\t\tcase \"peek\":\n\t\t\tif value, ok := queue.Peek(); ok {\n\t\t\t\tfmt.Println(value)\n\t\t\t} else {\n\t\t\t\tfmt.Println(\"falha: fila vazia\")\n\t\t\t}\n\t\tdefault:\n\t\t\tfmt.Println(\"Unknown command:\", args[0])\n\t\t}\n\t}\n}\n",
+            "lines": "121"
         }
     ]
 }
