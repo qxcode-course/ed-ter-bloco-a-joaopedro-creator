@@ -61,7 +61,7 @@ func (b *Deque) PushFront(value int) {
 	if b.size == b.capacity {
 		return
 	}
-	index := (b.front + b.size) % b.capacity
+	index := (b.front- 1 + b.size) % b.capacity
 	b.data[index] = value
 	b.size++
 }
