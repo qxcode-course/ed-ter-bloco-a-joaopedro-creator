@@ -2,8 +2,13 @@
     "patches": [
         {
             "label": "2026-06-02_19-31-42",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tq := NewQueue[string]()\n\tfor i := 0; i < 16; i++ {\n\t\tq.Enqueue(string(rune('A' + i)))\n\t}\n\n\tfor q.items.Len() > 1{\n\t\tesquerda := q.Dequeue()\n\t\tdireita := q.Dequeue()\n\n\t\tvar Egols, Dgols int\n\t\t\n\t}\n\t fmt.Println(q.Dequeue())\n}\n",
+            "content": "@@ -81,12 +81,13 @@\n .New\n-Read\n+Scann\n er(o\n@@ -291,125 +291,8 @@\n t%0A%09%09\n- fmt.Fscan(scanner, &Egols, &Dgols)%0A%0A%09%09if Egols %3E Dgols %7B%0A%09%09%09q.Enqueue(esquerda)%0A%09%09%7D else %7B%0A%09%09%09q.Enqueue(direita)%0A%09%09%7D\n %0A%09%7D%0A\n",
             "lines": "25"
+        },
+        {
+            "label": "2026-06-02_19-37-14",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n\nfunc main() {\n\tscanner := bufio.NewReader(os.Stdin)\n\tq := NewQueue[string]()\n\tfor i := 0; i < 16; i++ {\n\t\tq.Enqueue(string(rune('A' + i)))\n\t}\n\n\tfor q.items.Len() > 1{\n\t\tesquerda := q.Dequeue()\n\t\tdireita := q.Dequeue()\n\n\t\tvar Egols, Dgols int\n\t\t fmt.Fscan(scanner, &Egols, &Dgols)\n\n\t\tif Egols > Dgols {\n\t\t\tq.Enqueue(esquerda)\n\t\t} else {\n\t\t\tq.Enqueue(direita)\n\t\t}\n\t}\n\t fmt.Println(q.Dequeue())\n}\n",
+            "lines": "31"
         }
     ]
 }
