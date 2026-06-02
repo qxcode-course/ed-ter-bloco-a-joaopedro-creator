@@ -26,12 +26,12 @@ stack.Push(Pos{l, c})
 
 	for !stack.IsEmpty() {
 		pos := stack.Pop()
-		if !is_value(grid, pos.l, pos.c, 'o') {
+		if !is_value(grid, pos.l, pos.c, '#') {
 			continue
 		}
 
 		
-		grid[pos.l][pos.c] = '#'
+		grid[pos.l][pos.c] = 'o'
 
 		
 		stack.Push(Pos{pos.l, pos.c + 1})
