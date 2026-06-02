@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-02_19-31-42",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tq := NewQueue[string]()\n\tfor i := 0; i < 16; i++ {\n\t\tq.Enqueue(string(rune('A' + i)))\n\t}\n\n\tfor q.items.Len() > 1{\n\t\tesquerda := q.Dequeue()\n\t\tdireita := q.Dequeue()\n\n\t\tvar Egols, Dgols int\n\t\t\n\t}\n\t fmt.Println(q.Dequeue())\n}\n",
+            "lines": "25"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+2026-06-02 19:05:54, MOVE, v:1, k:ed@chaves, mode:DOWN
+2026-06-02 19:06:02, MOVE, v:1, k:ed@chaves, mode:PICK
+2026-06-02 19:05:54, MOVE, v:1, k:ed@chaves, mode:EDIT
+2026-06-02 19:05:54, MOVE, v:1, k:ed@chaves, mode:EDIT
+2026-06-02 19:05:54, MOVE, v:1, k:ed@chaves, mode:EDIT
+2026-06-02 19:05:54, MOVE, v:1, k:ed@chaves, mode:EDIT
+2026-06-02 19:08:02, MOVE, v:1, k:ed@chaves, mode:EDIT
+2026-06-02 19:26:54, MOVE, v:1, k:ed@chaves, mode:EDIT
+2026-06-02 19:31:42, EXEC, v:1, k:ed@chaves, mode:FULL, size:65, fail:COMP
+2026-06-02 19:31:33, MOVE, v:1, k:ed@chaves, mode:EDIT
