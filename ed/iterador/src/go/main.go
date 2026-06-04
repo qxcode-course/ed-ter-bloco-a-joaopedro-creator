@@ -110,13 +110,13 @@ func main() {
 			}
 			fmt.Println("]")
 		case "cyclic":
-			// qtd, _ := strconv.Atoi(args[1])
-			// fmt.Print("[ ")
-			// it := mylist.CyclicIterator()
-			// for range qtd {
-			// 	fmt.Printf("%v ", it.Next())
-			// }
-			// fmt.Println("]")
+			qtd, _ := strconv.Atoi(args[1])
+			fmt.Print("[ ")
+			it := mylist.CyclicIterator()
+			for range qtd {
+				fmt.Printf("%v ", it.Next())
+			}
+			fmt.Println("]")
 		}
 	}
 

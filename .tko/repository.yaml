@@ -22,10 +22,10 @@ expanded:
 - ed@vector
 flags:
   inbox: all
-  panel: skills
+  panel: graph
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@iterador
-selected_index: 9
+selected: ed@map_set
+selected_index: 0
