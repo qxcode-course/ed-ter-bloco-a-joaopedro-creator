@@ -28,21 +28,22 @@ func longestIncreasingPath(matrix [][]int) int {
 	return result
 }
 
+var dirs = [][]int{{-1,0}, {1,0}, {0,-1}, {0,1}}
 func dfs(matrix [][]int, i, j int, memo [][]int) int {
 	if memo[i][j] !=0{
 		return memo[i][j]
 	}
 	m, n := len(matrix), len(matrix[0])
-	maxResult :=1
+	maxLen :=1
 	for _, d := range dirs{
 		ni, nj := i + d[0], j + d[1]
 		if ni >= 0 && ni < m && nj >= 0 && nj < n && matrix[ni][nj] > matrix[i][j]{
-			maxResult = max(maxResult, 1 + dfs(matrix, ni, nj, memo))
+			maxLen = max(maxLen, 1 + dfs(matrix, ni, nj, memo))	
 		}
 	}
-	memo[i][j] = maxResult
+	memo[i][j] = maxLen
 
-	return maxResult
+	return maxLen
 }
 
 // Não modifique a função main

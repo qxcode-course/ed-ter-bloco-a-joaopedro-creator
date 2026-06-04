@@ -1,3 +1,6 @@
 2026-06-04 16:33:43, MOVE, v:1, k:ed@longest, mode:PICK
 2026-06-04 16:41:54, MOVE, v:1, k:ed@longest, mode:EDIT
 2026-06-04 16:46:34, MOVE, v:1, k:ed@longest, mode:EDIT
+2026-06-04 16:49:47, EXEC, v:1, k:ed@longest, mode:FULL, size:77, fail:COMP
+2026-06-04 16:52:05, MOVE, v:1, k:ed@longest, mode:EDIT
+2026-06-04 16:53:25, EXEC, v:1, k:ed@longest, mode:FULL, rate:100, size:78
