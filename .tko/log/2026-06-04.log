@@ -51,3 +51,6 @@
 2026-06-04 18:09:26, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:100, size:50
 2026-06-04 18:09:34, MOVE, v:1, k:ed@magicsearch, mode:BACK
 2026-06-04 18:10:11, SELF, v:1, k:ed@magicsearch, self:1, rate:100, study:30, concept:1, problem:1
+2026-06-04 18:11:09, MOVE, v:1, k:ed@iterador, mode:DOWN
+2026-06-04 18:11:41, MOVE, v:1, k:ed@iterador, mode:PICK
+2026-06-04 18:12:16, EXEC, v:1, k:ed@iterador, mode:FULL, rate:33, size:82
