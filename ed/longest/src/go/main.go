@@ -9,24 +9,40 @@ import (
 )
 
 func longestIncreasingPath(matrix [][]int) int {
-	maior :=0
-	var dfs func(i, j int) int
-	dfs = func(i, j int) int {
-		if i < 0 || i >= len(matrix) || j < 0 || j >= len(matrix[0]) {
-			return 0
+	if len(matrix) == 0 || len(matrix[0]) == 0 {
+		return 0
+	}
+
+	m , n := len(matrix), len(matrix[0])
+	memo := make([][]int, m)
+	for i := range memo {
+		memo[i] = make([]int, n)
+	}
+
+	result := 0
+	for i := 0; i<m;i++{
+		for j := 0; j<n;j++{
+			result = max(result, dfs(matrix, i, j, memo))
 		}
-		current := matrix[i][j]
-		matrix[i][j] = -1
-		maxPath := 1
-		directions := [][]int{{-1, 0}, {1, 0}, {0, -1}, {0, 1}}
-		for _, d := range directions {
-			ni, nj := i+d[0], j+d[1]
-			if ni >= 0 && ni < len(matrix) && nj >= 0 && nj < len(matrix[0]) && matrix[ni][nj] > current {
-				pathLength := 1 + dfs(ni, nj)
-				if pathLength > maxPath {
-					maxPath = pathLength
-				}
-	return 0
+	}
+	return result
+}
+
+func dfs(matrix [][]int, i, j int, memo [][]int) int {
+	if memo[i][j] !=0{
+		return memo[i][j]
+	}
+	m, n := len(matrix), len(matrix[0])
+	maxResult :=1
+	for _, d := range dirs{
+		ni, nj := i + d[0], j + d[1]
+		if ni >= 0 && ni < m && nj >= 0 && nj < n && matrix[ni][nj] > matrix[i][j]{
+			maxResult = max(maxResult, 1 + dfs(matrix, ni, nj, memo))
+		}
+	}
+	memo[i][j] = maxResult
+
+	return maxResult
 }
 
 // Não modifique a função main
