@@ -10,7 +10,7 @@ import (
 
 func MagicSearch(slice []int, value int) int {
 	low := 0
-	high := len(slice)
+	high := len(slice)-1
 
 	for low < high {
 		mid := low + (high-low)/2 
@@ -20,6 +20,8 @@ func MagicSearch(slice []int, value int) int {
 		}
 		if slice[mid] < value {
 			low = mid + 1
+		}else {
+			high = mid -1
 		}
 		
 	}
