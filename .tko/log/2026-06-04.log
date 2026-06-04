@@ -35,3 +35,14 @@
 2026-06-04 18:02:26, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:10, size:45
 2026-06-04 18:02:47, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:10, size:45
 2026-06-04 18:03:15, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:50, size:47
+2026-06-04 18:03:42, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:50, size:47
+2026-06-04 18:03:42, MOVE, v:1, k:ed@magicsearch, mode:EDIT
+2026-06-04 18:03:42, MOVE, v:1, k:ed@magicsearch, mode:EDIT
+2026-06-04 18:04:05, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:50, size:47
+2026-06-04 18:04:19, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:70, size:47
+2026-06-04 18:04:31, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:70
+2026-06-04 18:05:45, EXEC, v:1, k:ed@magicsearch, mode:FULL, size:50, fail:COMP
+2026-06-04 18:06:28, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:80, size:50
+2026-06-04 18:06:57, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:80, size:50
+2026-06-04 18:07:38, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:70, size:50
+2026-06-04 18:07:45, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:70
