@@ -27,3 +27,9 @@
 2026-06-04 17:45:01, MOVE, v:1, k:ed@magicsearch, mode:BACK
 2026-06-04 17:45:27, MOVE, v:1, k:ed@magicsearch, mode:PICK
 2026-06-04 17:45:31, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:30, size:30
+2026-06-04 17:46:28, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:30
+2026-06-04 17:46:28, MOVE, v:1, k:ed@magicsearch, mode:EDIT
+2026-06-04 17:48:06, MOVE, v:1, k:ed@magicsearch, mode:EDIT
+2026-06-04 17:53:19, MOVE, v:1, k:ed@magicsearch, mode:EDIT
+2026-06-04 17:58:24, MOVE, v:1, k:ed@magicsearch, mode:EDIT
+2026-06-04 18:02:26, EXEC, v:1, k:ed@magicsearch, mode:FULL, rate:10, size:45
