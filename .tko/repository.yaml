@@ -27,5 +27,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@longest
-selected_index: 13
+selected: ed@battleship
+selected_index: 14
