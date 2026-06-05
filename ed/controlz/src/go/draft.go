@@ -80,6 +80,6 @@ func main() {
         redoStack = nil
     }
     }
-    texto = append(texto[:cursor], append(texto[cursor:], []rune{'|'}...)...)
+    texto = append(texto[:cursor], append([]rune{'|'}, texto[cursor:]...)...)
     fmt.Println(string(texto))
 }
