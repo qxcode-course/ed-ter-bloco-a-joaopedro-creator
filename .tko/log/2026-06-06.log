@@ -52,3 +52,5 @@
 2026-06-06 17:42:28, EXEC, v:1, k:ed@sudoku, mode:FULL, size:57, fail:COMP
 2026-06-06 17:43:25, MOVE, v:1, k:ed@sudoku, mode:EDIT
 2026-06-06 17:48:50, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-06 17:56:02, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-06 17:58:48, EXEC, v:1, k:ed@sudoku, mode:FULL, rate:0, size:102

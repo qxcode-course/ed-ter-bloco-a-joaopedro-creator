@@ -4,6 +4,15 @@ import (
 
 )
 
+func contem(arr []rune, val rune) bool {
+    for _, v := range arr {
+        if v == val {
+            return true
+        }
+    }
+    return false
+}
+
 func linha(matriz [][]rune, lin int) []rune {
     return matriz[lin]
 }
@@ -61,7 +70,13 @@ func resolver(matriz [][]rune, index int) bool {
 
 
     for num := '1'; num <= rune(nl)+'0'; num++{
-
+        if !contem(linha(matriz, l), num) && !contem(coluna(matriz, c), num) && !contem(quadrante(matriz, l, c), num) {
+            matriz[l][c] = num
+            if resolver(matriz, index + 1) {
+                return true
+            }
+            matriz[l][c] = '.'
+        }
     }
      return false
 }
@@ -70,5 +85,18 @@ func resolver(matriz [][]rune, index int) bool {
 
 
 func main() {
-    
+    var n int 
+    fmt.Scan(&n)
+
+    matriz := make([][]rune, n)
+    for i := 0; i < n; i++ {
+        var linha string
+        fmt.Scan(&linha)
+        matriz[i] = []rune(linha)
+    }
+
+    resolver(matriz, 0)
+    for _, linha := range matriz {
+        fmt.Println(string(linha))
+    }
 }
