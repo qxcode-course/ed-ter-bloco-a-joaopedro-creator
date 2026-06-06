@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-06_13-31-05",
+            "content": "@@ -17,49 +17,13 @@\n ort \n-(%0A    %22fmt%22%0A    %22strings%22%0A    %22strconv%22%0A)\n+%22fmt%22\n %0A%0Afu\n@@ -313,18 +313,8 @@\n mut(\n- %22%22, %22abc%22\n )%0A%7D \n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-06-06_13-32-45",
+            "content": "@@ -24,27 +24,24 @@\n    %22fmt%22%0A   \n- //\n  %22strings%22%0A \n@@ -46,11 +46,8 @@\n %0A   \n- //\n  %22st\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-06-06_13-33-02",
+            "content": "package main\nimport (\n    \"fmt\"\n    // \"strings\"\n    // \"strconv\"\n)\n\nfunc permut (prefixo string, restante string) {\n    if len(restante) == 0 {\n        fmt.Println(prefixo)\n    } else {\n        for i := 0; i < len(restante); i++ {\n            permut(prefixo + string(restante[i]), restante[:i] + restante[i+1:])\n        }\n    }\n}\n\n\nfunc main() {\n    permut( \"\", \"abc\")\n}       \n",
+            "lines": "21"
+        }
+    ]
+}

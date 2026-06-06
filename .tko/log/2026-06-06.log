@@ -23,3 +23,15 @@
 2026-06-06 13:03:07, MOVE, v:1, k:ed@prin_list2, mode:EDIT
 2026-06-06 13:09:06, MOVE, v:1, k:ed@prin_list2, mode:EDIT
 2026-06-06 13:09:29, EXEC, v:1, k:ed@prin_list2, mode:FULL, rate:100, size:70
+2026-06-06 13:11:38, MOVE, v:1, k:ed@prin_list2, mode:BACK
+2026-06-06 13:12:05, SELF, v:1, k:ed@prin_list2, self:1, rate:100, study:33, concept:1, problem:1
+2026-06-06 13:13:45, MOVE, v:1, k:ed@permutacoes, mode:DOWN
+2026-06-06 13:09:29, MOVE, v:1, k:ed@prin_list2, mode:EDIT
+2026-06-06 13:13:45, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-06-06 13:13:45, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-06-06 13:14:28, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-06-06 13:29:12, MOVE, v:1, k:ed@permutacoes, mode:PICK
+2026-06-06 13:28:58, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-06-06 13:31:05, EXEC, v:1, k:ed@permutacoes, mode:FULL, size:17, fail:COMP
+2026-06-06 13:32:45, EXEC, v:1, k:ed@permutacoes, mode:FULL, size:21, fail:COMP
+2026-06-06 13:33:02, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:21
