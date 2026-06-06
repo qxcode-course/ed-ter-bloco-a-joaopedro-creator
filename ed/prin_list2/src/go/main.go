@@ -9,16 +9,19 @@ import (
 func ToStr(l *list.List, sword *list.Element) string {
 	res := "[ "
 	for e := l.Front(); e != nil; e = e.Next() {
-		res += fmt.Sprint(e.Value)
+		val := e.Value.(int)
+		res += fmt.Sprint(val)
 		if e == sword {
 			if e.Value.(int) > 0 {
-				res += ">"
+				res += fmt.Sprintf("%d> ", val)
 			} else {
-				res += "<"
+				res += fmt.Sprintf("%d< ", val)
 			}
 		}
 		if e.Next() != nil {
 			res += " "
+		}else{
+			res += fmt.Sprintf("%d ", val)
 		}
 		
 	}

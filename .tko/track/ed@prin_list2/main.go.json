@@ -17,8 +17,18 @@
         },
         {
             "label": "2026-06-06_12-53-27",
-            "content": "package main\n\nimport (\n\t\"container/list\"\n\t\"fmt\"\n)\n\n// mostra a lista com o elemento sword destacado\nfunc ToStr(l *list.List, sword *list.Element) string {\n\tres := \"[ \"\n\tfor e := l.Front(); e != nil; e = e.Next() {\n\t\tres += fmt.Sprint(e.Value)\n\t\tif e == sword {\n\t\t\tif e.Value.(int) > 0 {\n\t\t\t\tres += \">\"\n\t\t\t} else {\n\t\t\t\tres += \"<\"\n\t\t\t}\n\t\t}\n\t\tif e.Next() != nil {\n\t\t\tres += \" \"\n\t\t}\n\t\t\n\t}\n\tres += \" ]\"\n\treturn res\n}\n\n// move para frente na lista circular\nfunc Next(l *list.List, it *list.Element) *list.Element {\n\treturn nil\n}\n\n// move para tras na lista circular\nfunc Prev(l *list.List, it *list.Element) *list.Element {\n\treturn l.Front()\n}\n\nfunc main() {\n\tvar qtd, chosen, fase int\n\tfmt.Scan(&qtd, &chosen, &fase)\n\tl := list.New()\n\tfor i := 1; i <= qtd; i++ {\n\t\tl.PushBack(i * fase)\n\t\tfase = -fase\n\t}\n\tsword := l.Front()\n\tfor range chosen - 1 {\n\t\tsword = Next(l, sword)\n\t}\n\tfor range qtd - 1 {\n\t\tfmt.Println(ToStr(l, sword))\n\t\tif sword.Value.(int) > 0 {\n\t\t\tl.Remove(Next(l, sword))\n\t\t\tsword = Next(l, sword)\n\t\t} else {\n\t\t\tl.Remove(Prev(l, sword))\n\t\t\tsword = Prev(l, sword)\n\t\t}\n\t}\n\tfmt.Println(ToStr(l, sword))\n}\n",
+            "content": "@@ -211,31 +211,8 @@\n ) %7B%0A\n-%09%09val := e.Value.(int)%0A\n %09%09re\n@@ -227,19 +227,23 @@\n .Sprint(\n-val\n+e.Value\n )%0A%09%09if e\n@@ -288,71 +288,45 @@\n %09%09%09%09\n-fmt.Printf(%22%25d%3E %22, val)%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Printf(%22%25d%3C %22, val)\n+res += %22%3E%22%0A%09%09%09%7D else %7B%0A%09%09%09%09res += %22%3C%22\n %0A%09%09%09\n@@ -372,43 +372,8 @@\n %22 %22%0A\n-%09%09%7Delse%7B%0A%09%09%09fmt.Printf(%22%25d %22, val)%0A\n %09%09%7D%0A\n",
             "lines": "62"
+        },
+        {
+            "label": "2026-06-06_12-57-55",
+            "content": "@@ -299,37 +299,29 @@\n ) %3E 0 %7B%0A%09%09%09%09\n-res += \n fmt.\n-Sp\n+P\n rintf(%22%25d%3E %22\n@@ -343,29 +343,21 @@\n e %7B%0A%09%09%09%09\n-res += \n fmt.\n-Sp\n+P\n rintf(%22%25\n@@ -425,29 +425,21 @@\n lse%7B%0A%09%09%09\n-res += \n fmt.\n-Sp\n+P\n rintf(%22%25\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-06-06_13-00-24",
+            "content": "package main\n\nimport (\n\t\"container/list\"\n\t\"fmt\"\n)\n\n// mostra a lista com o elemento sword destacado\nfunc ToStr(l *list.List, sword *list.Element) string {\n\tres := \"[ \"\n\tfor e := l.Front(); e != nil; e = e.Next() {\n\t\tval := e.Value.(int)\n\t\tres += fmt.Sprint(val)\n\t\tif e == sword {\n\t\t\tif e.Value.(int) > 0 {\n\t\t\t\tres += fmt.Sprintf(\"%d> \", val)\n\t\t\t} else {\n\t\t\t\tres += fmt.Sprintf(\"%d< \", val)\n\t\t\t}\n\t\t}\n\t\tif e.Next() != nil {\n\t\t\tres += \" \"\n\t\t}else{\n\t\t\tres += fmt.Sprintf(\"%d \", val)\n\t\t}\n\t\t\n\t}\n\tres += \" ]\"\n\treturn res\n}\n\n// move para frente na lista circular\nfunc Next(l *list.List, it *list.Element) *list.Element {\n\treturn nil\n}\n\n// move para tras na lista circular\nfunc Prev(l *list.List, it *list.Element) *list.Element {\n\treturn l.Front()\n}\n\nfunc main() {\n\tvar qtd, chosen, fase int\n\tfmt.Scan(&qtd, &chosen, &fase)\n\tl := list.New()\n\tfor i := 1; i <= qtd; i++ {\n\t\tl.PushBack(i * fase)\n\t\tfase = -fase\n\t}\n\tsword := l.Front()\n\tfor range chosen - 1 {\n\t\tsword = Next(l, sword)\n\t}\n\tfor range qtd - 1 {\n\t\tfmt.Println(ToStr(l, sword))\n\t\tif sword.Value.(int) > 0 {\n\t\t\tl.Remove(Next(l, sword))\n\t\t\tsword = Next(l, sword)\n\t\t} else {\n\t\t\tl.Remove(Prev(l, sword))\n\t\t\tsword = Prev(l, sword)\n\t\t}\n\t}\n\tfmt.Println(ToStr(l, sword))\n}\n",
+            "lines": "65"
         }
     ]
 }
