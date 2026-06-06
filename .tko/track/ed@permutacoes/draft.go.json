@@ -12,8 +12,18 @@
         },
         {
             "label": "2026-06-06_13-33-02",
-            "content": "package main\nimport (\n    \"fmt\"\n    // \"strings\"\n    // \"strconv\"\n)\n\nfunc permut (prefixo string, restante string) {\n    if len(restante) == 0 {\n        fmt.Println(prefixo)\n    } else {\n        for i := 0; i < len(restante); i++ {\n            permut(prefixo + string(restante[i]), restante[:i] + restante[i+1:])\n        }\n    }\n}\n\n\nfunc main() {\n    permut( \"\", \"abc\")\n}       \n",
+            "content": "@@ -344,43 +344,8 @@\n ) %7B%0A\n-    var s string%0A    fmt.Scan(&s)%0A%0A\n     \n@@ -356,17 +356,21 @@\n ut( %22%22, \n-s\n+%22abc%22\n )%0A%7D     \n",
             "lines": "21"
+        },
+        {
+            "label": "2026-06-06_13-37-00",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import (\n@@ -33,27 +33,36 @@\n     \n-%22sort\n+// %22strings\n %22%0A   \n+ //\n  %22str\n-ings\n+conv\n %22%0A)%0A\n@@ -69,24 +69,25 @@\n %0Afunc permut\n+ \n (prefixo str\n@@ -251,17 +251,19 @@\n (prefixo\n-+\n+ + \n string(r\n@@ -287,17 +287,19 @@\n ante%5B:i%5D\n-+\n+ + \n restante\n@@ -325,16 +325,17 @@\n    %7D%0A%7D%0A%0A\n+%0A\n func mai\n@@ -379,104 +379,8 @@\n s)%0A%0A\n-    %0A    chars := strings.Split(s, %22%22)%0A    sort.Strings(chars)%0A    s = strings.Join(chars, %22%22)%0A%0A\n     \n@@ -386,16 +386,17 @@\n  permut(\n+ \n %22%22, s)%0A%7D\n@@ -400,9 +400,11 @@\n )%0A%7D     \n+  \n %0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-06-06_13-40-29",
+            "content": "package main\n\nimport (\n    \"fmt\"\n    \"sort\"\n    \"strings\"\n)\n\nfunc permut(prefixo string, restante string) {\n    if len(restante) == 0 {\n        fmt.Println(prefixo)\n    } else {\n        for i := 0; i < len(restante); i++ {\n            permut(prefixo+string(restante[i]), restante[:i]+restante[i+1:])\n        }\n    }\n}\n\nfunc main() {\n    var s string\n    fmt.Scan(&s)\n\n    \n    chars := strings.Split(s, \"\")\n    sort.Strings(chars)\n    s = strings.Join(chars, \"\")\n\n    permut(\"\", s)\n}     \n",
+            "lines": "29"
         }
     ]
 }

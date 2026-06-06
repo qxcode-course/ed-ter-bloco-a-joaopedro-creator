@@ -35,3 +35,20 @@
 2026-06-06 13:31:05, EXEC, v:1, k:ed@permutacoes, mode:FULL, size:17, fail:COMP
 2026-06-06 13:32:45, EXEC, v:1, k:ed@permutacoes, mode:FULL, size:21, fail:COMP
 2026-06-06 13:33:02, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:21
+2026-06-06 13:32:56, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-06-06 13:33:02, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-06-06 13:37:00, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:40, size:24
+2026-06-06 13:38:50, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-06-06 13:36:59, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-06-06 13:40:29, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:100, size:29
+2026-06-06 13:40:36, MOVE, v:1, k:ed@permutacoes, mode:BACK
+2026-06-06 13:41:13, SELF, v:1, k:ed@permutacoes, self:1, rate:100, study:28, concept:1
+2026-06-06 17:27:53, MOVE, v:1, k:ed@sudoku, mode:DOWN
+2026-06-06 17:27:53, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-06 17:27:53, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-06 17:28:46, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-06 17:41:34, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-06 17:42:27, MOVE, v:1, k:ed@sudoku, mode:PICK
+2026-06-06 17:42:28, EXEC, v:1, k:ed@sudoku, mode:FULL, size:57, fail:COMP
+2026-06-06 17:43:25, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-06-06 17:48:50, MOVE, v:1, k:ed@sudoku, mode:EDIT
