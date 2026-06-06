@@ -1,6 +1,7 @@
 package main
 import (
     "fmt"
+    "math"
 
 )
 
@@ -26,9 +27,10 @@ func coluna(matriz [][]rune, col int) []rune {
 }   
 
 func quadrante(matriz [][]rune, lin, col int) []rune {
-    dim := len(matriz)
-    l := (lin / dim) * dim
-    c := (col / dim) * dim
+  dim := len(matriz)
+tam := int(math.Sqrt(float64(dim)))
+l := (lin / tam) * tam
+c := (col / tam) * tam
 
     if dim == 4 {
         return []rune{
