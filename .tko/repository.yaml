@@ -27,5 +27,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@controlz
-selected_index: 13
+selected: ed@prin_list2
+selected_index: 11
