@@ -7,36 +7,41 @@ import (
 
 // mostra a lista com o elemento sword destacado
 func ToStr(l *list.List, sword *list.Element) string {
-	res := "[ "
-	for e := l.Front(); e != nil; e = e.Next() {
-		val := e.Value.(int)
-		res += fmt.Sprint(val)
-		if e == sword {
-			if e.Value.(int) > 0 {
-				res += fmt.Sprintf("%d> ", val)
-			} else {
-				res += fmt.Sprintf("%d< ", val)
-			}
-		}
-		if e.Next() != nil {
-			res += " "
-		}else{
-			res += fmt.Sprintf("%d ", val)
-		}
-		
-	}
-	res += " ]"
-	return res
+    res := "[ "
+    for e := l.Front(); e != nil; e = e.Next() {
+        val := e.Value.(int)
+        if e == sword {
+            if val > 0 {
+                res += fmt.Sprintf("%d>", val)
+            } else {
+                res += fmt.Sprintf("<%d", val)
+            }
+        } else {
+            res += fmt.Sprintf("%d", val) 
+        }
+        if e.Next() != nil {
+            res += " "
+        }
+    }
+    return res + " ]"
 }
 
 // move para frente na lista circular
 func Next(l *list.List, it *list.Element) *list.Element {
-	return nil
+	if it.Next() != nil {
+		return it.Next()
+	}
+	
+	return l.Front()
+
 }
 
 // move para tras na lista circular
 func Prev(l *list.List, it *list.Element) *list.Element {
-	return l.Front()
+	if it.Prev() != nil {
+		return it.Prev()
+	}
+	return l.Back()
 }
 
 func main() {
