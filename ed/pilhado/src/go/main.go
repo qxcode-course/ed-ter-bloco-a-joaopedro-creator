@@ -1,9 +1,9 @@
 package main
 
 import (
-	//"bufio"
+	"bufio"
 	"fmt"
-	//"os"
+	"os"
 )
 
 type Pos struct{
@@ -51,20 +51,20 @@ func dfs(grid [][]rune, start, end Pos) {
 
 func main() {
 	var linhas, colunas int
-	fmt.Scanf("%d %d", &linhas, &colunas)	
+	fmt.Scanf("%d %d\n", &linhas, &colunas)
 
+	reader := bufio.NewReader(os.Stdin)
 	grid := make([][]rune, linhas)
-    var start, end Pos
+	var start, end Pos
 
-    for i := 0; i < linhas; i++ {
-        var line string
-        fmt.Scan(&line) 
-        grid[i] = []rune(line)
-    }
+	for i := 0; i < linhas; i++ {
+		line, _ := reader.ReadString('\n')
+		grid[i] = []rune(line[:colunas])
+	}
 
 	for l := 0; l < linhas; l++ {
 		for c := 0; c < colunas; c++ {
-			if grid[l][c] == 'S' {
+			if grid[l][c] == 'I' {
 				start = Pos{l, c}
 			} else if grid[l][c] == 'F' {
 				end = Pos{l, c}
@@ -73,6 +73,8 @@ func main() {
 	}
 
 	dfs(grid, start, end)
+
+	for _, row := range grid {
+		fmt.Println(string(row))
+	}
 }
-
-
