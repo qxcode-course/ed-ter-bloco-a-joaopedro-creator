@@ -54,3 +54,5 @@
 2026-06-09 18:16:55, MOVE, v:1, k:ed@caminhao, mode:PICK
 2026-06-09 18:16:56, EXEC, v:1, k:ed@caminhao, mode:FULL, rate:25
 2026-06-09 18:18:16, EXEC, v:1, k:ed@caminhao, mode:FULL, rate:100, size:38
+2026-06-09 18:18:48, MOVE, v:1, k:ed@caminhao, mode:BACK
+2026-06-09 18:19:31, SELF, v:1, k:ed@caminhao, self:1, rate:100, study:40, concept:1
