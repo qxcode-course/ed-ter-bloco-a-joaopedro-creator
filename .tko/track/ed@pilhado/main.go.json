@@ -2,8 +2,18 @@
     "patches": [
         {
             "label": "2026-06-09_13-58-45",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct{\n\tl, c int\n}\nfunc dfs(grid [][]rune, start, end Pos) {\n    caminho := NewStack[Pos]()\n    becos := NewStack[Pos]()\n    caminho.Push(start)\n\n    for !caminho.IsEmpty() {\n        atual := caminho.Top()\n        grid[atual.l][atual.c] = '.'\n\n        if atual == end {\n            break\n        }\n\n        vizinhos := []Pos{\n            {atual.l - 1, atual.c},\n            {atual.l + 1, atual.c},\n            {atual.l, atual.c - 1},\n            {atual.l, atual.c + 1},\n        }\n\n        validos := []Pos{}\n        for _, v := range vizinhos {\n            if grid[v.l][v.c] == ' ' || grid[v.l][v.c] == 'F' {\n                validos = append(validos, v)\n            }\n        }\n\n        if len(validos) > 0 {\n            caminho.Push(validos[0])\n        } else {\n            becos.Push(caminho.Pop())\n        }\n    }\n\n    for !becos.IsEmpty() {\n        b := becos.Pop()\n        grid[b.l][b.c] = ' '\n    }\n}\n\nfunc main() {\nentrada := bufio.NewScanner(os.Stdin)\nentrada.Scan()\nvar nl, nc int\nfmt.Sscanf(entrada.Text(), \"%d %d\", &nl, &nc)\n}\n\n\n",
+            "content": "@@ -977,72 +977,121 @@\n ) %7B%0A\n-%09var linhas, colunas\n+entrada := bufio.NewScanner(os.Stdin)%0Aentrada.Scan()%0Avar nl, nc\n  int%0A\n-%09\n fmt.S\n+s\n canf(\n-%22%25d %25d%22, &linhas, &colunas)%09\n+entrada.Text(), %22%25d %25d%22, &nl, &nc)\n %0A%7D%0A%0A\n",
             "lines": "59"
+        },
+        {
+            "label": "2026-06-09_14-02-18",
+            "content": "@@ -17,18 +17,16 @@\n port (%0A%09\n-//\n %22bufio%22%0A\n@@ -37,10 +37,8 @@\n t%22%0A%09\n-//\n %22os%22\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-06-09_14-02-43",
+            "content": "package main\n\nimport (\n\t//\"bufio\"\n\t\"fmt\"\n\t//\"os\"\n)\n\ntype Pos struct{\n\tl, c int\n}\nfunc dfs(grid [][]rune, start, end Pos) {\n    caminho := NewStack[Pos]()\n    becos := NewStack[Pos]()\n    caminho.Push(start)\n\n    for !caminho.IsEmpty() {\n        atual := caminho.Top()\n        grid[atual.l][atual.c] = '.'\n\n        if atual == end {\n            break\n        }\n\n        vizinhos := []Pos{\n            {atual.l - 1, atual.c},\n            {atual.l + 1, atual.c},\n            {atual.l, atual.c - 1},\n            {atual.l, atual.c + 1},\n        }\n\n        validos := []Pos{}\n        for _, v := range vizinhos {\n            if grid[v.l][v.c] == ' ' || grid[v.l][v.c] == 'F' {\n                validos = append(validos, v)\n            }\n        }\n\n        if len(validos) > 0 {\n            caminho.Push(validos[0])\n        } else {\n            becos.Push(caminho.Pop())\n        }\n    }\n\n    for !becos.IsEmpty() {\n        b := becos.Pop()\n        grid[b.l][b.c] = ' '\n    }\n}\n\nfunc main() {\n\tvar linhas, colunas int\n\tfmt.Scanf(\"%d %d\", &linhas, &colunas)\t\n}\n\n\n",
+            "lines": "57"
         }
     ]
 }

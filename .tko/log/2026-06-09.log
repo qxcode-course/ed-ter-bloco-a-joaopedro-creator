@@ -6,3 +6,7 @@
 2026-06-09 13:50:28, MOVE, v:1, k:ed@pilhado, mode:EDIT
 2026-06-09 13:52:40, MOVE, v:1, k:ed@pilhado, mode:EDIT
 2026-06-09 13:58:45, EXEC, v:1, k:ed@pilhado, mode:FULL, rate:0, size:92
+2026-06-09 14:00:18, MOVE, v:1, k:ed@pilhado, mode:EDIT
+2026-06-09 13:58:45, MOVE, v:1, k:ed@pilhado, mode:EDIT
+2026-06-09 14:02:18, EXEC, v:1, k:ed@pilhado, mode:FULL, size:90, fail:COMP
+2026-06-09 14:02:43, EXEC, v:1, k:ed@pilhado, mode:FULL, rate:0, size:90

@@ -1,9 +1,9 @@
 package main
 
 import (
-	"bufio"
+	//"bufio"
 	"fmt"
-	"os"
+	//"os"
 )
 
 type Pos struct{
@@ -50,10 +50,8 @@ func dfs(grid [][]rune, start, end Pos) {
 }
 
 func main() {
-entrada := bufio.NewScanner(os.Stdin)
-entrada.Scan()
-var nl, nc int
-fmt.Sscanf(entrada.Text(), "%d %d", &nl, &nc)
+	var linhas, colunas int
+	fmt.Scanf("%d %d", &linhas, &colunas)	
 }
 
 
