@@ -52,6 +52,27 @@ func dfs(grid [][]rune, start, end Pos) {
 func main() {
 	var linhas, colunas int
 	fmt.Scanf("%d %d", &linhas, &colunas)	
+
+	grid := make([][]rune, linhas)
+    var start, end Pos
+
+    for i := 0; i < linhas; i++ {
+        var line string
+        fmt.Scan(&line) 
+        grid[i] = []rune(line)
+    }
+
+	for l := 0; l < linhas; l++ {
+		for c := 0; c < colunas; c++ {
+			if grid[l][c] == 'S' {
+				start = Pos{l, c}
+			} else if grid[l][c] == 'F' {
+				end = Pos{l, c}
+			}
+		}
+	}
+
+	dfs(grid, start, end)
 }
 
 
