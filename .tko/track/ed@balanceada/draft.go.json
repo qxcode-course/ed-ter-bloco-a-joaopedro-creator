@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-09_17-01-37",
+            "content": "@@ -365,17 +365,17 @@\n f c == '\n-)\n+(\n ' && top\n@@ -380,17 +380,17 @@\n opo == '\n-(\n+)\n '%7B%0A     \n@@ -510,36 +510,8 @@\n   %7D%0A\n-     return len(pilha) == 0%0A\n %7D%0A%0Af\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-06-09_17-02-25",
+            "content": "@@ -376,17 +376,17 @@\n && topo \n-!\n+=\n = '('%7B%0A \n@@ -452,9 +452,9 @@\n opo \n-!\n+=\n = '%5B\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-06-09_17-03-34",
+            "content": "@@ -258,29 +258,35 @@\n           %7D%0A\n-%0A\n+   \n     \n+ %7D%0A%0A\n         topo\n@@ -491,31 +491,24 @@\n       %7D%0A    \n-    %7D%0A%0A\n     %0A    %7D%0A \n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-06-09_17-04-30",
+            "content": "@@ -280,16 +280,17 @@\n    topo \n+:\n = pilha%5B\n@@ -311,26 +311,23 @@\n         \n-    \n pilha \n+:\n = pilha%5B\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-06-09_17-05-27",
+            "content": "@@ -83,17 +83,16 @@\n %0A    for\n- \n _, c := \n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-06-09_17-06-14",
+            "content": "@@ -281,17 +281,16 @@\n    topo \n-:\n = pilha%5B\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-06-09_17-10-42",
+            "content": "package main\nimport \"fmt\"\n\n\nfunc verificar(s string) bool{\n    pilha := [] rune{}\n\n    for _, c := range s{\n        if c == '(' || c == '['{\n            pilha = append(pilha, c)\n        }else {\n            if len(pilha) == 0{\n                return false \n            }\n\n            topo := pilha[len(pilha)-1]\n            pilha = pilha[:len(pilha)-1]\n\n        if c == ')' && topo != '('{\n            return false\n        }\n\n        if c == ']' && topo != '['{\n            return false\n        }\n        }\n\n    \n    }\n     return len(pilha) == 0\n}\n\nfunc main() {\n    var s string \n    fmt.Scan(&s)\n\n    if verificar(s){\n        fmt.Println(\"balanceado\")\n    }else{\n        fmt.Println(\"nao balanceado\")\n    }\n  \n}\n",
+            "lines": "43"
+        }
+    ]
+}

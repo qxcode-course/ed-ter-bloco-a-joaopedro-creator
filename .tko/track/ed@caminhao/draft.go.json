@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-09_17-49-27",
+            "content": "package main\nimport \"fmt\"\n\nfunc gasEst(gas, dist []int) int {\n    tanque, total, candidato := 0, 0, 0\n\n}\n\nfunc main() {\n    var n int \n    fmt.Scan(&n)\n}\n",
+            "lines": "12"
+        }
+    ]
+}
