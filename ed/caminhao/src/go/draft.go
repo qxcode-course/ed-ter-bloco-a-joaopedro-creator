@@ -26,4 +26,13 @@ func gasEst(gas, dist []int) int {
 func main() {
     var n int 
     fmt.Scan(&n)
+
+    gas := make([]int, n)
+    dist := make([]int, n)
+
+    for i := 0; i < n; i++ {
+    fmt.Scan(&gas[i], &dist[i])
+}
+    
+    fmt.Println(gasEst(gas, dist))  
 }

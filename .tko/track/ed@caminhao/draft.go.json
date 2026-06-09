@@ -2,8 +2,28 @@
     "patches": [
         {
             "label": "2026-06-09_17-49-27",
-            "content": "package main\nimport \"fmt\"\n\nfunc gasEst(gas, dist []int) int {\n    tanque, total, candidato := 0, 0, 0\n\n}\n\nfunc main() {\n    var n int \n    fmt.Scan(&n)\n}\n",
+            "content": "@@ -100,275 +100,8 @@\n  0%0A%0A\n-    for i := 0; i %3C len(gas); i++%7B%0A        diff := gas%5Bi%5D - dist%5Bi%5D%0A%09%09tanque += diff%0A%09%09total += diff%0A%0A        if tanque %3C 0%7B%0A            candidato = i + 1%0A            tanque = 0 %0A        %7D%0A    %7D%0A%0A   if total %3C 0%7B%0A        return -1%0A   %7D    %0A%0A    return candidato    %0A%0A\n %7D%0A%0Af\n",
             "lines": "12"
+        },
+        {
+            "label": "2026-06-09_18-14-21",
+            "content": "@@ -415,186 +415,7 @@\n (&n)\n-%0A%0A    gas := make(%5B%5Dint, n)%0A    dist := make(%5B%5Dint, n)%0A%0A    for i := 0; i %3C n; i++ %7B%0A        fmt.Scan(&gas%5Bi%5D)%0A    %7D%0A%0A    for i := 0; i %3C n; i++ %7B%0A        fmt.Scan(&dist%5Bi%5D)%0A    %7D\n %0A%7D%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-06-09_18-15-19",
+            "content": "@@ -595,48 +595,6 @@\n   %7D%0A\n-    %0A    fmt.Println(gasEst(gas, dist))  %0A\n %7D%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-06-09_18-15-49",
+            "content": "@@ -496,16 +496,20 @@\n ; i++ %7B%0A\n+    \n     fmt.\n@@ -520,18 +520,71 @@\n (&gas%5Bi%5D\n-, \n+)%0A    %7D%0A%0A    for i := 0; i %3C n; i++ %7B%0A        fmt.Scan(\n &dist%5Bi%5D\n@@ -585,16 +585,20 @@\n ist%5Bi%5D)%0A\n+    \n %7D%0A    %0A \n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-06-09_18-18-16",
+            "content": "package main\nimport \"fmt\"\n\nfunc gasEst(gas, dist []int) int {\n    tanque, total, candidato := 0, 0, 0\n\n    for i := 0; i < len(gas); i++{\n        diff := gas[i] - dist[i]\n\t\ttanque += diff\n\t\ttotal += diff\n\n        if tanque < 0{\n            candidato = i + 1\n            tanque = 0 \n        }\n    }\n\n   if total < 0{\n        return -1\n   }    \n\n    return candidato    \n\n}\n\nfunc main() {\n    var n int \n    fmt.Scan(&n)\n\n    gas := make([]int, n)\n    dist := make([]int, n)\n\n    for i := 0; i < n; i++ {\n    fmt.Scan(&gas[i], &dist[i])\n}\n    \n    fmt.Println(gasEst(gas, dist))  \n}\n",
+            "lines": "38"
         }
     ]
 }

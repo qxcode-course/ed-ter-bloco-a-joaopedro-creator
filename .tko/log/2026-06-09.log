@@ -47,3 +47,10 @@
 2026-06-09 17:49:27, EXEC, v:1, k:ed@caminhao, mode:FULL, size:12, fail:COMP
 2026-06-09 17:49:32, EXEC, v:1, k:ed@caminhao, mode:FULL, fail:COMP
 2026-06-09 17:51:36, MOVE, v:1, k:ed@caminhao, mode:EDIT
+2026-06-09 18:14:16, MOVE, v:1, k:ed@caminhao, mode:PICK
+2026-06-09 18:14:21, EXEC, v:1, k:ed@caminhao, mode:FULL, rate:0, size:29
+2026-06-09 18:15:19, EXEC, v:1, k:ed@caminhao, mode:FULL, rate:0, size:40
+2026-06-09 18:15:49, EXEC, v:1, k:ed@caminhao, mode:FULL, rate:25, size:42
+2026-06-09 18:16:55, MOVE, v:1, k:ed@caminhao, mode:PICK
+2026-06-09 18:16:56, EXEC, v:1, k:ed@caminhao, mode:FULL, rate:25
+2026-06-09 18:18:16, EXEC, v:1, k:ed@caminhao, mode:FULL, rate:100, size:38
