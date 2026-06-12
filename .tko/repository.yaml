@@ -27,5 +27,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@serial
-selected_index: 8
+selected: ed@formatada
+selected_index: 9

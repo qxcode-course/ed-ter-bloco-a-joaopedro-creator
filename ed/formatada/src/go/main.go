@@ -1,3 +1,4 @@
+
 package main
 
 import (
@@ -17,8 +18,10 @@ type Node struct {
 
 // MyShow imprime a árvore binária de forma formatada.
 func MyShow(node *Node, nivel int) {
-	_, _ = node, nivel
-	// TODO
+	if node.Left == nil && node.Right == nil {
+		fmt.Printf("%d ", node.Value)
+		return
+	}
 }
 // -----------------------------------------------------------------------------------
 func BShow(node *Node, history string) {

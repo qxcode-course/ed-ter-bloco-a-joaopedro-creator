@@ -22,3 +22,8 @@
 2026-06-12 17:13:57, MOVE, v:1, k:ed@formatada, mode:EDIT
 2026-06-12 17:13:57, MOVE, v:1, k:ed@formatada, mode:EDIT
 2026-06-12 17:13:57, MOVE, v:1, k:ed@formatada, mode:EDIT
+2026-06-12 17:15:16, MOVE, v:1, k:ed@formatada, mode:PICK
+2026-06-12 17:15:17, EXEC, v:1, k:ed@formatada, mode:FULL, rate:0, size:73
+2026-06-12 17:15:34, MOVE, v:1, k:ed@formatada, mode:EDIT
+2026-06-12 17:15:17, MOVE, v:1, k:ed@formatada, mode:EDIT
+2026-06-12 17:21:47, EXEC, v:1, k:ed@formatada, mode:FULL, rate:0, size:75
