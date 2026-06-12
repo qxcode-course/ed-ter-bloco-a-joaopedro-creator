@@ -19,8 +19,24 @@ type Node struct {
 // MyShow imprime a árvore binária de forma formatada.
 func MyShow(node *Node, nivel int) {
 	if node.Left == nil && node.Right == nil {
-		fmt.Printf("%d ", node.Value)
+		fmt.Print(strings.Repeat("....", nivel))
+		fmt.Println(node.Value)
 		return
+	}
+
+	if node.Left != nil || node.Right != nil {
+			if node.Left == nil {
+		fmt.Print(strings.Repeat("....", nivel+1))
+		fmt.Println("#")
+	} else {
+		MyShow(node.Left, nivel+1)
+	}
+		if node.Right == nil {
+		fmt.Print(strings.Repeat("....", nivel+1))
+		fmt.Println("#")
+	} else {
+		MyShow(node.Right, nivel+1)
+	}
 	}
 }
 // -----------------------------------------------------------------------------------
