@@ -41,3 +41,15 @@
 2026-06-12 17:42:40, MOVE, v:1, k:ed@formatada, mode:EDIT
 2026-06-12 17:44:07, SELF, v:1, k:ed@formatada, self:1, rate:100, study:29, concept:1
 2026-06-12 17:47:08, MOVE, v:1, k:ed@inverter, mode:DOWN
+2026-06-12 17:47:08, MOVE, v:1, k:ed@inverter, mode:EDIT
+2026-06-12 17:47:08, MOVE, v:1, k:ed@inverter, mode:EDIT
+2026-06-12 17:47:08, MOVE, v:1, k:ed@inverter, mode:EDIT
+2026-06-12 17:47:08, MOVE, v:1, k:ed@inverter, mode:EDIT
+2026-06-12 18:01:06, MOVE, v:1, k:ed@inverter, mode:PICK
+2026-06-12 18:01:08, EXEC, v:1, k:ed@inverter, mode:FULL, rate:16, size:73
+2026-06-12 18:03:44, EXEC, v:1, k:ed@inverter, mode:FULL, rate:100, size:77
+2026-06-12 18:03:54, MOVE, v:1, k:ed@inverter, mode:BACK
+2026-06-12 18:03:26, MOVE, v:1, k:ed@inverter, mode:EDIT
+2026-06-12 18:03:44, MOVE, v:1, k:ed@inverter, mode:EDIT
+2026-06-12 18:04:26, SELF, v:1, k:ed@inverter, self:1, rate:100, study:16, concept:1
+2026-06-12 18:05:20, MOVE, v:1, k:ed@clonar, mode:DOWN
