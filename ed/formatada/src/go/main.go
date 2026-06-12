@@ -31,6 +31,11 @@ func MyShow(node *Node, nivel int) {
 	} else {
 		MyShow(node.Left, nivel+1)
 	}
+
+	fmt.Print(strings.Repeat("....", nivel))
+	fmt.Println(node.Value)
+
+	
 		if node.Right == nil {
 		fmt.Print(strings.Repeat("....", nivel+1))
 		fmt.Println("#")
